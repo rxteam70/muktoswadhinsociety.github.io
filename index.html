@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mukto Swadhin Society - Independent Youth Platform. On-Page Interactive Donation & UN SDG Aligned Platform." />
+  <meta name="description" content="Mukto Swadhin Society - Independent Youth Platform. User Login, Sign-up, On-Page Donation & UN SDG Aligned." />
   <title>Mukto Swadhin Society | Independent Youth Platform</title>
 
   <!-- গুগল ফন্ট: Hind Siliguri -->
@@ -111,7 +112,7 @@
     .top-social-icon { color: #bbf0cf; display: flex; align-items: center; }
     .top-social-icon:hover { color: #4ade80; }
 
-    /* NAVBAR */
+    /* NAVBAR & USER AUTH BUTTON */
     .navbar {
       position: sticky; top: 0; background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(14px); border-bottom: 1px solid rgba(220, 231, 225, 0.8);
@@ -133,10 +134,43 @@
     .brand-title { font-size: 1.16rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
     .brand-subtitle { font-size: 0.73rem; font-weight: 400; color: rgba(255, 255, 255, 0.94); }
 
-    .nav-menu { display: flex; align-items: center; gap: 1rem; }
+    .nav-menu { display: flex; align-items: center; gap: 0.9rem; }
     .nav-link { font-size: 0.93rem; font-weight: 500; color: var(--text-main); padding: 0.5rem 0.15rem; cursor: pointer; }
     .nav-link:hover, .nav-link.active { color: var(--primary-accent); }
     .mobile-btn { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); }
+
+    /* ইউজার লগইন ও প্রোফাইল বাটন */
+    .user-profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(21, 128, 61, 0.1);
+      border: 1px solid var(--primary-accent);
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .user-profile-badge:hover {
+      background: var(--primary-accent);
+      color: #fff;
+    }
+
+    .user-avatar-mini {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
 
     /* HERO */
     .hero {
@@ -171,183 +205,49 @@
     .marquee-item { display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; font-weight: 600; }
     @keyframes marqueeRun { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* ==========================================================
-       ON-PAGE ALL-IN-ONE DONATION HUB (ইন্টারেক্টিভ অন-পেজ ডোনেশন)
-    ========================================================== */
-    .onpage-donate-section {
-      background: linear-gradient(180deg, #f0f7f3 0%, #ffffff 100%);
-      padding: 6rem 0;
-    }
-
+    /* অন-পেজ ডোনেশন */
+    .onpage-donate-section { background: linear-gradient(180deg, #f0f7f3 0%, #ffffff 100%); padding: 6rem 0; }
     .donate-hub-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-color);
-      box-shadow: var(--hover-shadow);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      max-width: 1100px;
-      margin: 0 auto;
+      background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--border-color);
+      box-shadow: var(--hover-shadow); overflow: hidden; display: grid; grid-template-columns: 1.15fr 0.85fr;
+      max-width: 1100px; margin: 0 auto;
     }
+    .donate-hub-left { padding: 3.5rem 3rem; border-right: 1px solid var(--border-color); }
+    .donate-hub-right { padding: 3.5rem 2.8rem; background: #fbfdfc; display: flex; flex-direction: column; justify-content: center; }
 
-    .donate-hub-left {
-      padding: 3.5rem 3rem;
-      border-right: 1px solid var(--border-color);
-    }
-
-    .donate-hub-right {
-      padding: 3.5rem 2.8rem;
-      background: #fbfdfc;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .step-title {
-      font-size: 1.15rem;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .step-circle {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--primary-accent);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 800;
-    }
-
-    /* অন-পেজ টাকার অ্যামাউন্ট পিলস */
-    .amount-pills-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-      margin-bottom: 1.8rem;
-    }
-
+    .step-title { font-size: 1.15rem; color: var(--primary); font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem; }
+    .step-circle { width: 28px; height: 28px; border-radius: 50%; background: var(--primary-accent); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; }
+    .amount-pills-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1.8rem; }
     .amount-btn {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      padding: 0.65rem 0.5rem;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-main);
-      cursor: pointer;
-      text-align: center;
-      transition: var(--transition);
+      background: #fff; border: 1px solid var(--border-color); padding: 0.65rem 0.5rem;
+      border-radius: var(--radius-sm); font-size: 1rem; font-weight: 700; color: var(--text-main); cursor: pointer; text-align: center;
     }
-
-    .amount-btn:hover, .amount-btn.active {
-      border-color: var(--primary-accent);
-      background: rgba(21, 128, 61, 0.08);
-      color: var(--primary-accent);
-    }
-
-    /* অন-পেজ পেমেন্ট মেথড সুইচার */
-    .payment-tab-selector {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
+    .amount-btn.active { border-color: var(--primary-accent); background: rgba(21, 128, 61, 0.08); color: var(--primary-accent); }
+    .payment-tab-selector { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
     .pay-tab-btn {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      padding: 0.75rem 0.4rem;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.3rem;
-      font-weight: 700;
-      font-size: 0.88rem;
-      transition: var(--transition);
+      background: #fff; border: 1px solid var(--border-color); padding: 0.75rem 0.4rem;
+      border-radius: var(--radius-sm); cursor: pointer; text-align: center; display: flex; flex-direction: column;
+      align-items: center; gap: 0.3rem; font-weight: 700; font-size: 0.88rem;
     }
-
-    .pay-tab-btn:hover {
-      border-color: #94a3b8;
-    }
-
-    .pay-tab-btn.active {
-      border-color: var(--primary-accent);
-      background: #f0fdf4;
-      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
-    }
-
-    /* অ্যাক্টিভ নম্বর ডিসপ্লে কার্ড */
+    .pay-tab-btn.active { border-color: var(--primary-accent); background: #f0fdf4; box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15); }
     .active-account-box {
-      background: #ffffff;
-      border: 1.5px dashed var(--primary-accent);
-      border-radius: var(--radius-md);
-      padding: 1.4rem;
-      margin-bottom: 1.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+      background: #fff; border: 1.5px dashed var(--primary-accent); border-radius: var(--radius-md);
+      padding: 1.4rem; margin-bottom: 1.8rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
     }
-
-    .account-text-info span {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      font-weight: 600;
-      display: block;
-    }
-
-    .account-text-info strong {
-      font-size: 1.35rem;
-      color: var(--primary);
-      letter-spacing: 0.04em;
-    }
-
-    .copy-action-btn {
-      background: var(--primary-accent);
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: var(--radius-full);
-      font-size: 0.88rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .copy-action-btn:hover {
-      background: var(--primary-hover);
-    }
+    .account-text-info span { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; display: block; }
+    .account-text-info strong { font-size: 1.35rem; color: var(--primary); letter-spacing: 0.04em; }
+    .copy-action-btn { background: var(--primary-accent); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: var(--radius-full); font-size: 0.88rem; font-weight: 700; cursor: pointer; }
 
     /* এসডিজি সেকশন */
     .sdg-section { background: linear-gradient(180deg, #ffffff 0%, #f4fbf6 100%); padding: 6rem 0; }
     .sdg-hero-banner {
-      background: #002244; color: #fff; border-radius: var(--radius-lg);
-      padding: 2.8rem; margin-bottom: 3.5rem; display: grid; grid-template-columns: 1.3fr 0.7fr;
-      align-items: center; gap: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #002244; color: #fff; border-radius: var(--radius-lg); padding: 2.8rem; margin-bottom: 3.5rem;
+      display: grid; grid-template-columns: 1.3fr 0.7fr; align-items: center; gap: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .sdg-hero-banner h3 { font-size: 1.85rem; margin-bottom: 0.8rem; line-height: 1.3; }
     .sdg-hero-banner p { font-size: 1rem; color: #cbd5e1; }
     .sdg-grid-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .sdg-card {
-      background: #fff; border-radius: var(--radius-md); border: 1px solid var(--border-color);
-      overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column;
-      transition: var(--transition);
-    }
+    .sdg-card { background: #fff; border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; transition: var(--transition); }
     .sdg-card:hover { transform: translateY(-8px); box-shadow: var(--hover-shadow); }
     .sdg-top-stripe { height: 8px; width: 100%; }
     .sdg-card-body { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -358,18 +258,12 @@
     .sdg-desc { font-size: 0.94rem; color: var(--text-muted); margin-bottom: 1.4rem; flex-grow: 1; }
     .sdg-initiatives-list { list-style: none; margin-bottom: 1.5rem; padding: 1rem; background: #f7faf8; border-radius: var(--radius-sm); }
     .sdg-initiatives-list li { font-size: 0.88rem; margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 0.5rem; }
-    .sdg-detail-btn {
-      align-self: flex-start; background: none; border: none; color: var(--primary-accent);
-      font-weight: 700; font-size: 0.92rem; cursor: pointer; padding: 0;
-    }
+    .sdg-detail-btn { align-self: flex-start; background: none; border: none; color: var(--primary-accent); font-weight: 700; font-size: 0.92rem; cursor: pointer; padding: 0; }
 
     /* সাধারণ কার্ডস */
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; }
-    .card {
-      background: var(--bg-white); border-radius: var(--radius-md); border: 1px solid var(--border-color);
-      overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; transition: var(--transition);
-    }
+    .card { background: var(--bg-white); border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; transition: var(--transition); }
     .card:hover { transform: translateY(-8px); box-shadow: var(--hover-shadow); border-color: rgba(21, 128, 61, 0.4); }
     .card-img-wrap { width: 100%; height: 230px; overflow: hidden; }
     .card-img-wrap img { width: 100%; height: 100%; transition: transform 0.5s ease; }
@@ -388,8 +282,7 @@
     /* হেল্পলাইন বক্স */
     .helpline-box {
       margin-top: 2.8rem; background: linear-gradient(135deg, var(--primary), var(--primary-accent));
-      color: #fff; border-radius: var(--radius-lg); padding: 3rem;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+      color: #fff; border-radius: var(--radius-lg); padding: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
     }
     .helpline-info h3 { font-size: 1.7rem; margin-bottom: 0.3rem; }
     .helpline-info p { color: #d1fae5; }
@@ -487,6 +380,97 @@
     .cat-pill-btn { background: #fff; border: 1px solid var(--border-color); padding: 0.45rem 1.2rem; border-radius: var(--radius-full); font-size: 0.88rem; font-weight: 600; cursor: pointer; }
     .cat-pill-btn.active { background: var(--primary-accent); color: #fff; }
 
+    /* ==========================================================
+       USER AUTH MODAL & PROFILE STYLES
+    ========================================================== */
+    .auth-tab-row {
+      display: flex;
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 1.8rem;
+    }
+
+    .auth-tab-btn {
+      flex: 1;
+      padding: 0.8rem;
+      background: none;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .auth-tab-btn.active {
+      color: var(--primary-accent);
+    }
+
+    .auth-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2.5px;
+      background: var(--primary-accent);
+    }
+
+    /* ডিজিটাল মেম্বার আইডি কার্ড */
+    .member-id-card {
+      background: linear-gradient(135deg, #07381b, #15803d);
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(21, 128, 61, 0.3);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .member-id-card::after {
+      content: 'MSS';
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      font-size: 6rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .member-id-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .member-id-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .member-data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .member-data-item span {
+      font-size: 0.78rem;
+      color: #bbf7d0;
+      display: block;
+    }
+
+    .member-data-item strong {
+      font-size: 1.05rem;
+    }
+
     @media (max-width: 992px) {
       .hero-grid, .about-layout, .sdg-hero-banner, .sdg-grid-container, .donate-hub-card, .grid-3, .grid-4, .donors-grid, .contact-wrapper, .footer-grid { grid-template-columns: 1fr; }
       .donate-hub-left { border-right: none; border-bottom: 1px solid var(--border-color); padding: 2.5rem 1.5rem; }
@@ -551,14 +535,19 @@
 
       <nav class="nav-menu" id="nav-menu">
         <a class="nav-link active" onclick="switchPage('home')">হোম</a>
-        <a href="#sdg-goals" class="nav-link" onclick="switchPage('home')">UN SDGs</a>
         <a href="#onpage-donate" class="nav-link" onclick="switchPage('home')" style="color: var(--accent-blood); font-weight:700;">❤️ অনুদান</a>
+        <a href="#sdg-goals" class="nav-link" onclick="switchPage('home')">UN SDGs</a>
         <a href="#about" class="nav-link" onclick="switchPage('home')">আমাদের কথা</a>
         <a href="#blood-network" class="nav-link" onclick="switchPage('home')">রক্তদান</a>
-        <a href="#animal-welfare" class="nav-link" onclick="switchPage('home')">প্রাণী কল্যাণ</a>
-        <a href="#committee" class="nav-link" onclick="switchPage('home')">টিম</a>
         <a class="nav-link" onclick="switchPage('blog')" style="color: var(--primary-accent); font-weight:700;">ব্লগ ➜</a>
-        <!-- অন-পেজ ডোনেশন বাটনে ক্লিক করলে স্ক্রোল হয়ে ডোনেশন হাবে যাবে -->
+
+        <!-- ডাইনামিক অথ / প্রোফাইল বাটন (লগইন থাকলে নাম দেখাবে) -->
+        <div id="navAuthSlot">
+          <button type="button" class="btn btn-outline" style="padding: 0.45rem 1.1rem;" onclick="openAuthModal('login')">
+            🔑 লগইন / সাইন-আপ
+          </button>
+        </div>
+
         <a href="#onpage-donate" class="btn btn-blood" style="padding: 0.45rem 1.1rem;" onclick="switchPage('home')">ডোনেট করুন ❤️</a>
       </nav>
     </div>
@@ -580,7 +569,7 @@
           </p>
           <div class="hero-btns">
             <a href="#onpage-donate" class="btn btn-blood">ডোনেট করে পাশে দাঁড়ান ❤️</a>
-            <a href="#sdg-goals" class="btn btn-primary">আমাদের SDG প্রজেক্ট ➜</a>
+            <button type="button" class="btn btn-primary" onclick="openAuthModal('signup')">মেম্বার হিসেবে যুক্ত হন ➜</button>
             <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20প্রয়োজন" target="_blank" class="btn btn-outline">
               🩸 রক্তের সন্ধান
             </a>
@@ -632,9 +621,7 @@
       </div>
     </div>
 
-    <!-- ==========================================================
-         ৩. ON-PAGE ALL-IN-ONE DONATION HUB (এক পেজে সম্পূর্ণ ডোনেশন)
-    ========================================================== -->
+    <!-- ৩. ON-PAGE ALL-IN-ONE DONATION HUB -->
     <section class="onpage-donate-section" id="onpage-donate">
       <div class="container">
         <div class="section-header">
@@ -645,10 +632,8 @@
           </p>
         </div>
 
-        <!-- অল-ইন-ওয়ান ডোনেশন কার্ড -->
         <div class="donate-hub-card">
-          
-          <!-- বাম পাশ: পরিমাণ ও পেমেন্ট মেথড সিলেক্টর -->
+          <!-- বাম পাশ -->
           <div class="donate-hub-left">
             <div class="step-title">
               <span class="step-circle">১</span>
@@ -686,7 +671,6 @@
               </div>
             </div>
 
-            <!-- লাইভ অ্যাকাউন্ট ডিসপ্লে ও কপি বাটন -->
             <div class="active-account-box" id="accountDisplayBox">
               <div class="account-text-info">
                 <span id="accountTypeDesc">বিকাশ পার্সোনাল নম্বর (Send Money)</span>
@@ -702,7 +686,7 @@
             </div>
           </div>
 
-          <!-- ডান পাশ: ট্রানজেকশন ভেরিফিকেশন ফর্ম -->
+          <!-- ডান পাশ -->
           <div class="donate-hub-right">
             <div class="step-title" style="margin-bottom: 1.2rem;">
               <span class="step-circle">৩</span>
@@ -715,12 +699,12 @@
 
               <div class="form-field">
                 <label>আপনার নাম *</label>
-                <input type="text" name="donor_name" class="form-ctrl" required placeholder="পূর্ণ নাম লিখুন">
+                <input type="text" id="donateDonorName" name="donor_name" class="form-ctrl" required placeholder="পূর্ণ নাম লিখুন">
               </div>
 
               <div class="form-field">
                 <label>মোবাইল নম্বর (যে নম্বর থেকে পাঠিয়েছেন) *</label>
-                <input type="tel" name="donor_phone" class="form-ctrl" required placeholder="০১XXXXXXXXX">
+                <input type="tel" id="donateDonorPhone" name="donor_phone" class="form-ctrl" required placeholder="০১XXXXXXXXX">
               </div>
 
               <div class="input-row-2">
@@ -760,7 +744,6 @@
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -769,7 +752,7 @@
     <section class="sdg-section" id="sdg-goals">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-sdg">🇺🇳 জাতিসংঘের টেকসই উন্নয়ন অভীষ্ট (UN SDGs)</span>
+          <span class="badge badge-sdg">🇺এন জাতিসংঘের টেকসই উন্নয়ন অভীষ্ট (UN SDGs)</span>
           <h2 class="section-title">বৈশ্বিক লক্ষ্য অর্জনে আমাদের তৃণমূল ভূমিকা</h2>
           <p class="section-subtitle">
             মুক্ত স্বাধীন সোসাইটি ২০৩০ সালের বৈশ্বিক এজেন্ডা বাস্তবায়নে স্থানীয় যুবসমাজকে সংগঠিত করে নির্দিষ্ট এসডিজি গোল অর্জনে সরাসরি কাজ করে যাচ্ছে।
@@ -1287,22 +1270,22 @@
             <div class="input-row-2">
               <div class="form-field">
                 <label>আপনার পূর্ণ নাম *</label>
-                <input type="text" name="vol_name" class="form-ctrl" placeholder="যেমন: তানভীর হাসান" required>
+                <input type="text" id="volNameInput" name="vol_name" class="form-ctrl" placeholder="যেমন: তানভীর হাসান" required>
               </div>
               <div class="form-field">
                 <label>মোবাইল বা হোয়াটসঅ্যাপ নম্বর *</label>
-                <input type="tel" name="vol_phone" class="form-ctrl" placeholder="০১XXXXXXXXX" required>
+                <input type="tel" id="volPhoneInput" name="vol_phone" class="form-ctrl" placeholder="০১XXXXXXXXX" required>
               </div>
             </div>
 
             <div class="input-row-2">
               <div class="form-field">
                 <label>ইমেইল অ্যাড্রেস *</label>
-                <input type="email" name="vol_email" class="form-ctrl" placeholder="name@domain.com" required>
+                <input type="email" id="volEmailInput" name="vol_email" class="form-ctrl" placeholder="name@domain.com" required>
               </div>
               <div class="form-field">
                 <label>রক্তের গ্রুপ</label>
-                <select name="vol_blood" class="form-ctrl">
+                <select id="volBloodInput" name="vol_blood" class="form-ctrl">
                   <option value="উল্লেখ করা হয়নি">নির্বাচন করুন</option>
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
@@ -1413,7 +1396,121 @@
     </div>
   </div>
 
-  <!-- SDG বিস্তারিত রোডম্যাপ মোডাল -->
+  <!-- ==========================================================
+       MODALS: AUTH, PROFILE, SDG, BLOG
+  ========================================================== -->
+  <!-- ১. ইউজার অথেনটিকেশন মোডাল (লগইন ও সাইন-আপ) -->
+  <div class="custom-modal-overlay" id="authModal">
+    <div class="custom-modal-box" style="max-width: 500px;">
+      <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeAuthModal()">&times;</button>
+      
+      <div class="auth-tab-row">
+        <button type="button" class="auth-tab-btn active" id="tabLoginBtn" onclick="switchAuthTab('login')">লগইন</button>
+        <button type="button" class="auth-tab-btn" id="tabSignUpBtn" onclick="switchAuthTab('signup')">নতুন অ্যাকাউন্ট</button>
+      </div>
+
+      <!-- লগইন ফর্ম -->
+      <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+        <div class="form-field">
+          <label>ইমেইল অথবা মোবাইল নম্বর *</label>
+          <input type="text" id="loginIdentifier" class="form-ctrl" required placeholder="আপনার ইমেইল বা ফোন">
+        </div>
+        <div class="form-field">
+          <label>পাসওয়ার্ড *</label>
+          <input type="password" id="loginPassword" class="form-ctrl" required placeholder="পাসওয়ার্ড লিখুন">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+          লগইন করুন ➜
+        </button>
+      </form>
+
+      <!-- সাইন-আপ ফর্ম -->
+      <form id="signupForm" style="display: none;" onsubmit="handleSignUpSubmit(event)">
+        <div class="form-field">
+          <label>আপনার পূর্ণ নাম *</label>
+          <input type="text" id="regName" class="form-ctrl" required placeholder="পূর্ণ নাম">
+        </div>
+        <div class="form-field">
+          <label>ইমেইল অ্যাড্রেস *</label>
+          <input type="email" id="regEmail" class="form-ctrl" required placeholder="name@domain.com">
+        </div>
+        <div class="form-field">
+          <label>মোবাইল নম্বর *</label>
+          <input type="tel" id="regPhone" class="form-ctrl" required placeholder="০১XXXXXXXXX">
+        </div>
+        <div class="input-row-2">
+          <div class="form-field">
+            <label>রক্তের গ্রুপ</label>
+            <select id="regBlood" class="form-ctrl">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>পাসওয়ার্ড *</label>
+            <input type="password" id="regPassword" class="form-ctrl" required placeholder="কমপক্ষে ৬ অক্ষর">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+          অ্যাকাউন্ট তৈরি করুন ➜
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ২. ইউজার মেম্বার প্রোফাইল ড্যাশবোর্ড মোডাল -->
+  <div class="custom-modal-overlay" id="profileModal">
+    <div class="custom-modal-box" style="max-width: 560px;">
+      <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeProfileModal()">&times;</button>
+      
+      <!-- মেম্বার আইডি কার্ড ভিউ -->
+      <div class="member-id-card">
+        <div class="member-id-header">
+          <div>
+            <h4 style="font-size: 1.15rem; margin:0;">Mukto Swadhin Society</h4>
+            <span style="font-size: 0.72rem; color: #bbf7d0;">Official Volunteer & Member Card</span>
+          </div>
+          <span class="member-id-badge">Verified Member</span>
+        </div>
+
+        <div style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.2rem;" id="cardUserName">ইউজারের নাম</div>
+
+        <div class="member-data-grid">
+          <div class="member-data-item">
+            <span>মেম্বার আইডি</span>
+            <strong id="cardMemberId">MSS-2026-0001</strong>
+          </div>
+          <div class="member-data-item">
+            <span>রক্তের গ্রুপ</span>
+            <strong id="cardBloodGroup">A+</strong>
+          </div>
+          <div class="member-data-item">
+            <span>মোবাইল নম্বর</span>
+            <strong id="cardPhone">০১৭XXXXXXXX</strong>
+          </div>
+          <div class="member-data-item">
+            <span>যোগদানের তারিখ</span>
+            <strong id="cardJoinDate">২০২৬</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem;">
+        <a href="#onpage-donate" class="btn btn-blood" style="flex: 1; padding: 0.75rem;" onclick="closeProfileModal()">❤️ ডোনেট করুন</a>
+        <button type="button" class="btn btn-outline" style="flex: 1; padding: 0.75rem; color: #b91c1c; border-color: #fecaca;" onclick="handleUserLogout()">
+          লগআউট করুন 🚪
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SDG মোডাল -->
   <div class="custom-modal-overlay" id="sdgModal">
     <div class="custom-modal-box">
       <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeSdgModal()">&times;</button>
@@ -1421,7 +1518,7 @@
     </div>
   </div>
 
-  <!-- ব্লগ রিডিং মোডাল -->
+  <!-- ব্লগ মোডাল -->
   <div class="custom-modal-overlay" id="articleModal">
     <div class="custom-modal-box">
       <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeModal()">&times;</button>
@@ -1475,7 +1572,7 @@
 
       <div class="footer-bottom">
         <div>© <span id="year"></span> <strong>Mukto Swadhin Society (Independent Youth Platform)</strong>. সর্বস্বত্ব সংরক্ষিত।</div>
-        <div>অন-পেজ ডোনেশন ও UN SDG Aligned পূর্ণাঙ্গ প্ল্যাটফর্ম।</div>
+        <div>ইউজার লগইন ও মেম্বার ড্যাশবোর্ড সংবলিত প্ল্যাটফর্ম।</div>
       </div>
     </div>
   </footer>
@@ -1519,46 +1616,175 @@
       }
     });
 
-    // ১. অন-পেজ ডোনেশন অ্যামাউন্ট সিলেক্টর
+    // ==========================================================
+    // USER AUTH & DASHBOARD LOGIC (AUTHENTICATION ENGINE)
+    // ==========================================================
+    function checkUserSession() {
+      const activeUser = JSON.parse(localStorage.getItem('mss_logged_user'));
+      const slot = document.getElementById('navAuthSlot');
+
+      if (activeUser && slot) {
+        slot.innerHTML = `
+          <div class="user-profile-badge" onclick="openProfileModal()">
+            <span class="user-avatar-mini">${activeUser.name.charAt(0).toUpperCase()}</span>
+            <span>${activeUser.name.split(' ')[0]}</span>
+          </div>
+        `;
+        // ফর্মগুলোতে অটো-ফিল
+        if(document.getElementById('donateDonorName')) document.getElementById('donateDonorName').value = activeUser.name;
+        if(document.getElementById('donateDonorPhone')) document.getElementById('donateDonorPhone').value = activeUser.phone;
+        if(document.getElementById('volNameInput')) document.getElementById('volNameInput').value = activeUser.name;
+        if(document.getElementById('volEmailInput')) document.getElementById('volEmailInput').value = activeUser.email;
+        if(document.getElementById('volPhoneInput')) document.getElementById('volPhoneInput').value = activeUser.phone;
+        if(document.getElementById('volBloodInput') && activeUser.blood) document.getElementById('volBloodInput').value = activeUser.blood;
+      } else if (slot) {
+        slot.innerHTML = `
+          <button type="button" class="btn btn-outline" style="padding: 0.45rem 1.1rem;" onclick="openAuthModal('login')">
+            🔑 লগইন / সাইন-আপ
+          </button>
+        `;
+      }
+    }
+
+    function openAuthModal(tab = 'login') {
+      document.getElementById('authModal').style.display = 'flex';
+      switchAuthTab(tab);
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').style.display = 'none';
+    }
+
+    function switchAuthTab(tab) {
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+      const tabLoginBtn = document.getElementById('tabLoginBtn');
+      const tabSignUpBtn = document.getElementById('tabSignUpBtn');
+
+      if (tab === 'signup') {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        tabSignUpBtn.classList.add('active');
+        tabLoginBtn.classList.remove('active');
+      } else {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        tabLoginBtn.classList.add('active');
+        tabSignUpBtn.classList.remove('active');
+      }
+    }
+
+    // সাইন-আপ সাবমিট
+    function handleSignUpSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const email = document.getElementById('regEmail').value.trim().toLowerCase();
+      const phone = document.getElementById('regPhone').value.trim();
+      const blood = document.getElementById('regBlood').value;
+      const password = document.getElementById('regPassword').value;
+
+      if (password.length < 6) {
+        alert("পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('mss_users_db')) || [];
+      const userExists = users.some(u => u.email === email || u.phone === phone);
+
+      if (userExists) {
+        alert("এই ইমেইল বা ফোন নম্বর দিয়ে ইতোমধ্যে অ্যাকাউন্ট খোলা আছে। দয়া করে লগইন করুন।");
+        switchAuthTab('login');
+        return;
+      }
+
+      const randomId = "MSS-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
+      const newUser = {
+        id: randomId,
+        name: name,
+        email: email,
+        phone: phone,
+        blood: blood,
+        password: password,
+        joinDate: new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long' })
+      };
+
+      users.push(newUser);
+      localStorage.setItem('mss_users_db', JSON.stringify(users));
+      localStorage.setItem('mss_logged_user', JSON.stringify(newUser));
+
+      alert(`অভিনন্দন ${name}! আপনার অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে এবং আপনি লগইন হয়েছেন।`);
+      closeAuthModal();
+      checkUserSession();
+    }
+
+    // লগইন সাবমিট
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      const iden = document.getElementById('loginIdentifier').value.trim().toLowerCase();
+      const pass = document.getElementById('loginPassword').value;
+
+      let users = JSON.parse(localStorage.getItem('mss_users_db')) || [];
+      const matched = users.find(u => (u.email === iden || u.phone === iden) && u.password === pass);
+
+      if (matched) {
+        localStorage.setItem('mss_logged_user', JSON.stringify(matched));
+        alert(`স্বাগতম, ${matched.name}! আপনি সফলভাবে লগইন হয়েছেন।`);
+        closeAuthModal();
+        checkUserSession();
+      } else {
+        alert("ভুল ইমেইল/ফোন অথবা পাসওয়ার্ড দিয়েছেন। অনুগ্রহ করে আবার চেষ্টা করুন।");
+      }
+    }
+
+    // প্রোফাইল ড্যাশবোর্ড ওপেন
+    function openProfileModal() {
+      const activeUser = JSON.parse(localStorage.getItem('mss_logged_user'));
+      if(!activeUser) return;
+
+      document.getElementById('cardUserName').innerText = activeUser.name;
+      document.getElementById('cardMemberId').innerText = activeUser.id || 'MSS-2026-0001';
+      document.getElementById('cardBloodGroup').innerText = activeUser.blood || 'A+';
+      document.getElementById('cardPhone').innerText = activeUser.phone;
+      document.getElementById('cardJoinDate').innerText = activeUser.joinDate || '২০২৬';
+
+      document.getElementById('profileModal').style.display = 'flex';
+    }
+
+    function closeProfileModal() {
+      document.getElementById('profileModal').style.display = 'none';
+    }
+
+    // লগআউট
+    function handleUserLogout() {
+      if(confirm("আপনি কি নিশ্চিতভাবে লগআউট করতে চান?")) {
+        localStorage.removeItem('mss_logged_user');
+        closeProfileModal();
+        checkUserSession();
+        alert("আপনি সফলভাবে লগআউট হয়েছেন।");
+      }
+    }
+
+    // অন-পেজ ডোনেশন অ্যামাউন্ট সিলেক্টর
     function selectAmount(val, btn) {
       document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('formDonationAmount').value = val;
     }
 
-    // ২. অন-পেজ পেমেন্ট মেথড সুইচিং
+    // অন-পেজ পেমেন্ট মেথড সুইচিং
     const paymentAccounts = {
-      bkash: {
-        desc: "বিকাশ পার্সোনাল নম্বর (Send Money)",
-        num: "01405319335",
-        methodName: "বিকাশ (bKash)"
-      },
-      nagad: {
-        desc: "নগদ পার্সোনাল নম্বর (Send Money)",
-        num: "01405319335",
-        methodName: "নগদ (Nagad)"
-      },
-      rocket: {
-        desc: "রকেট পার্সোনাল নম্বর (Send Money)",
-        num: "01405319335",
-        methodName: "রকেট (Rocket)"
-      },
-      bank: {
-        desc: "ব্যাংক অ্যাকাউন্ট (A/C Name: Mukto Swadhin | Branch: Dhanmondi)",
-        num: "150220XXXXXXXX",
-        methodName: "ব্যাংক ট্রান্সফার"
-      }
+      bkash: { desc: "বিকাশ পার্সোনাল নম্বর (Send Money)", num: "01405319335", methodName: "বিকাশ (bKash)" },
+      nagad: { desc: "নগদ পার্সোনাল নম্বর (Send Money)", num: "01405319335", methodName: "নগদ (Nagad)" },
+      rocket: { desc: "রকেট পার্সোনাল নম্বর (Send Money)", num: "01405319335", methodName: "রকেট (Rocket)" },
+      bank: { desc: "ব্যাংক অ্যাকাউন্ট (A/C Name: Mukto Swadhin | Branch: Dhanmondi)", num: "150220XXXXXXXX", methodName: "ব্যাংক ট্রান্সফার" }
     };
-
     let currentPaymentMethod = 'bkash';
 
     function switchPaymentMethod(methodKey, btn) {
       document.querySelectorAll('.pay-tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      
       currentPaymentMethod = methodKey;
       const data = paymentAccounts[methodKey];
-      
       document.getElementById('accountTypeDesc').innerText = data.desc;
       document.getElementById('accountNumberVal').innerText = data.num;
       document.getElementById('formDonationMethod').value = data.methodName;
@@ -1573,58 +1799,49 @@
       });
     }
 
-    // ৩. এসডিজি ডেটা
+    // এসডিজি ডেটা
     const sdgDetails = {
       sdg3: {
         number: "SDG 03",
         title: "সুস্বাস্থ্য ও মানসিক কল্যাণ (Good Health & Well-being)",
         color: "#4c9f38",
         content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> সকলের জন্য সুস্থ জীবন নিশ্চিত করা ও সব বয়সের মানুষের সার্বিক কল্যাণ বাড়ানো।<br><br>
-        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>২৪/৭ ফ্রি ব্লাড ডোনার ডেটাবেস:</strong> রক্তের অভাবে যেন কোনো রোগীর জীবন বিপন্ন না হয়, সেজন্য স্বেচ্ছাসেবী রক্তদাতাদের নেটওয়ার্ক পরিচালনা।<br>
-        • <strong>মানসিক স্বাস্থ্য ও লিসেনিং ডেস্ক:</strong> তরুণ ও শিক্ষার্থীদের হতাশা, ক্যারিয়ার চাপ ও বিষণ্নতা দূর করতে অভিজ্ঞ মনোবিজ্ঞানীদের তত্ত্বাবধানে বিনামূল্যে কাউন্সেলিং।`
+        <strong>আমাদের কার্যক্রম:</strong> ২৪/৭ ফ্রি ব্লাড ডোনার ডেটাবেস ও মানসিক স্বাস্থ্য লিসেনিং ডেস্ক পরিচালনা।`
       },
       sdg4: {
         number: "SDG 04",
         title: "অন্তর্ভুক্তিমূলক ও মানসম্মত শিক্ষা (Quality Education)",
         color: "#c5192d",
-        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> অন্তর্ভুক্তিমূলক ও সমতাভিত্তিক মানসম্মত শিক্ষা নিশ্চিত করা এবং জীবনব্যাপী শিক্ষার সুযোগ সৃষ্টি।<br><br>
-        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>মুক্ত সন্ধ্যা পাঠশালা:</strong> বস্তি ও পথশিশুদের জন্য বিনামূল্যে বর্ণমালা, গণিত ও নীতিশিক্ষা পরিচালনা।<br>
-        • <strong>শিক্ষা উপকরণ ড্রাইভ:</strong> খাতা, কলম, জ্যামিতি বক্স ও স্কুলব্যাগ সরবরাহ করে ঝরে পড়া শিশুদের ক্লাসরুমে ফিরিয়ে আনা।`
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> মানসম্মত শিক্ষা নিশ্চিত করা।<br><br>
+        <strong>আমাদের কার্যক্রম:</strong> বস্তি ও পথশিশুদের জন্য মুক্ত সন্ধ্যা পাঠশালা, শিক্ষা উপকরণ ও কম্পিউটার প্রশিক্ষণ।`
       },
       sdg10: {
         number: "SDG 10",
         title: "সামাজিক অসমতা ও বৈষম্য হ্রাস (Reduced Inequalities)",
         color: "#dd1367",
-        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> দেশের অভ্যন্তরীণ সামাজিক, অর্থনৈতিক ও সাংস্কৃতিক বৈষম্য কমিয়ে আনা।<br><br>
-        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>বুক আড্ডা ও মুক্ত বই বিনিময়:</strong> সবার জন্য বিনামূল্যে জ্ঞানচর্চার সমতাভিত্তিক সুযোগ সৃষ্টি।`
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> বৈষম্য কমিয়ে আনা।<br><br>
+        <strong>আমাদের কার্যক্রম:</strong> বুক আড্ডা ও সবার জন্য মুক্ত বই বিনিময়ের সুযোগ সৃষ্টি।`
       },
       sdg11: {
         number: "SDG 11",
         title: "টেকসই ও মানবিক নগর সম্প্রদায় (Sustainable Communities)",
         color: "#fd9d24",
-        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> মানববসতি ও শহরগুলোকে অন্তর্ভুক্তিমূলক, নিরাপদ ও টেকসই করে গড়ে তোলা।<br><br>
-        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>অ্যান্টি-রেবিজ (জলাতঙ্ক) টিকাদান:</strong> শহরের পথকুকুরদের ভ্যাকসিন প্রদান করে জননিরাপত্তা জোরদার করা।`
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> নিরাপদ নগর গড়ে তোলা।<br><br>
+        <strong>আমাদের কার্যক্রম:</strong> পথকুকুরদের জলাতঙ্ক টিকা (ভ্যাক্সিন) দিয়ে জননিরাপত্তা জোরদার করা।`
       },
       sdg15: {
         number: "SDG 15",
         title: "ডাঙার বাস্তুতন্ত্র ও প্রাণী অধিকার (Life on Land)",
         color: "#56c02b",
-        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> স্থলজ বাস্তুতন্ত্রের সুরক্ষা, পুনর্বাসন ও টেকসই ব্যবহার নিশ্চিত করা।<br><br>
-        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>আহত প্রাণী উদ্ধার ও চিকিৎসা:</strong> সড়ক দুর্ঘটনায় আহত পথকুকুর-বিড়ালকে দ্রুত ফার্স্ট এইড ও সার্জারি প্রদান।<br>
-        • <strong>দৈনিক স্ট্রিট ফিডিং ক্যাম্প:</strong> শহরের রাস্তায় অভুক্ত প্রাণীদের স্বাস্থ্যসম্মত খাবার সরবরাহ।`
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> স্থলজ বাস্তুতন্ত্র ও প্রাণী অধিকার রক্ষা।<br><br>
+        <strong>আমাদের কার্যক্রম:</strong> সড়ক দুর্ঘটনায় আহত প্রাণীদের ফার্স্ট এইড ও দৈনিক ফিডিং ক্যাম্প।`
       },
       sdg17: {
         number: "SDG 17",
         title: "লক্ষ্য অর্জনে অংশীদারিত্ব (Partnerships for the Goals)",
         color: "#19486a",
-        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> টেকসই উন্নয়নের জন্য বৈশ্বিক ও জাতীয় অংশীদারিত্ব পুনরুজ্জীবিত করা।<br><br>
-        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>তারুণ্যের নেটওয়ার্কিং:</strong> দেশের বিভিন্ন কলেজ ও বিশ্ববিদ্যালয়ের তরুণ শিক্ষার্থীদের সমাজসেবায় ঐক্যবদ্ধ করা।`
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> অংশীদারিত্ব পুনরুজ্জীবিত করা।<br><br>
+        <strong>আমাদের কার্যক্রম:</strong> তরুণ শিক্ষার্থীদের একতাবদ্ধ করে সামাজিক স্বেচ্ছাসেবা জোরদার করা।`
       }
     };
 
@@ -1646,7 +1863,7 @@
       document.getElementById('sdgModal').style.display = 'none';
     }
 
-    // ৪. ব্লগ ডেটা
+    // ব্লগ ডেটা
     const blogData = [
       {
         id: 0,
@@ -1860,8 +2077,19 @@
       document.getElementById('nav-menu').classList.toggle('active');
     });
 
+    // ইনিশিয়াল লোড ও সেশন চেক
+    checkUserSession();
     renderHomeBlogPreview();
     renderDonors();
   </script>
 </body>
 </html>
+
+কীভাবে পরীক্ষা করবেন?
+
+1.  কোডটি আপনার index.html ফাইলে পেস্ট করে ব্রাউজারে রিলোড দিন।
+2.  মেনুবারে থাকা "🔑 লগইন / সাইন-আপ" বাটনে চাপ দিন।
+3.  "নতুন অ্যাকাউন্ট" ট্যাবে গিয়ে আপনার নাম, ইমেইল, ফোন ও একটি সহজ পাসওয়ার্ড
+    দিয়ে অ্যাকাউন্ট তৈরি করুন।
+4.  অ্যাকাউন্ট তৈরি হতেই মেনুবারে আপনার নাম ভেসে উঠবে এবং তাতে ক্লিক করলে আপনার
+    ডিজিটাল মেম্বার আইডি কার্ড ড্যাশবোর্ড দেখতে পাবেন!
