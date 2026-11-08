@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mukto Swadhin Society - Independent Youth Platform. Fixed Post Engine, Social Community & Donation." />
+  <meta name="description" content="Mukto Swadhin Society - Independent Youth Platform. Login-Gated Volunteer Chat Group & On-Page Donation." />
   <title>Mukto Swadhin Society | Independent Youth Platform</title>
 
   <!-- গুগল ফন্ট: Hind Siliguri -->
@@ -239,7 +239,7 @@
     .sdg-initiatives-list li { font-size: 0.88rem; margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 0.5rem; }
     .sdg-detail-btn { align-self: flex-start; background: none; border: none; color: var(--primary-accent); font-weight: 700; font-size: 0.92rem; cursor: pointer; padding: 0; }
 
-    /* সাধারণ কার্ডস */
+    /* কার্ডস */
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; }
     .card { background: var(--bg-white); border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; transition: var(--transition); }
@@ -360,7 +360,7 @@
     .cat-pill-btn.active { background: var(--primary-accent); color: #fff; }
 
     /* ==========================================================
-       VOLUNTEER DASHBOARD, FEED & CHAT STYLES
+       DASHBOARD & CHAT GROUP STYLES (CLEAN & GATED)
     ========================================================== */
     .dashboard-tabs-bar {
       display: flex;
@@ -454,112 +454,32 @@
       font-size: 1.05rem;
     }
 
-    /* সোশ্যাল ফিড স্টাইল */
-    .community-post-creator {
-      background: #f8faf9;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .post-input-textarea {
-      width: 100%;
-      height: 75px;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 0.8rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      outline: none;
-      resize: none;
-      margin-bottom: 0.6rem;
-    }
-
-    .post-input-textarea:focus {
-      border-color: var(--primary-accent);
-    }
-
-    .post-card-item {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.3rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    }
-
-    .post-author-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .post-author-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--primary-accent);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .post-actions-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--border-color);
-      padding-top: 0.8rem;
-      margin-top: 0.8rem;
-    }
-
-    .like-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .like-btn.liked {
-      color: #dc2626;
-    }
-
-    /* লাইভ চ্যাট রুম */
+    /* লাইভ চ্যাট গ্রুপ */
     .chat-room-container {
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      height: 380px;
+      height: 420px;
       background: #f8faf9;
     }
 
     .chat-messages-scroll {
       flex: 1;
-      padding: 1rem;
+      padding: 1.2rem;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 0.85rem;
     }
 
     .chat-bubble {
-      max-width: 80%;
-      padding: 0.6rem 0.9rem;
+      max-width: 82%;
+      padding: 0.7rem 1rem;
       border-radius: 12px;
-      font-size: 0.9rem;
-      line-height: 1.4;
+      font-size: 0.92rem;
+      line-height: 1.45;
     }
 
     .chat-bubble.mine {
@@ -577,8 +497,18 @@
       border-bottom-left-radius: 2px;
     }
 
+    .chat-bubble.system {
+      align-self: center;
+      background: #e2ece6;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.9rem;
+    }
+
     .chat-sender-name {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 2px;
@@ -587,20 +517,28 @@
 
     .chat-input-bar {
       display: flex;
-      padding: 0.6rem;
+      padding: 0.75rem;
       background: #ffffff;
       border-top: 1px solid var(--border-color);
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .chat-input-field {
       flex: 1;
-      padding: 0.6rem 1rem;
+      padding: 0.65rem 1.1rem;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-full);
       outline: none;
       font-family: inherit;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+    }
+
+    .chat-locked-box {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--border-color);
     }
 
     @media (max-width: 992px) {
@@ -616,7 +554,6 @@
       .nav-menu.active { left: 0; }
       .filter-grid, .input-row-2, .about-pills { grid-template-columns: 1fr; }
       .hero-text h2 { font-size: 2.3rem; }
-      .dashboard-tabs-bar { overflow-x: auto; white-space: nowrap; }
     }
   </style>
 </head>
@@ -674,7 +611,7 @@
         <a href="#blood-network" class="nav-link" onclick="switchPage('home')">রক্তদান</a>
         <a class="nav-link" onclick="switchPage('blog')" style="color: var(--primary-accent); font-weight:700;">ব্লগ ➜</a>
 
-        <!-- ডাইনামিক অথ / প্রোফাইল বাটন -->
+        <!-- ডাইনামিক অথ / চ্যাট গ্রুপ বাটন -->
         <div id="navAuthSlot">
           <button type="button" class="btn btn-outline" style="padding: 0.45rem 1.1rem;" onclick="openAuthModal('login')">
             🔑 লগইন / সাইন-আপ
@@ -694,7 +631,7 @@
     <section class="hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <span class="badge">🚀 জাতিসংঘের ২০৩০ এজেন্ডা বাস্তবায়নে তারুণ্যের সামাজিক প্ল্যাটফর্ম</span>
+          <span class="badge">🚀 জাতিসংঘের ২০৩০ এজেন্ডা বাস্তবায়নে তারুণ্যের প্ল্যাটফর্ম</span>
           <h2>নতুন দিনের নতুন সমাজ বিনির্মাণে <span>তারুণ্যের একতাবদ্ধ</span> যাত্রা।</h2>
           <p class="hero-tagline">
             "Building a Better Community Through Mental Health, Education, Animal Welfare and Volunteerism."<br>
@@ -702,7 +639,10 @@
           </p>
           <div class="hero-btns">
             <a href="#onpage-donate" class="btn btn-blood">ডোনেট করে পাশে দাঁড়ান ❤️</a>
-            <button type="button" class="btn btn-primary" onclick="openProfileModal()">👥 ভলান্টিয়ার কমিউনিটি ড্যাশবোর্ড ➜</button>
+            <!-- লগইন বা চ্যাট গ্রুপে যাওয়ার বাটন -->
+            <button type="button" class="btn btn-primary" onclick="handleOpenChatGroupBtn()">
+              👥 ভলান্টিয়ার চ্যাট গ্রুপে জয়েন করুন ➜
+            </button>
             <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20প্রয়োজন" target="_blank" class="btn btn-outline">
               🩸 রক্তের সন্ধান
             </a>
@@ -854,26 +794,10 @@
                 <input type="text" name="trx_id" class="form-ctrl" required placeholder="যেমন: 9J4K2L1M">
               </div>
 
-              <div class="form-field">
-                <label>যে খাতে ব্যয় করতে চান</label>
-                <select name="donation_cause" class="form-ctrl">
-                  <option value="সাধারণ তহবিল">সাধারণ তহবিল (যেখানে প্রয়োজন)</option>
-                  <option value="শিশুদের শিক্ষা">সুবিধাবঞ্চিত শিশুদের শিক্ষা</option>
-                  <option value="পথপ্রাণী সেবা">পথপ্রাণীদের খাদ্য ও চিকিৎসা</option>
-                  <option value="জরুরি রক্তদান">জরুরি রক্তদান সহায়তা</option>
-                </select>
-              </div>
-
               <button type="submit" id="donationSubmitBtn" class="btn btn-blood" style="width: 100%; margin-top: 0.5rem; padding: 0.85rem;">
                 ডোনেশন কনফার্ম করুন ➜
               </button>
             </form>
-
-            <div style="text-align: center; margin-top: 1.2rem;">
-              <a href="https://wa.me/8801405319335?text=আসসালামু%20আলাইকুম,%20আমি%20অন-পেজে%20ডোনেশন%20করেছি।%20মানি%20রিসিপ্ট%20পাঠাচ্ছি।" target="_blank" style="color: var(--accent-wa); font-weight: 700; font-size: 0.92rem;">
-                💬 হোয়াটসঅ্যাপে মানি রিসিপ্ট পাঠান
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -885,65 +809,36 @@
         <div class="section-header">
           <span class="badge badge-sdg">🇺🇳 জাতিসংঘের টেকসই উন্নয়ন অভীষ্ট (UN SDGs)</span>
           <h2 class="section-title">বৈশ্বিক লক্ষ্য অর্জনে আমাদের তৃণমূল ভূমিকা</h2>
-          <p class="section-subtitle">
-            মুক্ত স্বাধীন সোসাইটি ২০৩০ সালের বৈশ্বিক এজেন্ডা বাস্তবায়নে স্থানীয় যুবসমাজকে সংগঠিত করে নির্দিষ্ট এসডিজি গোল অর্জনে সরাসরি কাজ করে যাচ্ছে।
-          </p>
-        </div>
-
-        <div class="sdg-hero-banner">
-          <div>
-            <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-weight: 700;">Global Agenda 2030</span>
-            <h3>তারুণ্যের স্থানীয় অ্যাকশন, বৈশ্বিক রূপান্তর</h3>
-            <p>
-              জাতিসংঘ ঘোষিত ১৭টি টেকসই উন্নয়ন অভীষ্টের মধ্যে আমরা বিশেষত স্বাস্থ্য, শিক্ষা, অসমতা হ্রাস, নগর নিরাপত্তা, জীববৈচিত্র্য ও অংশীদারিত্ব—এই ৬টি স্তম্ভে বাস্তব মাঠপর্যায়ের প্রকল্প বাস্তবায়ন করছি।
-            </p>
-          </div>
-          <div style="text-align: center; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 2rem;">
-            <div style="font-size: 2.8rem; font-weight: 800; color: #4ade80;">১০০%</div>
-            <p style="font-size: 0.95rem; color: #cbd5e1;">অলাভজনক ও নিঃস্বার্থ তরুণ নেতৃত্ব</p>
-          </div>
         </div>
 
         <div class="sdg-grid-container">
           <div class="sdg-card">
             <div class="sdg-top-stripe" style="background: var(--sdg-3);"></div>
             <div class="sdg-card-body">
-              <div class="sdg-badge-row">
-                <span class="sdg-number-badge" style="background: var(--sdg-3);">SDG 03</span>
-                <span style="font-size: 1.5rem;">💚</span>
-              </div>
+              <span class="sdg-number-badge" style="background: var(--sdg-3);">SDG 03</span>
               <h4 class="sdg-card-title">সুস্বাস্থ্য ও মানসিক কল্যাণ</h4>
-              <span class="sdg-official-tag">UN Target: Good Health & Well-being</span>
               <p class="sdg-desc">২৪/৭ ফ্রি ব্লাড ডোনার নেটওয়ার্ক ও যুবসমাজের মানসিক প্রশান্তিতে লিসেনিং ডেস্ক পরিচালনা।</p>
-              <button class="sdg-detail-btn" onclick="openSdgModal('sdg3')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg3')">বিস্তারিত রোডম্যাপ ➜</button>
             </div>
           </div>
 
           <div class="sdg-card">
             <div class="sdg-top-stripe" style="background: var(--sdg-4);"></div>
             <div class="sdg-card-body">
-              <div class="sdg-badge-row">
-                <span class="sdg-number-badge" style="background: var(--sdg-4);">SDG 04</span>
-                <span style="font-size: 1.5rem;">📖</span>
-              </div>
+              <span class="sdg-number-badge" style="background: var(--sdg-4);">SDG 04</span>
               <h4 class="sdg-card-title">মানসম্মত শিক্ষা</h4>
-              <span class="sdg-official-tag">UN Target: Quality Education</span>
               <p class="sdg-desc">বস্তি ও পথশিশুদের জন্য মুক্ত সন্ধ্যা পাঠশালা, শিক্ষা উপকরণ ও কম্পিউটার প্রশিক্ষণ।</p>
-              <button class="sdg-detail-btn" onclick="openSdgModal('sdg4')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg4')">বিস্তারিত রোডম্যাপ ➜</button>
             </div>
           </div>
 
           <div class="sdg-card">
             <div class="sdg-top-stripe" style="background: var(--sdg-10);"></div>
             <div class="sdg-card-body">
-              <div class="sdg-badge-row">
-                <span class="sdg-number-badge" style="background: var(--sdg-10);">SDG 10</span>
-                <span style="font-size: 1.5rem;">⚖️</span>
-              </div>
+              <span class="sdg-number-badge" style="background: var(--sdg-10);">SDG 10</span>
               <h4 class="sdg-card-title">সামাজিক অসমতা হ্রাস</h4>
-              <span class="sdg-official-tag">UN Target: Reduced Inequalities</span>
               <p class="sdg-desc">বুক আড্ডা ও সবার জন্য মুক্ত বই বিনিময়ের মাধ্যমে সমতাভিত্তিক জ্ঞানচর্চার সুযোগ।</p>
-              <button class="sdg-detail-btn" onclick="openSdgModal('sdg10')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg10')">বিস্তারিত রোডম্যাপ ➜</button>
             </div>
           </div>
         </div>
@@ -956,14 +851,13 @@
         <div class="section-header">
           <span class="badge">আমাদের গল্প ও মিশন</span>
           <h2 class="section-title">আমরা কেন এই প্ল্যাটফর্ম শুরু করলাম?</h2>
-          <p class="section-subtitle">কথা নয়, সরাসরি কাজের মাধ্যমে সমাজকে একটু সংবেদনশীল করে গড়ে তোলার নতুন সূচনা।</p>
         </div>
 
         <div class="about-layout">
           <div>
             <h3 style="font-size: 1.6rem; color: var(--primary); margin-bottom: 1rem;">আমরা নতুন, কিন্তু আমাদের সংকল্প অটুট</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.1rem;">
-              <strong>মুক্ত স্বাধীন সোসাইটি (Mukto Swadhin Society)</strong> একটি উদ্যমী ও আধুনিক সামাজিক স্টার্টআপ। বর্তমান সমাজে তরুণদের মানসিক স্বাস্থ্য, পিছিয়ে পড়া শিশুদের মৌলিক শিক্ষা, মুমূর্ষু রোগীর রক্তের সংকট এবং অবলা পথপ্রাণীদের অসহায়ত্ব দেখে আমরা একদল তরুণ একতাবদ্ধ হয়েছি।
+              <strong>মুক্ত স্বাধীন সোসাইটি (Mukto Swadhin Society)</strong> একটি উদ্যমী ও আধুনিক সামাজিক স্টার্টআপ। বর্তমান সমাজে তরুণদের মানসিক স্বাস্থ্য, পিছিয়ে পড়া শিশুদের শিক্ষা, মুমূর্ষু রোগীর রক্তের সংকট এবং পথপ্রাণীদের সহায়তায় আমরা একতাবদ্ধ হয়েছি।
             </p>
             <div class="about-pills">
               <div class="about-pill-item">
@@ -990,7 +884,6 @@
         <div class="section-header">
           <span class="badge badge-blood">🩸 জরুরি রক্তের সন্ধানে</span>
           <h2 class="section-title">ফ্রি ব্লাড ডোনার নেটওয়ার্ক</h2>
-          <p class="section-subtitle">আপনার এক ব্যাগ রক্ত বাঁচাতে পারে একটি মুমূর্ষু প্রাণ।</p>
         </div>
 
         <div class="blood-filter-box">
@@ -999,14 +892,11 @@
               <label style="font-size: 0.85rem; font-weight: 600;">রক্তের গ্রুপ বাছাই করুন</label>
               <select id="blood-filter" class="form-ctrl">
                 <option value="ALL">সকল গ্রুপের রক্ত</option>
-                <option value="A+">A+ (পজিটিভ)</option>
-                <option value="A-">A- (নেগেটিভ)</option>
-                <option value="B+">B+ (পজিটিভ)</option>
-                <option value="B-">B- (নেগেটিভ)</option>
-                <option value="O+">O+ (পজিটিভ)</option>
-                <option value="O-">O- (নেগেটিভ)</option>
-                <option value="AB+">AB+ (পজিটিভ)</option>
-                <option value="AB-">AB- (নেগেটিভ)</option>
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="O+">O+</option>
+                <option value="AB+">AB+</option>
+                <option value="O-">O-</option>
               </select>
             </div>
 
@@ -1017,7 +907,6 @@
                 <option value="ঢাকা">ঢাকা</option>
                 <option value="চট্টগ্রাম">চট্টগ্রাম</option>
                 <option value="রাজশাহী">রাজশাহী</option>
-                <option value="সিলেট">সিলেট</option>
               </select>
             </div>
 
@@ -1051,7 +940,6 @@
             <div class="member-info">
               <h3 class="member-name">তানজিলা শারমিন</h3>
               <span class="member-role">প্রতিষ্ঠাতা ও সভাপতি</span>
-              <p class="member-desc">মানসিক স্বাস্থ্য ও শিক্ষা বিস্তার নিয়ে কাজ করছেন।</p>
               <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
             </div>
           </div>
@@ -1061,7 +949,6 @@
             <div class="member-info">
               <h3 class="member-name">আরিফুল ইসলাম</h3>
               <span class="member-role">সহ-প্রতিষ্ঠাতা ও সেক্রেটারি</span>
-              <p class="member-desc">মাঠপর্যায়ের অপারেশন লিড করছেন।</p>
               <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
             </div>
           </div>
@@ -1071,7 +958,6 @@
             <div class="member-info">
               <h3 class="member-name">ডাঃ ফারজানা মেহনাজ</h3>
               <span class="member-role">স্বাস্থ্য ও রক্তদান প্রধান</span>
-              <p class="member-desc">ফ্রি ব্লাড ডোনার ডেটাবেস তত্ত্বাবধায়ক।</p>
               <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
             </div>
           </div>
@@ -1081,7 +967,6 @@
             <div class="member-info">
               <h3 class="member-name">মাহমুদুর রহমান</h3>
               <span class="member-role">প্রাণী কল্যাণ সমন্বয়ক</span>
-              <p class="member-desc">আহত পশু রেসকিউ টিমের প্রধান সমন্বয়ক।</p>
               <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
             </div>
           </div>
@@ -1139,22 +1024,8 @@
       </div>
     </section>
 
-    <!-- SOCIAL MEDIA -->
-    <section class="social-section">
-      <div class="container">
-        <span class="badge" style="background: rgba(255,255,255,0.15); color: #fff;">কানেক্টেড থাকুন</span>
-        <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem;">আমাদের সোশ্যাল মিডিয়ায় যুক্ত হোন</h2>
-        <div class="social-grid">
-          <a href="https://facebook.com" target="_blank" class="social-btn btn-fb">Facebook</a>
-          <a href="https://wa.me/8801405319335" target="_blank" class="social-btn btn-wa-channel">WhatsApp (০১৪০৫৩১৯৩৩৫)</a>
-          <a href="https://youtube.com" target="_blank" class="social-btn btn-yt">YouTube</a>
-          <a href="https://instagram.com" target="_blank" class="social-btn btn-insta">Instagram</a>
-        </div>
-      </div>
-    </section>
-
     <!-- VOLUNTEER REGISTRATION -->
-    <section class="section section-white" id="volunteer">
+    <section class="section section-light" id="volunteer">
       <div class="container">
         <div class="section-header">
           <span class="badge">তারুণ্যের শক্তি</span>
@@ -1186,13 +1057,9 @@
                 <label>রক্তের গ্রুপ</label>
                 <select id="volBloodInput" name="vol_blood" class="form-ctrl">
                   <option value="A+">A+</option>
-                  <option value="A-">A-</option>
                   <option value="B+">B+</option>
-                  <option value="B-">B-</option>
                   <option value="O+">O+</option>
-                  <option value="O-">O-</option>
                   <option value="AB+">AB+</option>
-                  <option value="AB-">AB-</option>
                 </select>
               </div>
             </div>
@@ -1206,7 +1073,7 @@
     </section>
 
     <!-- CONTACT FORM -->
-    <section class="section section-light" id="contact">
+    <section class="section section-white" id="contact">
       <div class="container">
         <div class="section-header">
           <span class="badge">বার্তা পাঠান</span>
@@ -1276,28 +1143,19 @@
         <h1 class="section-title">মুক্ত স্বাধীন ব্লগ পোর্টাল</h1>
       </div>
 
-      <div class="blog-controls-box">
-        <input type="text" id="blogSearchInput" class="search-input-field" placeholder="🔍 যেকোনো বিষয় লিখে সার্চ করুন..." />
-        <div class="category-pills-row">
-          <button class="cat-pill-btn active" onclick="filterBlogCategory('ALL', this)">সবগুলো</button>
-          <button class="cat-pill-btn" onclick="filterBlogCategory('শিক্ষা', this)">শিক্ষা সহায়তা</button>
-          <button class="cat-pill-btn" onclick="filterBlogCategory('রক্তদান', this)">রক্তদান</button>
-        </div>
-      </div>
-
       <div class="grid-3" id="allBlogGrid"></div>
     </div>
   </div>
 
   <!-- ==========================================================
-       MODALS: AUTH, ADVANCED PROFILE, SDG, BLOG
+       MODALS: AUTH, MEMBER DASHBOARD WITH CHAT GROUP
   ========================================================== -->
-  <!-- ১. ইউজার অথেনটিকেশন মোডাল -->
+  <!-- ১. লগইন ও সাইন-আপ মোডাল -->
   <div class="custom-modal-overlay" id="authModal">
     <div class="custom-modal-box" style="max-width: 500px;">
       <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeAuthModal()">&times;</button>
       
-      <div class="auth-tab-row" style="display:flex; border-bottom:2px solid var(--border-color); margin-bottom:1.8rem;">
+      <div class="dashboard-tabs-bar">
         <button type="button" class="dash-tab-btn active" id="tabLoginBtn" style="flex:1; justify-content:center;" onclick="switchAuthTab('login')">লগইন</button>
         <button type="button" class="dash-tab-btn" id="tabSignUpBtn" style="flex:1; justify-content:center;" onclick="switchAuthTab('signup')">নতুন অ্যাকাউন্ট</button>
       </div>
@@ -1313,7 +1171,7 @@
           <input type="password" id="loginPassword" class="form-ctrl" required placeholder="পাসওয়ার্ড লিখুন">
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-          লগইন করুন ➜
+          লগইন করে চ্যাট গ্রুপে ঢুকুন ➜
         </button>
       </form>
 
@@ -1336,13 +1194,9 @@
             <label>রক্তের গ্রুপ</label>
             <select id="regBlood" class="form-ctrl">
               <option value="A+">A+</option>
-              <option value="A-">A-</option>
               <option value="B+">B+</option>
-              <option value="B-">B-</option>
               <option value="O+">O+</option>
-              <option value="O-">O-</option>
               <option value="AB+">AB+</option>
-              <option value="AB-">AB-</option>
             </select>
           </div>
           <div class="form-field">
@@ -1351,26 +1205,66 @@
           </div>
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-          অ্যাকাউন্ট তৈরি করুন ➜
+          অ্যাকাউন্ট তৈরি ও চ্যাট গ্রুপে যুক্ত হন ➜
         </button>
       </form>
     </div>
   </div>
 
-  <!-- ২. অ্যাডভান্সড মেম্বার ড্যাশবোর্ড (সোশ্যাল ফিড + লাইভ চ্যাট + আইডি কার্ড) -->
+  <!-- ২. মেম্বার প্রোফাইল ও ভলান্টিয়ার চ্যাট গ্রুপ ড্যাশবোর্ড -->
   <div class="custom-modal-overlay" id="profileModal">
     <div class="custom-modal-box" style="max-width: 680px;">
       <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeProfileModal()">&times;</button>
       
-      <!-- ড্যাশবোর্ড মেনু বার -->
+      <!-- ড্যাশবোর্ড ট্যাব বার -->
       <div class="dashboard-tabs-bar">
-        <button type="button" class="dash-tab-btn active" id="tabIdBtn" onclick="switchDashboardTab('id')">🪪 মেম্বার আইডি</button>
-        <button type="button" class="dash-tab-btn" id="tabFeedBtn" onclick="switchDashboardTab('feed')">🌐 সোশ্যাল ফিড</button>
-        <button type="button" class="dash-tab-btn" id="tabChatBtn" onclick="switchDashboardTab('chat')">💬 লাইভ চ্যাট</button>
+        <button type="button" class="dash-tab-btn active" id="tabChatBtn" onclick="switchDashboardTab('chat')">
+          💬 ভলান্টিয়ার চ্যাট গ্রুপ
+        </button>
+        <button type="button" class="dash-tab-btn" id="tabIdBtn" onclick="switchDashboardTab('id')">
+          🪪 মেম্বার আইডি কার্ড
+        </button>
       </div>
 
-      <!-- ট্যাব ১: ডিজিটাল মেম্বার কার্ড -->
-      <div id="dashTabIdView">
+      <!-- চ্যাট গ্রুপ ট্যাব (প্রধান আকর্ষণ) -->
+      <div id="dashTabChatView">
+        <div id="chatAuthWrapper">
+          <!-- ইউজার লগইন না থাকলে লক স্ক্রিন দেখাবে -->
+          <div class="chat-locked-box" id="chatLockedNotice" style="display: none;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔒</div>
+            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">চ্যাট গ্রুপে প্রবেশাধিকার সংরক্ষিত</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+              মুক্ত স্বাধীন সোসাইটির সেন্ট্রাল ভলান্টিয়ার চ্যাট গ্রুপে যুক্ত হতে আপনার ইউজারনেম/ফোন এবং পাসওয়ার্ড দিয়ে লগইন করুন।
+            </p>
+            <button type="button" class="btn btn-primary" onclick="closeProfileModal(); openAuthModal('login');">
+              ইউজার ও পাসওয়ার্ড দিয়ে লগইন করুন ➜
+            </button>
+          </div>
+
+          <!-- ইউজার লগইন থাকলে সক্রিয় চ্যাট বক্স -->
+          <div class="chat-room-container" id="chatActiveBox">
+            <div style="padding: 0.8rem 1.2rem; background:#fff; border-bottom:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <strong style="font-size:0.95rem; color:var(--primary); display:block;">সেন্ট্রাল ভলান্টিয়ার চ্যাট গ্রুপ</strong>
+                <span style="font-size:0.75rem; color:var(--primary-accent);" id="activeUserBadgeStatus">🟢 আপনি যুক্ত আছেন</span>
+              </div>
+              <button type="button" style="background:none; border:none; color:#ef4444; font-size:0.8rem; font-weight:700; cursor:pointer;" onclick="handleUserLogout()">
+                লগআউট 🚪
+              </button>
+            </div>
+
+            <div class="chat-messages-scroll" id="chatMessagesBox"></div>
+
+            <div class="chat-input-bar">
+              <input type="text" id="chatMsgInput" class="chat-input-field" placeholder="গ্রুপে বার্তা লিখুন..." onkeypress="if(event.key === 'Enter') handleSendChatMessage()">
+              <button type="button" class="btn btn-primary" style="padding:0.4rem 1.1rem; border-radius:var(--radius-full);" onclick="handleSendChatMessage()">➤</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- মেম্বার আইডি ট্যাব -->
+      <div id="dashTabIdView" style="display: none;">
         <div class="member-id-card">
           <div class="member-id-header">
             <div>
@@ -1380,7 +1274,7 @@
             <span class="member-id-badge">Verified Member</span>
           </div>
 
-          <div style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.2rem;" id="cardUserName">স্বেচ্ছাসেবী মেম্বার</div>
+          <div style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.2rem;" id="cardUserName">ইউজারের নাম</div>
 
           <div class="member-data-grid">
             <div class="member-data-item">
@@ -1396,51 +1290,17 @@
               <strong id="cardPhone">০১৭XXXXXXXX</strong>
             </div>
             <div class="member-data-item">
-              <span>ভলান্টিয়ার স্ট্যাটাস</span>
-              <strong style="color: #fef08a;">সক্রিয় সদস্য</strong>
+              <span>স্ট্যাটাস</span>
+              <strong style="color: #fef08a;">সক্রিয় ভলান্টিয়ার</strong>
             </div>
           </div>
         </div>
 
         <div style="display: flex; gap: 1rem;">
-          <a href="#onpage-donate" class="btn btn-blood" style="flex: 1; padding: 0.75rem;" onclick="closeProfileModal()">❤️ ডোনেট করুন</a>
+          <a href="#onpage-donate" class="btn btn-blood" style="flex: 1; padding: 0.75rem;" onclick="closeProfileModal()">❤️ অনুদান দিন</a>
           <button type="button" class="btn btn-outline" style="flex: 1; padding: 0.75rem; color: #b91c1c; border-color: #fecaca;" onclick="handleUserLogout()">
             লগআউট করুন 🚪
           </button>
-        </div>
-      </div>
-
-      <!-- ট্যাব ২: ১০০% ফিক্সড ভলান্টিয়ার সোশ্যাল নেটওয়ার্ক ফিড -->
-      <div id="dashTabFeedView" style="display: none;">
-        <!-- পোস্ট তৈরি করার বক্স -->
-        <div class="community-post-creator">
-          <textarea id="communityPostInput" class="post-input-textarea" placeholder="আপনার ফিল্ড কাজের অভিজ্ঞতা বা কোনো জরুরি বার্তা লিখুন..."></textarea>
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-            <input type="text" id="communityPostImgUrl" class="form-ctrl" style="max-width:320px; padding:0.45rem 0.8rem; font-size:0.82rem;" placeholder="ছবির অনলাইন লিংক (ঐচ্ছিক)">
-            <button type="button" id="submitPostBtn" class="btn btn-primary" style="padding: 0.55rem 1.4rem; font-size:0.9rem;" onclick="handleCreatePost()">
-              পোস্ট করুন 📢
-            </button>
-          </div>
-        </div>
-
-        <!-- ফিড পোস্টসমূহ -->
-        <div id="communityFeedContainer" style="max-height: 400px; overflow-y: auto;"></div>
-      </div>
-
-      <!-- ট্যাব ৩: ভলান্টিয়ার লাইভ স্কোয়াড চ্যাট -->
-      <div id="dashTabChatView" style="display: none;">
-        <div class="chat-room-container">
-          <div style="padding: 0.6rem 1rem; background:#fff; border-bottom:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center;">
-            <strong style="font-size:0.9rem; color:var(--primary);">সেন্ট্রাল ভলান্টিয়ার স্কোয়াড চ্যাট</strong>
-            <span style="font-size:0.75rem; color:var(--primary-accent);">🟢 লাইভ সক্রিয়</span>
-          </div>
-
-          <div class="chat-messages-scroll" id="chatMessagesBox"></div>
-
-          <div class="chat-input-bar">
-            <input type="text" id="chatMsgInput" class="chat-input-field" placeholder="মেসেজ লিখুন..." onkeypress="if(event.key === 'Enter') handleSendChatMessage()">
-            <button type="button" class="btn btn-primary" style="padding:0.4rem 1.1rem; border-radius:var(--radius-full);" onclick="handleSendChatMessage()">➤</button>
-          </div>
         </div>
       </div>
     </div>
@@ -1451,19 +1311,6 @@
     <div class="custom-modal-box">
       <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeSdgModal()">&times;</button>
       <div id="sdgModalContent"></div>
-    </div>
-  </div>
-
-  <!-- ব্লগ মোডাল -->
-  <div class="custom-modal-overlay" id="articleModal">
-    <div class="custom-modal-box">
-      <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeModal()">&times;</button>
-      <img src="" id="modalImg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" alt="ফটো">
-      <span id="modalCat" style="background: rgba(21,128,61,0.1); color: var(--primary-accent); padding: 0.2rem 0.8rem; border-radius: 20px; font-weight: 700; font-size: 0.8rem;"></span>
-      <h2 id="modalTitle" style="color: var(--primary); font-size: 1.6rem; margin: 0.8rem 0;"></h2>
-      <div id="modalMeta" style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;"></div>
-      <div id="modalText" style="line-height: 1.8; color: var(--text-main); font-size: 1rem; margin-bottom: 2rem;"></div>
-      <a id="modalWaShare" target="_blank" class="btn btn-whatsapp">💬 হোয়াটসঅ্যাপে শেয়ার করুন</a>
     </div>
   </div>
 
@@ -1485,7 +1332,6 @@
             <li><a href="#mental-health" onclick="switchPage('home')">মানসিক স্বাস্থ্য (SDG 3)</a></li>
             <li><a href="#education" onclick="switchPage('home')">শিক্ষা সহায়তা (SDG 4)</a></li>
             <li><a href="#blood-network" onclick="switchPage('home')">ব্লাড ডোনেশন</a></li>
-            <li><a href="#animal-welfare" onclick="switchPage('home')">প্রাণী কল্যাণ (SDG 15)</a></li>
           </ul>
         </div>
 
@@ -1495,7 +1341,6 @@
             <li><a href="#onpage-donate" onclick="switchPage('home')">অন-পেজ ডোনেশন</a></li>
             <li><a href="#sdg-goals" onclick="switchPage('home')">UN SDGs লক্ষ্যমাত্রা</a></li>
             <li><a onclick="switchPage('blog')">ব্লগ ও ফিল্ড স্টোরি</a></li>
-            <li><a href="#volunteer" onclick="switchPage('home')">স্বেচ্ছাসেবী ফর্ম</a></li>
           </ul>
         </div>
 
@@ -1508,7 +1353,6 @@
 
       <div class="footer-bottom">
         <div>© <span id="year"></span> <strong>Mukto Swadhin Society (Independent Youth Platform)</strong>. সর্বস্বত্ব সংরক্ষিত।</div>
-        <div>১০০% ফিক্সড ইউজার সোশ্যাল নেটওয়ার্ক ও প্ল্যাটফর্ম।</div>
       </div>
     </div>
   </footer>
@@ -1540,7 +1384,7 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT: FIXED POST ENGINE, CHAT & SESSIONS -->
+  <!-- JAVASCRIPT LOGIC (AUTH-GATED CHAT GROUP) -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1554,7 +1398,7 @@
     });
 
     // ==========================================================
-    // ১. ইউজার সেশন ও প্রোফাইল বাটন
+    // ১. ইউজার সেশন ও ন্যাভবার বাটন হ্যান্ডলিং
     // ==========================================================
     function checkUserSession() {
       const activeUser = JSON.parse(localStorage.getItem('mss_logged_user'));
@@ -1564,7 +1408,7 @@
         slot.innerHTML = `
           <div class="user-profile-badge" onclick="openProfileModal()">
             <span class="user-avatar-mini">${activeUser.name.charAt(0).toUpperCase()}</span>
-            <span>${activeUser.name.split(' ')[0]} (ড্যাশবোর্ড)</span>
+            <span>${activeUser.name.split(' ')[0]} (চ্যাট গ্রুপ)</span>
           </div>
         `;
         if(document.getElementById('donateDonorName')) document.getElementById('donateDonorName').value = activeUser.name;
@@ -1610,6 +1454,7 @@
       }
     }
 
+    // ইউজার ও পাসওয়ার্ড দিয়ে সাইন-আপ -> সাথে সাথে চ্যাট গ্রুপে যুক্ত হওয়া
     function handleSignUpSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('regName').value.trim();
@@ -1628,19 +1473,23 @@
 
       const newUser = {
         id: "MSS-2026-" + Math.floor(1000 + Math.random() * 9000),
-        name: name, email: email, phone: phone, blood: blood, password: password,
-        joinDate: "২০২৬"
+        name: name, email: email, phone: phone, blood: blood, password: password
       };
 
       users.push(newUser);
       localStorage.setItem('mss_users_db', JSON.stringify(users));
       localStorage.setItem('mss_logged_user', JSON.stringify(newUser));
 
-      alert(`স্বাগতম ${name}! আপনার অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে।`);
+      // চ্যাট গ্রুপে সিস্টেম জয়েন নোটিফিকেশন যুক্ত হওয়া
+      appendSystemChatNotice(`${name} চ্যাট গ্রুপে যোগ দিয়েছেন! 🎉`);
+
+      alert(`অভিনন্দন ${name}! আপনার অ্যাকাউন্ট তৈরি হয়েছে এবং আপনি চ্যাট গ্রুপে যুক্ত হয়েছেন।`);
       closeAuthModal();
       checkUserSession();
+      openProfileModal(); // সরাসরি চ্যাট গ্রুপে নিয়ে যাওয়া
     }
 
+    // ইউজার ও পাসওয়ার্ড দিয়ে লগইন -> চ্যাট গ্রুপে প্রবেশ
     function handleLoginSubmit(e) {
       e.preventDefault();
       const iden = document.getElementById('loginIdentifier').value.trim().toLowerCase();
@@ -1651,31 +1500,49 @@
 
       if (matched) {
         localStorage.setItem('mss_logged_user', JSON.stringify(matched));
-        alert(`স্বাগতম, ${matched.name}!`);
+        alert(`স্বাগতম, ${matched.name}! আপনি চ্যাট গ্রুপে যুক্ত হয়েছেন।`);
         closeAuthModal();
         checkUserSession();
+        openProfileModal(); // সরাসরি চ্যাট গ্রুপে নিয়ে যাওয়া
       } else {
         alert("ভুল ইমেইল/ফোন অথবা পাসওয়ার্ড দিয়েছেন।");
       }
     }
 
+    // হিরো সেকশনের "চ্যাট গ্রুপ" বাটনের কাজ
+    function handleOpenChatGroupBtn() {
+      const activeUser = JSON.parse(localStorage.getItem('mss_logged_user'));
+      if(activeUser) {
+        openProfileModal();
+      } else {
+        openAuthModal('login');
+      }
+    }
+
+    // ড্যাশবোর্ড মোডাল ওপেন
     function openProfileModal() {
       const activeUser = JSON.parse(localStorage.getItem('mss_logged_user'));
-      
-      // ইউজার লগইন না থাকলে ডিফল্ট তথ্য দিয়েও ওপেন হবে
-      const name = activeUser ? activeUser.name : "স্বেচ্ছাসেবী মেম্বার (গেস্ট)";
-      const id = activeUser ? activeUser.id : "MSS-2026-GUEST";
-      const blood = activeUser ? (activeUser.blood || 'A+') : "A+";
-      const phone = activeUser ? activeUser.phone : "লগইন করা নেই";
+      const lockedNotice = document.getElementById('chatLockedNotice');
+      const activeChatBox = document.getElementById('chatActiveBox');
 
-      document.getElementById('cardUserName').innerText = name;
-      document.getElementById('cardMemberId').innerText = id;
-      document.getElementById('cardBloodGroup').innerText = blood;
-      document.getElementById('cardPhone').innerText = phone;
+      if (!activeUser) {
+        // লগইন না থাকলে লক স্ক্রিন দেখাবে
+        lockedNotice.style.display = 'block';
+        activeChatBox.style.display = 'none';
+      } else {
+        // লগইন থাকলে চ্যাট গ্রুপ সক্রিয় হবে
+        lockedNotice.style.display = 'none';
+        activeChatBox.style.display = 'flex';
+        document.getElementById('activeUserBadgeStatus').innerText = `🟢 আপনি ${activeUser.name} হিসেবে যুক্ত আছেন`;
+        
+        document.getElementById('cardUserName').innerText = activeUser.name;
+        document.getElementById('cardMemberId').innerText = activeUser.id || 'MSS-2026-0001';
+        document.getElementById('cardBloodGroup').innerText = activeUser.blood || 'A+';
+        document.getElementById('cardPhone').innerText = activeUser.phone;
+      }
 
       document.getElementById('profileModal').style.display = 'flex';
-      switchDashboardTab('id');
-      renderCommunityFeed();
+      switchDashboardTab('chat'); // সরাসরি চ্যাট গ্রুপ ওপেন হবে
       renderChatMessages();
     }
 
@@ -1684,7 +1551,7 @@
     }
 
     function handleUserLogout() {
-      if(confirm("আপনি কি নিশ্চিতভাবে লগআউট করতে চান?")) {
+      if(confirm("আপনি কি চ্যাট গ্রুপ থেকে লগআউট করতে চান?")) {
         localStorage.removeItem('mss_logged_user');
         closeProfileModal();
         checkUserSession();
@@ -1693,164 +1560,33 @@
 
     function switchDashboardTab(tab) {
       const idView = document.getElementById('dashTabIdView');
-      const feedView = document.getElementById('dashTabFeedView');
       const chatView = document.getElementById('dashTabChatView');
-      
       const tabIdBtn = document.getElementById('tabIdBtn');
-      const tabFeedBtn = document.getElementById('tabFeedBtn');
       const tabChatBtn = document.getElementById('tabChatBtn');
 
-      [tabIdBtn, tabFeedBtn, tabChatBtn].forEach(b => b.classList.remove('active'));
-      [idView, feedView, chatView].forEach(v => v.style.display = 'none');
+      tabIdBtn.classList.remove('active');
+      tabChatBtn.classList.remove('active');
+      idView.style.display = 'none';
+      chatView.style.display = 'none';
 
-      if(tab === 'feed') {
-        feedView.style.display = 'block';
-        tabFeedBtn.classList.add('active');
-        renderCommunityFeed();
-      } else if(tab === 'chat') {
+      if(tab === 'id') {
+        idView.style.display = 'block';
+        tabIdBtn.classList.add('active');
+      } else {
         chatView.style.display = 'block';
         tabChatBtn.classList.add('active');
         renderChatMessages();
-      } else {
-        idView.style.display = 'block';
-        tabIdBtn.classList.add('active');
       }
     }
 
     // ==========================================================
-    // ২. ১০০% ফিক্সড ভলান্টিয়ার পোস্ট ইঞ্জিন (যেখানে আর আটকাবে না)
-    // ==========================================================
-    const defaultPosts = [
-      {
-        id: 1,
-        author: "আরিফুল ইসলাম",
-        role: "সাধারণ সম্পাদক",
-        time: "২ ঘণ্টা আগে",
-        content: "আজ মিরপুরের মুক্ত সন্ধ্যা পাঠশালায় ৩০ জন শিশুর মাঝে খাতা ও জ্যামিতি বক্স বিতরণ করেছি। ওদের মুখের হাসি দেখে সমস্ত ক্লান্তি চলে গেল! ❤️",
-        imgUrl: "",
-        likes: 12
-      },
-      {
-        id: 2,
-        author: "ডাঃ ফারজানা মেহনাজ",
-        role: "স্বাস্থ্য প্রধান",
-        time: "৫ ঘণ্টা আগে",
-        content: "জরুরি রক্তদানের আপডেট: ঢাকা মেডিকেলে ভর্তিকৃত রোগীর জন্য B+ রক্তের ব্যবস্থা সম্পন্ন হয়েছে। ধন্যবাদ রক্তদাতা তানভীর ভাইকে!",
-        imgUrl: "",
-        likes: 19
-      }
-    ];
-
-    function getCommunityPosts() {
-      try {
-        const saved = localStorage.getItem('mss_community_posts');
-        return saved ? JSON.parse(saved) : defaultPosts;
-      } catch (e) {
-        return defaultPosts;
-      }
-    }
-
-    function renderCommunityFeed() {
-      const container = document.getElementById('communityFeedContainer');
-      if(!container) return;
-      const posts = getCommunityPosts();
-      container.innerHTML = '';
-
-      posts.forEach(post => {
-        container.innerHTML += `
-          <div class="post-card-item">
-            <div class="post-author-row">
-              <div class="post-author-avatar">${post.author ? post.author.charAt(0).toUpperCase() : 'M'}</div>
-              <div>
-                <strong style="font-size:0.95rem; color:var(--primary);">${post.author}</strong>
-                <span style="font-size:0.75rem; color:var(--text-muted); display:block;">${post.role || 'স্বেচ্ছাসেবী'} • ${post.time}</span>
-              </div>
-            </div>
-            <p style="font-size:0.92rem; color:var(--text-main); line-height:1.6; margin-bottom:0.5rem;">${post.content}</p>
-            ${post.imgUrl ? `<img src="${post.imgUrl}" style="width:100%; max-height:220px; object-fit:cover; border-radius:8px; margin:0.6rem 0;" alt="পোস্ট ছবি">` : ''}
-            <div class="post-actions-row">
-              <button type="button" class="like-btn" onclick="handleLikePost(${post.id})">
-                ❤️ <span>${post.likes || 0}</span> লাইক
-              </button>
-              <button type="button" style="background:none; border:none; color:#ef4444; font-size:0.8rem; cursor:pointer;" onclick="handleDeletePost(${post.id})">
-                🗑️ মুছুন
-              </button>
-            </div>
-          </div>
-        `;
-      });
-    }
-
-    // ফিক্সড পোস্ট হ্যান্ডলার (লগইন ছাড়াও চলবে, এরর হবে না)
-    function handleCreatePost() {
-      const input = document.getElementById('communityPostInput');
-      const imgInput = document.getElementById('communityPostImgUrl');
-      const content = input.value.trim();
-      const imgUrl = imgInput ? imgInput.value.trim() : "";
-
-      if(!content) {
-        alert("দয়া করে কিছু লিখুন!");
-        return;
-      }
-
-      const activeUser = JSON.parse(localStorage.getItem('mss_logged_user'));
-      let authorName = "অ্যাক্টিভ ভলান্টিয়ার";
-
-      if (activeUser && activeUser.name) {
-        authorName = activeUser.name;
-      } else {
-        const guestName = prompt("আপনার নাম লিখুন (বা লগইন করুন):", "স্বেচ্ছাসেবী বন্ধু");
-        if(guestName && guestName.trim()) {
-          authorName = guestName.trim();
-        }
-      }
-
-      let posts = getCommunityPosts();
-      const newPost = {
-        id: Date.now(),
-        author: authorName,
-        role: activeUser ? "ভেরিফায়েড মেম্বার" : "স্বেচ্ছাসেবী",
-        time: "এইমাত্র",
-        content: content,
-        imgUrl: imgUrl,
-        likes: 0
-      };
-
-      posts.unshift(newPost);
-      localStorage.setItem('mss_community_posts', JSON.stringify(posts));
-      
-      input.value = '';
-      if(imgInput) imgInput.value = '';
-      
-      renderCommunityFeed();
-      alert("আপনার পোস্টটি সফলভাবে সোশ্যাল ফিডে প্রকাশিত হয়েছে!");
-    }
-
-    function handleLikePost(postId) {
-      let posts = getCommunityPosts();
-      const post = posts.find(p => p.id === postId);
-      if(post) {
-        post.likes = (post.likes || 0) + 1;
-        localStorage.setItem('mss_community_posts', JSON.stringify(posts));
-        renderCommunityFeed();
-      }
-    }
-
-    function handleDeletePost(postId) {
-      if(confirm("পোস্টটি মুছে ফেলতে চান?")) {
-        let posts = getCommunityPosts();
-        posts = posts.filter(p => p.id !== postId);
-        localStorage.setItem('mss_community_posts', JSON.stringify(posts));
-        renderCommunityFeed();
-      }
-    }
-
-    // ==========================================================
-    // ৩. লাইভ চ্যাট রুম ইঞ্জিন
+    // ২. সেন্ট্রাল ভলান্টিয়ার চ্যাট গ্রুপ ইঞ্জিন
     // ==========================================================
     const defaultChatMessages = [
-      { sender: "আরিফুল ইসলাম", text: "সবাই কেমন আছেন? আগামী শুক্রবার কি ধানমন্ডি পার্কে সবাই মিলিত হচ্ছি?", time: "বিকাল ৪:৩০" },
-      { sender: "তানজিলা শারমিন", text: "হ্যাঁ, বুক আড্ডার জন্য বইয়ের প্রস্তুতি সম্পন্ন হয়েছে। সবাই ৪টার মধ্যে পৌঁছাবেন!", time: "বিকাল ৪:৩৫" }
+      { type: 'system', text: "মুক্ত স্বাধীন সেন্ট্রাল ভলান্টিয়ার চ্যাট গ্রুপে স্বাগতম!" },
+      { type: 'msg', sender: "আরিফুল ইসলাম", text: "সবাই কেমন আছেন? আগামী শুক্রবার কি ধানমন্ডি পার্কে রক্তদান ও বুক আড্ডার প্রস্তুতি শুরু করছি?", time: "বিকাল ৪:৩০" },
+      { type: 'msg', sender: "তানজিলা শারমিন", text: "হ্যাঁ, বুক আড্ডার প্রস্তুতি সম্পন্ন। সবাই ৪টার মধ্যে পৌঁছাবেন!", time: "বিকাল ৪:৩৫" },
+      { type: 'msg', sender: "ডাঃ ফারজানা মেহনাজ", text: "ঢাকা মেডিকেলে জরুরি রক্তদানের জন্য যারা প্রস্তুত আছেন, দয়া করে জানাবেন।", time: "বিকাল ৫:১০" }
     ];
 
     function getChatMessages() {
@@ -1870,14 +1606,18 @@
       box.innerHTML = '';
 
       messages.forEach(msg => {
-        const isMine = activeUser && (msg.sender === activeUser.name);
-        box.innerHTML += `
-          <div class="chat-bubble ${isMine ? 'mine' : 'others'}">
-            ${!isMine ? `<span class="chat-sender-name">${msg.sender}</span>` : ''}
-            <div>${msg.text}</div>
-            <div style="font-size:0.65rem; opacity:0.8; text-align:right; margin-top:2px;">${msg.time}</div>
-          </div>
-        `;
+        if(msg.type === 'system') {
+          box.innerHTML += `<div class="chat-bubble system">${msg.text}</div>`;
+        } else {
+          const isMine = activeUser && (msg.sender === activeUser.name);
+          box.innerHTML += `
+            <div class="chat-bubble ${isMine ? 'mine' : 'others'}">
+              ${!isMine ? `<span class="chat-sender-name">${msg.sender}</span>` : ''}
+              <div>${msg.text}</div>
+              <div style="font-size:0.65rem; opacity:0.8; text-align:right; margin-top:2px;">${msg.time || ''}</div>
+            </div>
+          `;
+        }
       });
       box.scrollTop = box.scrollHeight;
     }
@@ -1885,15 +1625,14 @@
     function handleSendChatMessage() {
       const input = document.getElementById('chatMsgInput');
       const text = input.value.trim();
-      if(!text) return;
-
       const activeUser = JSON.parse(localStorage.getItem('mss_logged_user'));
-      let senderName = activeUser ? activeUser.name : "ভলান্টিয়ার";
 
+      if(!text) return;
       if(!activeUser) {
-        const ask = prompt("চ্যাটে মেসেজ পাঠাতে আপনার নাম লিখুন:", "স্বেচ্ছাসেবী");
-        if(ask && ask.trim()) senderName = ask.trim();
-        else return;
+        alert("চ্যাট করতে অনুগ্রহ করে ইউজার ও পাসওয়ার্ড দিয়ে লগইন করুন!");
+        closeProfileModal();
+        openAuthModal('login');
+        return;
       }
 
       let messages = getChatMessages();
@@ -1901,7 +1640,8 @@
       const timeStr = now.toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' });
 
       messages.push({
-        sender: senderName,
+        type: 'msg',
+        sender: activeUser.name,
         text: text,
         time: timeStr
       });
@@ -1911,8 +1651,14 @@
       renderChatMessages();
     }
 
+    function appendSystemChatNotice(noticeText) {
+      let messages = getChatMessages();
+      messages.push({ type: 'system', text: noticeText });
+      localStorage.setItem('mss_squad_chat', JSON.stringify(messages));
+    }
+
     // ==========================================================
-    // ৪. অন-পেজ ডোনেশন ও অন্যান্য
+    // ৩. অন-পেজ ডোনেশন ও কপি
     // ==========================================================
     function selectAmount(val, btn) {
       document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
@@ -1946,7 +1692,7 @@
     function openSdgModal(key) {
       document.getElementById('sdgModalContent').innerHTML = `
         <h3 style="color:var(--primary); margin-bottom:1rem;">জাতিসংঘ টেকসই উন্নয়ন লক্ষ্যমাত্রা (UN SDGs)</h3>
-        <p style="color:var(--text-main); line-height:1.7;">মুক্ত স্বাধীন সোসাইটি ২০৩০ সালের বৈশ্বিক এজেন্ডা বাস্তবায়নে স্থানীয় যুবসমাজকে সংগঠিত করে স্বাস্থ্য, শিক্ষা, জীববৈচিত্র্য ও অসমতা হ্রাসে সরাসরি কাজ করছে।</p>
+        <p style="color:var(--text-main); line-height:1.7;">মুক্ত স্বাধীন সোসাইটি ২০৩০ সালের বৈশ্বিক এজেন্ডা বাস্তবায়নে স্থানীয় যুবসমাজকে সংগঠিত করে স্বাস্থ্য, শিক্ষা ও রক্তদানে সরাসরি কাজ করছে।</p>
         <div style="margin-top:1.5rem;"><a href="#volunteer" class="btn btn-primary" onclick="closeSdgModal()">যুক্ত হোন ➜</a></div>
       `;
       document.getElementById('sdgModal').style.display = 'flex';
@@ -1954,8 +1700,8 @@
     function closeSdgModal() { document.getElementById('sdgModal').style.display = 'none'; }
 
     const blogData = [
-      { id: 0, title: "মিরপুরের বস্তির শিশুদের মাঝে শিক্ষা ও শীতবস্ত্র বিতরণ", category: "শিক্ষা", date: "১৫ নভেম্বর, ২০২৬", author: "আরিফুল ইসলাম", img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80", excerpt: "দেড় শতাধিক পথশিশুর হাতে তুলে দেওয়া হলো নতুন শিক্ষাবর্ষের উপহার এবং শুরু হলো আনন্দ পাঠশালা..." },
-      { id: 1, title: "জরুরি রক্তের সন্ধানে রাত ২টায় দৌড়: বেঁচে গেল প্রসূতি মায়ের প্রাণ", category: "রক্তদান", date: "১২ নভেম্বর, ২০২৬", author: "ডাঃ ফারজানা মেহনাজ", img: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&auto=format&fit=crop&q=80", excerpt: "ঢাকা মেডিকেলে জরুরি বিরল ‘O নেগেটিভ’ রক্তের জন্য আমাদের টিম কীভাবে জীবন বাঁচাল..." }
+      { id: 0, title: "মিরপুরের বস্তির শিশুদের মাঝে শিক্ষা ও শীতবস্ত্র বিতরণ", category: "শিক্ষা", img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80", excerpt: "দেড় শতাধিক পথশিশুর হাতে তুলে দেওয়া হলো নতুন শিক্ষাবর্ষের উপহার..." },
+      { id: 1, title: "জরুরি রক্তের সন্ধানে রাত ২টায় দৌড়: বেঁচে গেল প্রসূতি মায়ের প্রাণ", category: "রক্তদান", img: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&auto=format&fit=crop&q=80", excerpt: "ঢাকা মেডিকেলে জরুরি বিরল ‘O নেগেটিভ’ রক্তের জন্য আমাদের টিম কীভাবে জীবন বাঁচাল..." }
     ];
 
     function renderHomeBlogPreview() {
@@ -1986,7 +1732,7 @@
           <div class="card">
             <div class="card-img-wrap"><img src="${post.img}" alt="${post.title}" referrerpolicy="no-referrer"></div>
             <div class="card-content">
-              <span style="color:var(--primary-accent); font-weight:700; font-size:0.8rem; margin-bottom:0.4rem;">${post.category} • ${post.date}</span>
+              <span style="color:var(--primary-accent); font-weight:700; font-size:0.8rem; margin-bottom:0.4rem;">${post.category}</span>
               <h3>${post.title}</h3>
               <p>${post.excerpt}</p>
               <a href="https://wa.me/8801405319335?text=আমি%20ব্লগটি%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="btn btn-outline" style="padding:0.4rem 1rem; align-self:flex-start;">বিস্তারিত হোয়াটসঅ্যাপে ➜</a>
@@ -2017,12 +1763,11 @@
       document.getElementById('nav-menu').classList.remove('active');
     }
 
-    // ডোনার তালিকা
+    // ডোনার ডেটা
     const donors = [
       { name: "শাকিল আহমেদ", blood: "A+", area: "ঢাকা", phone: "০১৪০৫৩১৯৩৩৫" },
       { name: "নুসরাত জাহান", blood: "O+", area: "চট্টগ্রাম", phone: "০১৪০৫৩১৯৩৩৫" },
-      { name: "মাহমুদুল হাসান", blood: "B+", area: "রাজশাহী", phone: "০১৪০৫৩১৯৩৩৫" },
-      { name: "রাকিব চৌধুরী", blood: "AB+", area: "ঢাকা", phone: "০১৪০৫৩১৯৩৩৫" }
+      { name: "মাহমুদুল হাসান", blood: "B+", area: "রাজশাহী", phone: "০১৪০৫৩১৯৩৩৫" }
     ];
 
     function renderDonors() {
@@ -2092,7 +1837,7 @@
       document.getElementById('nav-menu').classList.toggle('active');
     });
 
-    // ইনিশিয়াল কল
+    // সেশন চেক
     checkUserSession();
     renderHomeBlogPreview();
     renderDonors();
