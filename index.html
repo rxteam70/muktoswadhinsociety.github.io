@@ -1,10 +1,1518 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-  <title>Mukto Swadhin Society</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mukto Swadhin Society - Independent Youth Platform. UN SDG Aligned Youth Startup." />
+  <title>Mukto Swadhin Society | UN SDG Aligned Youth Platform</title>
+
+  <!-- গুগল ফন্ট: Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #07381b;
+      --primary-accent: #15803d;
+      --primary-hover: #0f622e;
+      --secondary: #10b981;
+      --accent-blood: #dc2626;
+      --accent-wa: #25d366;
+      --bg-body: #f6faf7;
+      --bg-white: #ffffff;
+      --text-main: #0c1f14;
+      --text-muted: #4e6556;
+      --border-color: #dce7e1;
+      --card-shadow: 0 10px 30px -5px rgba(21, 128, 61, 0.08);
+      --hover-shadow: 0 20px 45px -8px rgba(21, 128, 61, 0.22);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 30px;
+      --radius-full: 9999px;
+      --transition: all 0.35s ease;
+
+      /* জাতিসংঘ এসডিজি অফিসিয়াল কালারস */
+      --sdg-3: #4c9f38;
+      --sdg-4: #c5192d;
+      --sdg-10: #dd1367;
+      --sdg-11: #fd9d24;
+      --sdg-15: #56c02b;
+      --sdg-17: #19486a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; background: #e2ebe5; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+    .scroll-progress-bar {
+      position: fixed; top: 0; left: 0; height: 4px;
+      background: linear-gradient(90deg, #10b981, #15803d, #4ade80);
+      width: 0%; z-index: 99999;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+    }
+
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5.5rem 0; position: relative; }
+    .section-white { background-color: var(--bg-white); }
+    .section-light { background-color: var(--bg-body); }
+    .section-header { text-align: center; max-width: 780px; margin: 0 auto 3.8rem; }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.45rem 1.25rem; border-radius: var(--radius-full);
+      font-size: 0.88rem; font-weight: 600;
+      background: rgba(21, 128, 61, 0.08); color: var(--primary-accent);
+      margin-bottom: 1rem; border: 1px solid rgba(21, 128, 61, 0.22);
+    }
+    .badge-blood { background: rgba(220, 38, 38, 0.1); color: var(--accent-blood); border-color: rgba(220, 38, 38, 0.25); }
+    .badge-sdg { background: #002244; color: #fff; border-color: rgba(255, 255, 255, 0.2); }
+
+    .section-title { font-size: 2.4rem; font-weight: 700; color: var(--primary); line-height: 1.3; margin-bottom: 0.8rem; }
+    .section-subtitle { font-size: 1.12rem; color: var(--text-muted); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+      padding: 0.85rem 1.9rem; border-radius: var(--radius-full);
+      font-size: 0.98rem; font-weight: 600; cursor: pointer;
+      border: 2px solid transparent; transition: var(--transition);
+    }
+    .btn-primary { background: var(--primary-accent); color: #fff; box-shadow: 0 4px 18px rgba(21, 128, 61, 0.32); }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+    .btn-outline { background: transparent; border-color: var(--border-color); color: var(--primary); }
+    .btn-outline:hover { border-color: var(--primary-accent); background: rgba(21, 128, 61, 0.06); color: var(--primary-accent); }
+    .btn-blood { background: var(--accent-blood); color: #fff; }
+    .btn-blood:hover { background: #b91c1c; transform: translateY(-2px); }
+    .btn-whatsapp { background: #25d366; color: #fff; }
+    .btn-whatsapp:hover { background: #1eb954; transform: translateY(-2px); }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #041f0f; color: #bbf0cf; font-size: 0.85rem; padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .top-bar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; }
+    .top-social-links { display: flex; align-items: center; gap: 0.9rem; }
+    .top-social-icon { color: #bbf0cf; display: flex; align-items: center; }
+    .top-social-icon:hover { color: #4ade80; }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky; top: 0; background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px); border-bottom: 1px solid rgba(220, 231, 225, 0.8);
+      z-index: 1000;
+    }
+    .nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 86px; }
+
+    .brand-pill-logo {
+      background: var(--primary-accent); padding: 7px 19px 7px 8px; border-radius: 26px;
+      display: inline-flex; align-items: center; gap: 12px;
+      box-shadow: 0 4px 16px rgba(21, 128, 61, 0.3); cursor: pointer;
+    }
+    .brand-pill-logo:hover { transform: translateY(-2px); }
+    .brand-icon-circle {
+      width: 42px; height: 42px; border-radius: 50%; background: #dc2626;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .brand-pill-text { display: flex; flex-direction: column; justify-content: center; line-height: 1.18; }
+    .brand-title { font-size: 1.16rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+    .brand-subtitle { font-size: 0.73rem; font-weight: 400; color: rgba(255, 255, 255, 0.94); }
+
+    .nav-menu { display: flex; align-items: center; gap: 1.1rem; }
+    .nav-link { font-size: 0.94rem; font-weight: 500; color: var(--text-main); padding: 0.5rem 0.15rem; cursor: pointer; }
+    .nav-link:hover, .nav-link.active { color: var(--primary-accent); }
+    .mobile-btn { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); }
+
+    /* HERO */
+    .hero {
+      padding: 5rem 0 5.5rem;
+      background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.09) 0%, rgba(255, 255, 255, 1) 90%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 3.5rem; }
+    .hero-text h2 { font-size: 3.2rem; font-weight: 700; color: var(--primary); line-height: 1.22; margin-bottom: 1.2rem; }
+    .hero-text h2 span { color: var(--primary-accent); }
+    .hero-tagline { font-size: 1.18rem; color: var(--text-muted); border-left: 4px solid var(--primary-accent); padding-left: 1.2rem; margin-bottom: 2.2rem; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1.1rem; margin-bottom: 2.5rem; }
+
+    .hero-img-card {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: 0 20px 50px -10px rgba(21, 128, 61, 0.25);
+      border: 1px solid rgba(220, 231, 225, 0.9); background: #fff;
+    }
+    .hero-main-photo { width: 100%; height: 420px; object-fit: cover; }
+    .hero-floating-stat {
+      position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+      background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(14px);
+      padding: 1.25rem; border-radius: var(--radius-md);
+      display: grid; grid-template-columns: repeat(3, 1fr); text-align: center;
+      border: 1px solid rgba(21, 128, 61, 0.22);
+    }
+    .stat-unit h4 { font-size: 1.65rem; font-weight: 700; color: var(--primary-accent); }
+    .stat-unit p { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+
+    /* মারকুই */
+    .marquee-container { background: linear-gradient(135deg, #052311, #0b4924); color: #e3faec; padding: 0.95rem 0; overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; gap: 3rem; animation: marqueeRun 24s linear infinite; }
+    .marquee-item { display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; font-weight: 600; }
+    @keyframes marqueeRun { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* এসডিজি সেকশন */
+    .sdg-section { background: linear-gradient(180deg, #ffffff 0%, #f4fbf6 100%); padding: 6rem 0; }
+    .sdg-hero-banner {
+      background: #002244; color: #fff; border-radius: var(--radius-lg);
+      padding: 2.8rem; margin-bottom: 3.5rem; display: grid; grid-template-columns: 1.3fr 0.7fr;
+      align-items: center; gap: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .sdg-hero-banner h3 { font-size: 1.85rem; margin-bottom: 0.8rem; line-height: 1.3; }
+    .sdg-hero-banner p { font-size: 1rem; color: #cbd5e1; }
+
+    .sdg-grid-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .sdg-card {
+      background: #fff; border-radius: var(--radius-md); border: 1px solid var(--border-color);
+      overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column;
+      transition: var(--transition);
+    }
+    .sdg-card:hover { transform: translateY(-8px); box-shadow: var(--hover-shadow); }
+    .sdg-top-stripe { height: 8px; width: 100%; }
+    .sdg-card-body { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .sdg-badge-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .sdg-number-badge { color: #fff; font-weight: 800; font-size: 0.9rem; padding: 0.35rem 0.9rem; border-radius: var(--radius-sm); }
+    .sdg-card-title { font-size: 1.35rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; }
+    .sdg-official-tag { font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 1rem; display: block; }
+    .sdg-desc { font-size: 0.94rem; color: var(--text-muted); margin-bottom: 1.4rem; flex-grow: 1; }
+    .sdg-initiatives-list { list-style: none; margin-bottom: 1.5rem; padding: 1rem; background: #f7faf8; border-radius: var(--radius-sm); }
+    .sdg-initiatives-list li { font-size: 0.88rem; margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .sdg-detail-btn {
+      align-self: flex-start; background: none; border: none; color: var(--primary-accent);
+      font-weight: 700; font-size: 0.92rem; cursor: pointer; padding: 0;
+    }
+    .sdg-detail-btn:hover { text-decoration: underline; }
+
+    /* সাধারণ কার্ডস */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; }
+    .card {
+      background: var(--bg-white); border-radius: var(--radius-md); border: 1px solid var(--border-color);
+      overflow: hidden; box-shadow: var(--card-shadow); display: flex; flex-direction: column; transition: var(--transition);
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: var(--hover-shadow); border-color: rgba(21, 128, 61, 0.4); }
+    .card-img-wrap { width: 100%; height: 230px; overflow: hidden; }
+    .card-img-wrap img { width: 100%; height: 100%; transition: transform 0.5s ease; }
+    .card:hover .card-img-wrap img { transform: scale(1.06); }
+    .card-content { padding: 1.7rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .card-content h3 { font-size: 1.28rem; font-weight: 600; color: var(--primary); margin-bottom: 0.65rem; }
+    .card-content p { font-size: 0.94rem; color: var(--text-muted); margin-bottom: 1.3rem; flex-grow: 1; }
+
+    /* এবাউট আস */
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3.8rem; align-items: center; }
+    .about-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+    .about-pill-item { background: #f0f7f2; padding: 1.25rem; border-radius: var(--radius-md); border-left: 3.5px solid var(--primary-accent); }
+    .about-pill-item h4 { font-size: 1.08rem; color: var(--primary); margin-bottom: 0.3rem; }
+    .about-pill-item p { font-size: 0.86rem; color: var(--text-muted); }
+
+    /* হেল্পলাইন বক্স */
+    .helpline-box {
+      margin-top: 2.8rem; background: linear-gradient(135deg, var(--primary), var(--primary-accent));
+      color: #fff; border-radius: var(--radius-lg); padding: 3rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+    }
+    .helpline-info h3 { font-size: 1.7rem; margin-bottom: 0.3rem; }
+    .helpline-info p { color: #d1fae5; }
+    .helpline-call { background: #fff; color: var(--primary); padding: 0.85rem 1.8rem; border-radius: var(--radius-full); font-size: 1.15rem; font-weight: 700; }
+
+    /* ব্লাড নেটওয়ার্ক ফিল্টার */
+    .blood-filter-box { background: #fff; padding: 2.4rem; border-radius: var(--radius-lg); border: 1px solid #fed7d7; box-shadow: var(--card-shadow); margin-bottom: 2.5rem; }
+    .filter-grid { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 1.1rem; align-items: flex-end; }
+    .form-ctrl { width: 100%; padding: 0.85rem 1.1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: inherit; outline: none; font-size: 0.95rem; }
+    .donors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; margin-top: 1.8rem; }
+    .donor-badge-card { background: var(--bg-body); border: 1px solid var(--border-color); padding: 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1rem; }
+    .donor-blood-type { width: 48px; height: 48px; background: var(--accent-blood); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; }
+
+    /* টিম কার্ড */
+    .member-card { background: #fff; border-radius: var(--radius-md); border: 1px solid var(--border-color); overflow: hidden; box-shadow: var(--card-shadow); text-align: center; padding-bottom: 1.3rem; }
+    .member-img-wrap { width: 100%; height: 245px; overflow: hidden; }
+    .member-info { padding: 1.3rem 1rem 0.5rem; }
+    .member-name { font-size: 1.18rem; font-weight: 700; color: var(--primary); margin-bottom: 0.2rem; }
+    .member-role { display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--primary-accent); background: rgba(21, 128, 61, 0.08); padding: 0.2rem 0.85rem; border-radius: var(--radius-full); margin-bottom: 0.65rem; }
+    .member-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.5; padding: 0 0.5rem; margin-bottom: 0.9rem; }
+    .member-btn { font-size: 0.82rem; padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); color: var(--text-muted); font-weight: 600; }
+
+    /* FAQ */
+    .faq-container { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.1rem; }
+    .faq-item { background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; }
+    .faq-question { padding: 1.3rem 1.6rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.1rem; font-weight: 600; color: var(--primary); }
+    .faq-icon { font-size: 1.3rem; color: var(--primary-accent); }
+    .faq-answer { display: none; padding: 0 1.6rem 1.3rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* সোশ্যাল */
+    .social-section { background: linear-gradient(135deg, #05200c, #093c1d); color: #fff; padding: 5rem 0; text-align: center; }
+    .social-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.2rem; margin-top: 2.2rem; }
+    .social-btn { display: inline-flex; align-items: center; gap: 0.65rem; padding: 0.85rem 1.8rem; border-radius: var(--radius-full); color: #fff; font-weight: 600; font-size: 0.96rem; }
+    .btn-fb { background: #1877f2; }
+    .btn-wa-channel { background: #25d366; }
+    .btn-yt { background: #ff0000; }
+    .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+    /* ফর্মস */
+    .form-card { max-width: 800px; margin: 0 auto; background: #fff; padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--card-shadow); }
+    .input-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; margin-bottom: 1.3rem; }
+    .form-field { margin-bottom: 1.3rem; }
+    .form-field label { display: block; font-size: 0.92rem; font-weight: 600; margin-bottom: 0.45rem; color: var(--text-main); }
+    .contact-wrapper { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2.8rem; }
+    .contact-info-card { background: var(--primary); color: #fff; padding: 3rem; border-radius: var(--radius-lg); }
+    .contact-list { margin: 2rem 0; display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-list-item { display: flex; align-items: flex-start; gap: 0.85rem; }
+
+    /* ফুটার */
+    .footer { background: #031509; color: #c4d9cc; padding: 4.8rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.6rem; margin-bottom: 3.2rem; }
+    .footer-col h4 { color: #fff; font-size: 1.15rem; margin-bottom: 1.3rem; position: relative; padding-bottom: 0.5rem; }
+    .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 34px; height: 2.5px; background: var(--secondary); }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.65rem; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.6rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.88rem; }
+
+    /* হোয়াটসঅ্যাপ পপআপ */
+    .wa-floating-btn {
+      position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff;
+      border: none; border-radius: 50%; width: 62px; height: 62px; display: flex;
+      align-items: center; justify-content: center; font-size: 32px; cursor: pointer;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); z-index: 9999;
+    }
+    .wa-direct-box {
+      position: fixed; bottom: 98px; right: 25px; width: 340px; max-width: calc(100vw - 40px);
+      background: #fff; border-radius: 20px; box-shadow: 0 15px 45px rgba(0, 0, 0, 0.24);
+      display: none; flex-direction: column; z-index: 10000; overflow: hidden; border: 1px solid var(--border-color);
+    }
+    .wa-box-header { background: #083c1d; color: #fff; padding: 1.15rem 1.2rem; display: flex; align-items: center; justify-content: space-between; }
+    .wa-box-body { padding: 1.2rem; background: #f8fafc; }
+    .wa-quick-btns { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
+    .wa-quick-btn {
+      background: #fff; border: 1px solid #cbd5e1; padding: 0.6rem 0.9rem; border-radius: var(--radius-sm);
+      font-size: 0.88rem; font-weight: 600; color: var(--text-main); display: flex; align-items: center; justify-content: space-between;
+    }
+    .wa-direct-form textarea { width: 100%; padding: 0.65rem 0.8rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: inherit; outline: none; margin-bottom: 0.6rem; }
+
+    /* মোডাল উইন্ডোজ */
+    .custom-modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+      z-index: 20000; display: none; align-items: center; justify-content: center; padding: 1.5rem;
+    }
+    .custom-modal-box {
+      background: #fff; width: 100%; max-width: 820px; max-height: 90vh;
+      border-radius: var(--radius-lg); overflow-y: auto; position: relative; padding: 2.5rem;
+    }
+
+    #blog-full-view { display: none; padding: 4rem 0 6rem; background: #f6faf7; min-height: 80vh; }
+    .search-input-field { width: 100%; max-width: 520px; padding: 0.9rem 1.4rem; border-radius: var(--radius-full); border: 1px solid var(--border-color); font-size: 1rem; outline: none; }
+    .category-pills-row { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+    .cat-pill-btn { background: #fff; border: 1px solid var(--border-color); padding: 0.45rem 1.2rem; border-radius: var(--radius-full); font-size: 0.88rem; font-weight: 600; cursor: pointer; }
+    .cat-pill-btn.active { background: var(--primary-accent); color: #fff; }
+
+    @media (max-width: 992px) {
+      .hero-grid, .about-layout, .sdg-hero-banner, .sdg-grid-container, .grid-3, .grid-4, .donors-grid, .contact-wrapper, .footer-grid { grid-template-columns: 1fr; }
+      .mobile-btn { display: block; }
+      .nav-menu {
+        position: fixed; top: 86px; left: -100%; width: 100%; height: calc(100vh - 86px);
+        background: #fff; flex-direction: column; align-items: flex-start; padding: 2rem;
+        transition: var(--transition); overflow-y: auto;
+      }
+      .nav-menu.active { left: 0; }
+      .filter-grid, .input-row-2, .about-pills { grid-template-columns: 1fr; }
+      .hero-text h2 { font-size: 2.3rem; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Mukto Swadhin Society</h1>
-  <p>Mental Health | Education | Blood Donation | Animal Welfare</p>
+
+  <!-- টপ স্ক্রোল প্রগ্রেস বার -->
+  <div class="scroll-progress-bar" id="scrollBar"></div>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div>
+        <span>📞 হটলাইন: <a href="tel:01405319335" style="color: #fff; font-weight:700;">০১৪০৫৩১৯৩৩৫</a></span>
+        <span style="margin: 0 10px;">|</span>
+        <span>✉️ info@muktoswadhin.org</span>
+      </div>
+      <div class="top-social-links">
+        <span style="font-size: 0.8rem; color: #a5d6b7;">সোশ্যাল মিডিয়া:</span>
+        <a href="https://facebook.com" target="_blank" class="top-social-icon" title="Facebook">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        </a>
+        <a href="https://wa.me/8801405319335" target="_blank" class="top-social-icon" title="WhatsApp">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="top-social-icon" title="YouTube">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <div class="brand-pill-logo" onclick="switchPage('home')">
+        <div class="brand-icon-circle">
+          <svg viewBox="0 0 100 100" width="36" height="36">
+            <circle cx="50" cy="50" r="50" fill="#dc2626" />
+            <path d="M53 76 C46 68 37 59 34 56 C31 53 33 50.5 36 52 C39.5 53.8 44 56.5 46 58 C41.5 50 34 44.5 32 42.5 C29.5 40 32 38 35 40 C39 42.5 45 47.5 47 50 C42.5 41 36.5 35 34.5 33 C32 30.5 35 28.5 37.5 30.5 C42 34 48 42 50.5 45.5 C47.5 36 43 31.5 41.5 29 C39.5 26.5 42.5 24.5 45 26.5 C49.5 30.5 55 41 57 44.5 C58.5 47.5 60 47.5 61 44.5 C62.5 39.5 64 34.5 66.5 35.5 C69 36.5 68 41.5 65.5 47 C63 52.5 63.5 57 65.5 61 C67 65.5 65 69 61.5 72 Z" fill="#ffffff" />
+          </svg>
+        </div>
+        <div class="brand-pill-text">
+          <span class="brand-title">Mukto Swadhin Society</span>
+          <span class="brand-subtitle">Independent Youth Platform</span>
+        </div>
+      </div>
+
+      <button class="mobile-btn" id="mobile-toggle" aria-label="মেনু খুলুন">☰</button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a class="nav-link active" onclick="switchPage('home')">হোম</a>
+        <a href="#sdg-goals" class="nav-link" onclick="switchPage('home')" style="color: #0284c7; font-weight:700;">🌐 UN SDGs</a>
+        <a href="#about" class="nav-link" onclick="switchPage('home')">আমাদের কথা</a>
+        <a href="#mental-health" class="nav-link" onclick="switchPage('home')">মানসিক স্বাস্থ্য</a>
+        <a href="#education" class="nav-link" onclick="switchPage('home')">শিক্ষা সহায়তা</a>
+        <a href="#blood-network" class="nav-link" onclick="switchPage('home')">রক্তদান</a>
+        <a href="#animal-welfare" class="nav-link" onclick="switchPage('home')">প্রাণী কল্যাণ</a>
+        <a href="#committee" class="nav-link" onclick="switchPage('home')">টিম</a>
+        <a class="nav-link" onclick="switchPage('blog')" style="color: var(--primary-accent); font-weight:700;">ব্লগ পেজ ➜</a>
+        <a href="#volunteer" class="btn btn-outline" style="padding: 0.45rem 1.1rem;" onclick="switchPage('home')">স্বেচ্ছাসেবী</a>
+        <a href="#contact" class="btn btn-primary" style="padding: 0.45rem 1.2rem;" onclick="switchPage('home')">যোগাযোগ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       VIEW A: MAIN LANDING PAGE
+  ========================================================== -->
+  <div id="home-view">
+    <!-- 1. HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="badge">🚀 জাতিসংঘের ২০৩০ এজেন্ডা বাস্তবায়নে তারুণ্যের সামাজিক প্ল্যাটফর্ম</span>
+          <h2>নতুন দিনের নতুন সমাজ বিনির্মাণে <span>তারুণ্যের একতাবদ্ধ</span> যাত্রা।</h2>
+          <p class="hero-tagline">
+            "Building a Better Community Through Mental Health, Education, Animal Welfare and Volunteerism."<br>
+            জাতিসংঘের টেকসই উন্নয়ন অভীষ্ট (UN SDGs) অর্জনে আমরা তৃণমূল পর্যায়ে রক্তদান, মানসিক স্বস্তি, সুবিধাবঞ্চিতদের শিক্ষা ও অবলা জীবের অধিকার প্রতিষ্ঠায় কাজ করছি।
+          </p>
+          <div class="hero-btns">
+            <a href="#sdg-goals" class="btn btn-primary">আমাদের SDG প্রজেক্ট দেখুন ➜</a>
+            <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20প্রয়োজন" target="_blank" class="btn btn-blood">
+              🩸 জরুরি রক্তের সন্ধান
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-img-card">
+          <img 
+            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000&auto=format&fit=crop&q=80" 
+            alt="সুবিধাবঞ্চিত শিশুদের সহায়তা" 
+            class="hero-main-photo" 
+            referrerpolicy="no-referrer"
+          />
+          <div class="hero-floating-stat">
+            <div class="stat-unit">
+              <h4>৬টি</h4>
+              <p>অ্যাক্টিভ SDG গোল</p>
+            </div>
+            <div class="stat-unit">
+              <h4>৫০০+</h4>
+              <p>টার্গেট ভলান্টিয়ার</p>
+            </div>
+            <div class="stat-unit">
+              <h4>১,২০০+</h4>
+              <p>ব্লাড ডোনার লক্ষ্য</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ২. মারকুই রিবন -->
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <div class="marquee-item">🌐 UN SDG 3: Good Health & Well-being</div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">📚 UN SDG 4: Quality Education</div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">⚖️ UN SDG 10: Reduced Inequalities</div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">🏙️ UN SDG 11: Sustainable Communities</div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">🐾 UN SDG 15: Life on Land & Animal Care</div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">🤝 UN SDG 17: Partnerships for the Goals</div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">🌐 UN SDG 3: Good Health & Well-being</div>
+        <div class="marquee-item">•</div>
+      </div>
+    </div>
+
+    <!-- ৩. DETAILED UN SDG GOALS SECTION -->
+    <section class="sdg-section" id="sdg-goals">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-sdg">🇺🇳 জাতিসংঘের টেকসই উন্নয়ন অভীষ্ট (UN SDGs)</span>
+          <h2 class="section-title">বৈশ্বিক লক্ষ্য অর্জনে আমাদের তৃণমূল ভূমিকা</h2>
+          <p class="section-subtitle">
+            মুক্ত স্বাধীন সোসাইটি ২০৩০ সালের বৈশ্বিক এজেন্ডা বাস্তবায়নে স্থানীয় যুবসমাজকে সংগঠিত করে নির্দিষ্ট এসডিজি গোল অর্জনে সরাসরি কাজ করে যাচ্ছে।
+          </p>
+        </div>
+
+        <div class="sdg-hero-banner">
+          <div>
+            <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-weight: 700;">Global Agenda 2030</span>
+            <h3>তারুণ্যের স্থানীয় অ্যাকশন, বৈশ্বিক রূপান্তর</h3>
+            <p>
+              জাতিসংঘ ঘোষিত ১৭টি টেকসই উন্নয়ন অভীষ্টের মধ্যে আমরা বিশেষত স্বাস্থ্য, শিক্ষা, অসমতা হ্রাস, নগর নিরাপত্তা, জীববৈচিত্র্য ও অংশীদারিত্ব—এই ৬টি স্তম্ভে বাস্তব মাঠপর্যায়ের প্রকল্প বাস্তবায়ন করছি।
+            </p>
+          </div>
+          <div style="text-align: center; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 2rem;">
+            <div style="font-size: 2.8rem; font-weight: 800; color: #4ade80;">১০০%</div>
+            <p style="font-size: 0.95rem; color: #cbd5e1;">অলাভজনক ও নিঃস্বার্থ তরুণ নেতৃত্ব</p>
+          </div>
+        </div>
+
+        <div class="sdg-grid-container">
+          <!-- SDG 3 -->
+          <div class="sdg-card">
+            <div class="sdg-top-stripe" style="background: var(--sdg-3);"></div>
+            <div class="sdg-card-body">
+              <div class="sdg-badge-row">
+                <span class="sdg-number-badge" style="background: var(--sdg-3);">SDG 03</span>
+                <span style="font-size: 1.5rem;">💚</span>
+              </div>
+              <h4 class="sdg-card-title">সুস্বাস্থ্য ও মানসিক কল্যাণ</h4>
+              <span class="sdg-official-tag">UN Target: Good Health & Well-being</span>
+              <p class="sdg-desc">
+                শারীরিক জরুরি চিকিৎসার পাশাপাশি সমাজে অবহেলিত মানসিক স্বাস্থ্য ও আত্মহত্যার প্রবণতা রোধে আমাদের তরুণরা সার্বক্ষণিক সক্রিয়।
+              </p>
+              <ul class="sdg-initiatives-list">
+                <li>🩸 <strong>২৪/৭ ফ্রি ব্লাড ডোনার নেটওয়ার্ক:</strong> জরুরি সময়ে রক্তের অভাবে মৃত্যুহার শূন্যে নামিয়ে আনা।</li>
+                <li>🧠 <strong>লিসেনিং ডেস্ক:</strong> তরুণ ও শিক্ষার্থীদের সম্পূর্ণ গোপনীয় ও ফ্রি মানসিক কাউন্সেলিং সাপোর্ট।</li>
+              </ul>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg3')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+            </div>
+          </div>
+
+          <!-- SDG 4 -->
+          <div class="sdg-card">
+            <div class="sdg-top-stripe" style="background: var(--sdg-4);"></div>
+            <div class="sdg-card-body">
+              <div class="sdg-badge-row">
+                <span class="sdg-number-badge" style="background: var(--sdg-4);">SDG 04</span>
+                <span style="font-size: 1.5rem;">📖</span>
+              </div>
+              <h4 class="sdg-card-title">অন্তর্ভুক্তিমূলক ও মানসম্মত শিক্ষা</h4>
+              <span class="sdg-official-tag">UN Target: Quality Education</span>
+              <p class="sdg-desc">
+                অর্থের অভাবে কোনো শিশুর মেধা যেন অঙ্কুরেই বিনষ্ট না হয়, সেজন্য মৌলিক সাক্ষরতা ও নৈতিক শিক্ষার আলো ঘরে ঘরে পৌঁছানো।
+              </p>
+              <ul class="sdg-initiatives-list">
+                <li>🎒 <strong>মুক্ত সন্ধ্যা পাঠশালা:</strong> পথশিশু ও পিছিয়ে পড়া বস্তির শিশুদের সম্পূর্ণ বিনামূল্যে পাঠদান।</li>
+                <li>💻 <strong>ডিজিটাল লিটারেসি ক্যাম্প:</strong> সুবিধাবঞ্চিত কিশোরদের জন্য ফ্রি কম্পিউটার ও ইন্টারনেট প্রশিক্ষণ।</li>
+              </ul>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg4')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+            </div>
+          </div>
+
+          <!-- SDG 10 -->
+          <div class="sdg-card">
+            <div class="sdg-top-stripe" style="background: var(--sdg-10);"></div>
+            <div class="sdg-card-body">
+              <div class="sdg-badge-row">
+                <span class="sdg-number-badge" style="background: var(--sdg-10);">SDG 10</span>
+                <span style="font-size: 1.5rem;">⚖️</span>
+              </div>
+              <h4 class="sdg-card-title">সামাজিক অসমতা ও বৈষম্য হ্রাস</h4>
+              <span class="sdg-official-tag">UN Target: Reduced Inequalities</span>
+              <p class="sdg-desc">
+                শ্রেণি, পেশা বা আর্থিক অস্বচ্ছলতার কারণে সমাজে পিছিয়ে থাকা জনগোষ্ঠীর জীবনমান উন্নয়নে তরুণদের সামাজিক সম্পৃক্ততা।
+              </p>
+              <ul class="sdg-initiatives-list">
+                <li>📚 <strong>বুক আড্ডা ও মুক্ত বই বিনিময়:</strong> সবার জন্য বিনামূল্যে জ্ঞানচর্চার উন্মুক্ত প্ল্যাটফর্ম।</li>
+                <li>🤝 <strong>শিক্ষা কিট সহায়তা:</strong> চরম দরিদ্র পরিবারের শিশুদের মাঝে খাতা-কলম ও স্কুল ব্যাগ সরবরাহ।</li>
+              </ul>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg10')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+            </div>
+          </div>
+
+          <!-- SDG 11 -->
+          <div class="sdg-card">
+            <div class="sdg-top-stripe" style="background: var(--sdg-11);"></div>
+            <div class="sdg-card-body">
+              <div class="sdg-badge-row">
+                <span class="sdg-number-badge" style="background: var(--sdg-11);">SDG 11</span>
+                <span style="font-size: 1.5rem;">🏙️</span>
+              </div>
+              <h4 class="sdg-card-title">টেকসই ও মানবিক নগর সম্প্রদায়</h4>
+              <span class="sdg-official-tag">UN Target: Sustainable Cities & Communities</span>
+              <p class="sdg-desc">
+                একটি সুস্থ, পরিচ্ছন্ন ও নিরাপদ শহর গঠনে মানুষ ও রাস্তার অবলা প্রাণীর মধ্যে পারস্পরিক সহাবস্থান এবং জননিরাপত্তা তৈরি।
+              </p>
+              <ul class="sdg-initiatives-list">
+                <li>💉 <strong>অ্যান্টি-রেবিজ ভ্যাক্সিনেশন:</strong> পথকুকুরদের জলাতঙ্ক টিকা দিয়ে সাধারণ নাগরিক নিরাপত্তা বাড়ানো।</li>
+                <li>🚑 <strong>সড়ক দুর্ঘটনা রেসকিউ:</strong> আহত ও অসুস্থ পথপ্রাণীদের দ্রুত উদ্ধার ও ভেটেরিনারি সেবা।</li>
+              </ul>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg11')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+            </div>
+          </div>
+
+          <!-- SDG 15 -->
+          <div class="sdg-card">
+            <div class="sdg-top-stripe" style="background: var(--sdg-15);"></div>
+            <div class="sdg-card-body">
+              <div class="sdg-badge-row">
+                <span class="sdg-number-badge" style="background: var(--sdg-15);">SDG 15</span>
+                <span style="font-size: 1.5rem;">🐾</span>
+              </div>
+              <h4 class="sdg-card-title">ডাঙার বাস্তুতন্ত্র ও প্রাণী অধিকার</h4>
+              <span class="sdg-official-tag">UN Target: Life on Land & Animal Welfare</span>
+              <p class="sdg-desc">
+                প্রকৃতি ও নগর বাস্তুতন্ত্রের ভারসাম্য বজায় রাখতে রাস্তার অবলা জীবের অধিকার রক্ষা এবং প্রাণীর প্রতি নিষ্ঠুরতা প্রতিরোধ।
+              </p>
+              <ul class="sdg-initiatives-list">
+                <li>🍲 <strong>দৈনিক স্ট্রিট ফিডিং ড্রাইভ:</strong> শহরের বিভিন্ন পয়েন্টে পুষ্টিকর খাদ্য সরবরাহ।</li>
+                <li>🏡 <strong>পুনর্বাসন ও দত্তক ক্যাম্পেইন:</strong> অঙ্গহীন বা বিপদাপন্ন প্রাণীদের স্থায়ী আশ্রয় ও অ্যাডপশন।</li>
+              </ul>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg15')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+            </div>
+          </div>
+
+          <!-- SDG 17 -->
+          <div class="sdg-card">
+            <div class="sdg-top-stripe" style="background: var(--sdg-17);"></div>
+            <div class="sdg-card-body">
+              <div class="sdg-badge-row">
+                <span class="sdg-number-badge" style="background: var(--sdg-17);">SDG 17</span>
+                <span style="font-size: 1.5rem;">🌐</span>
+              </div>
+              <h4 class="sdg-card-title">লক্ষ্য অর্জনে অংশীদারিত্ব</h4>
+              <span class="sdg-official-tag">UN Target: Partnerships for the Goals</span>
+              <p class="sdg-desc">
+                কোনো একক প্রতিষ্ঠানের পক্ষে পরিবর্তন সম্ভব নয়। তাই তৃণমূল তরুণ, সাধারণ নাগরিক ও যুব প্ল্যাটফর্মের মধ্যে যোগসূত্র তৈরি।
+              </p>
+              <ul class="sdg-initiatives-list">
+                <li>🤝 <strong>তারুণ্যের নেটওয়ার্ক:</strong> কলেজ-বিশ্ববিদ্যালয়ের শিক্ষার্থীদের সামাজিক কাজে যুক্ত করা।</li>
+                <li>📲 <strong>ডিজিটাল সমন্বয়:</strong> সোশ্যাল মিডিয়া ও হোয়াটসঅ্যাপের মাধ্যমে দ্রুত স্বেচ্ছাসেবী পরিচালনা।</li>
+              </ul>
+              <button class="sdg-detail-btn" onclick="openSdgModal('sdg17')">বিস্তারিত রোডম্যাপ দেখুন ➜</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABOUT US -->
+    <section class="section section-white" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">আমাদের গল্প ও মিশন</span>
+          <h2 class="section-title">আমরা কেন এই প্ল্যাটফর্ম শুরু করলাম?</h2>
+          <p class="section-subtitle">কথা নয়, সরাসরি কাজের মাধ্যমে সমাজকে একটু সংবেদনশীল করে গড়ে তোলার নতুন সূচনা।</p>
+        </div>
+
+        <div class="about-layout">
+          <div>
+            <h3 style="font-size: 1.6rem; color: var(--primary); margin-bottom: 1rem;">আমরা নতুন, কিন্তু আমাদের সংকল্প অটুট</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.1rem;">
+              <strong>মুক্ত স্বাধীন সোসাইটি (Mukto Swadhin Society)</strong> একটি উদ্যমী ও আধুনিক সামাজিক স্টার্টআপ। বর্তমান সমাজে তরুণদের মানসিক স্বাস্থ্য, পিছিয়ে পড়া শিশুদের মৌলিক শিক্ষা, মুমূর্ষু রোগীর রক্তের সংকট এবং অবলা পথপ্রাণীদের অসহায়ত্ব দেখে আমরা একদল তরুণ একতাবদ্ধ হয়েছি।
+            </p>
+            <p style="color: var(--text-muted);">
+              আমাদের দীর্ঘদিনের কোনো আমলাতান্ত্রিক জটিলতা নেই, নেই কোনো রাজনীতি। আমাদের আসল শক্তি হলো তারুণ্যের সততা, উদ্যম এবং প্রযুক্তি ব্যবহার করে দ্রুত আর্তপীড়িতদের পাশে দাঁড়ানোর স্পৃহা।
+            </p>
+            <div class="about-pills">
+              <div class="about-pill-item">
+                <h4>🤝 সহমর্মিতা ও লিসেনিং</h4>
+                <p>কাউকে বিচার না করে মনের কথা শোনার নিরাপদ আশ্রয়।</p>
+              </div>
+              <div class="about-pill-item">
+                <h4>⚡ দ্রুত রক্তের নেটওয়ার্ক</h4>
+                <p>হোয়াটসঅ্যাপ ও ডেটাবেসের মাধ্যমে দ্রুত দাতার সংযোগ।</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--card-shadow);">
+            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&auto=format&fit=crop&q=80" alt="ভলান্টিয়ার টিম" style="width: 100%; height: 400px;" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MENTAL HEALTH -->
+    <section class="section section-light" id="mental-health">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">মনের যত্ন (SDG 3)</span>
+          <h2 class="section-title">মানসিক স্বাস্থ্য ও কাউন্সেলিং সহায়তা</h2>
+          <p class="section-subtitle">মন খারাপ থাকা কোনো অপরাধ নয়। আপনার কথা শোনার জন্য আমরা সবসময় প্রস্তুত।</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=80" alt="লিসেনিং সেশন" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>সহানুভূতিশীল লিসেনিং ডেস্ক</h3>
+              <p>কোনো প্রকার চার্জ ছাড়াই সম্পূর্ণ গোপনীয়তায় মনের না-বলা কথা ও একাকীত্ব ভাগ করে নেওয়ার নিরাপদ ব্যবস্থা।</p>
+              <a href="#contact" class="btn btn-outline">সেশন বুক করুন</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop&q=80" alt="কর্মশালা" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>স্ট্রেস ও ক্যারিয়ার হতাশা মুক্তি</h3>
+              <p>শিক্ষার্থী ও তরুণদের জন্য পড়াশোনা, ক্যারিয়ারের চাপ ও বিষণ্নতা কাটানোর নিয়মিত দিকনির্দেশনা ও সেমিনার।</p>
+              <a href="#contact" class="btn btn-outline">ক্যাম্পে অংশ নিন</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop&q=80" alt="মাইন্ডফুলনেস" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>মাইন্ডফুলনেস ও মেডিটেশন</h3>
+              <p>উদ্বেগ নিয়ন্ত্রণ ও মনের ভারসাম্য বজায় রাখতে সহজ মেডিটেশন ও ব্রিদিং টেকনিক শেখার ফ্রি ক্লাস।</p>
+              <a href="#contact" class="btn btn-outline">বিস্তারিত জানুন</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="helpline-box">
+          <div class="helpline-info">
+            <h3>আপনি কি মানসিকভাবে ভেঙে পড়েছেন?</h3>
+            <p>লজ্জা বা ভয় না পেয়ে নিঃসংকোচে সরাসরি হোয়াটসঅ্যাপে কথা বলুন আমাদের ভলান্টিয়ারের সাথে।</p>
+          </div>
+          <a href="https://wa.me/8801405319335?text=আসসালামু%20আলাইকুম,%20মানসিক%20স্বাস্থ্য%20কাউন্সেলিং%20বিষয়ে%20কথা%20বলতে%20চাই।" target="_blank" class="helpline-call">
+            💬 ০১৪০৫৩১৯৩৩৫ (হোয়াটসঅ্যাপ সহায়তা)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. EDUCATION SUPPORT -->
+    <section class="section section-white" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">আলোর দিশা (SDG 4)</span>
+          <h2 class="section-title">শিক্ষা সহায়তা ও মেধার বিকাশ</h2>
+          <p class="section-subtitle">অর্থের অভাবে কোনো শিশুর মেধা যেন অঙ্কুরেই ঝরে না পড়ে, সেটাই আমাদের সংকল্প।</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80" alt="ফ্রি পাঠশালা" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>মুক্ত শিক্ষালয় (সন্ধ্যা পাঠশালা)</h3>
+              <p>বঞ্চিত ও পথশিশুদের জন্য নিয়মিত বর্ণমালা শিক্ষা, গণিত, ইংরেজি ও মৌলিক নীতিশিক্ষা কার্যক্রম।</p>
+              <div style="font-size: 0.85rem; font-weight: 600; color: var(--primary-accent);">✔ প্রাথমিক টার্গেট: ৩০০+ শিশু</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&auto=format&fit=crop&q=80" alt="শিক্ষা উপকরণ বিতরণ" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>শিক্ষা উপকরণ বিতরণ ড্রাইভ</h3>
+              <p>নতুন শিক্ষাবর্ষে পিছিয়ে পড়া শিক্ষার্থীদের মাঝে খাতা, কলম, জ্যামিতি বক্স ও স্কুল ব্যাগ বিতরণ।</p>
+              <div style="font-size: 0.85rem; font-weight: 600; color: var(--primary-accent);">✔ বাৎসরিক কিট বিতরণ লক্ষ্য</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&auto=format&fit=crop&q=80" alt="কম্পিউটার শিক্ষা" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>ডিজিটাল সাক্ষরতা ক্যাম্প</h3>
+              <p>কিশোর-কিশোরীদের ফ্রিতে কম্পিউটার চালনা, ইন্টারনেট ব্রাউজিং এবং নিরাপদ প্রযুক্তির ব্যবহার শেখানো।</p>
+              <div style="font-size: 0.85rem; font-weight: 600; color: var(--primary-accent);">✔ আধুনিক স্কিল ট্রেইনিং</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. BLOOD DONOR NETWORK -->
+    <section class="section section-light" id="blood-network">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-blood">🩸 জরুরি রক্তের সন্ধানে</span>
+          <h2 class="section-title">ফ্রি ব্লাড ডোনার নেটওয়ার্ক</h2>
+          <p class="section-subtitle">আপনার এক ব্যাগ রক্ত বাঁচাতে পারে একটি মুমূর্ষু প্রাণ। কোনো প্রকার অর্থ লেনদেন ছাড়াই রক্তদাতার সন্ধান নিন।</p>
+        </div>
+
+        <div class="blood-filter-box">
+          <div class="filter-grid">
+            <div>
+              <label style="font-size: 0.85rem; font-weight: 600;">রক্তের গ্রুপ বাছাই করুন</label>
+              <select id="blood-filter" class="form-ctrl">
+                <option value="ALL">সকল গ্রুপের রক্ত</option>
+                <option value="A+">A+ (পজিটিভ)</option>
+                <option value="A-">A- (নেগেটিভ)</option>
+                <option value="B+">B+ (পজিটিভ)</option>
+                <option value="B-">B- (নেগেটিভ)</option>
+                <option value="O+">O+ (পজিটিভ)</option>
+                <option value="O-">O- (নেগেটিভ)</option>
+                <option value="AB+">AB+ (পজিটিভ)</option>
+                <option value="AB-">AB- (নেগেটিভ)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.85rem; font-weight: 600;">এলাকা / বিভাগ</label>
+              <select id="area-filter" class="form-ctrl">
+                <option value="ALL">সকল অঞ্চল</option>
+                <option value="ঢাকা">ঢাকা</option>
+                <option value="চট্টগ্রাম">চট্টগ্রাম</option>
+                <option value="রাজশাহী">রাজশাহী</option>
+                <option value="সিলেট">সিলেট</option>
+              </select>
+            </div>
+
+            <div>
+              <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20আবেদন%20করতে%20চাই।" target="_blank" class="btn btn-blood" style="width: 100%;">
+                রক্তের জন্য হোয়াটসঅ্যাপ করুন
+              </a>
+            </div>
+
+            <div>
+              <a href="#volunteer" class="btn btn-outline" style="width: 100%;">রক্তদাতা হন</a>
+            </div>
+          </div>
+
+          <div class="donors-grid" id="donors-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ANIMAL WELFARE -->
+    <section class="section section-white" id="animal-welfare">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">প্রতিটি প্রাণের অধিকার (SDG 15)</span>
+          <h2 class="section-title">প্রাণী কল্যাণ ও অবলা জীবের সেবা</h2>
+          <p class="section-subtitle">শহরের রাস্তার অবলা কুকুর ও বিড়ালগুলোর জন্য নিয়মিত খাবার এবং প্রাথমিক চিকিৎসা সেবা।</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=600&auto=format&fit=crop&q=80" alt="পথপ্রাণীদের খাবার" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>দৈনিক স্ট্রিট ফিডিং ক্যাম্প</h3>
+              <p>প্রতিদিন শহরের বিভিন্ন মোড়ে অসহায় পথকুকুর ও বিড়ালের জন্য স্বাস্থ্যসম্মত ও পুষ্টিকর খাবারের ব্যবস্থা।</p>
+              <a href="https://wa.me/8801405319335?text=আমি%20পথপ্রাণীদের%20খাবারে%20সহায়তা%20করতে%20চাই।" target="_blank" class="btn btn-outline">খাবারের স্পন্সর হন</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80" alt="আহত প্রাণী উদ্ধার" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>দুর্ঘটনায় আহত প্রাণী উদ্ধার</h3>
+              <p>গাড়ির ধাক্কায় বা চর্মরোগে আক্রান্ত রাস্তার প্রাণীদের দ্রুত ফার্স্ট এইড ও ভেটেরিনারি ক্লিনিকে চিকিৎসা প্রদান।</p>
+              <a href="https://wa.me/8801405319335?text=একটি%20আহত%20প্রাণীর%20সন্ধান%20দিতে%20চাই।" target="_blank" class="btn btn-outline">আহত প্রাণীর খবর দিন</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80" alt="ভ্যাকসিন প্রদান" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <h3>জলাতঙ্ক প্রতিরোধ ও ভ্যাকসিন</h3>
+              <p>জননিরাপত্তা নিশ্চিত করতে ও প্রাণীদের ভালো রাখতে ফ্রি অ্যান্টি-রেবিজ (জলাতঙ্ক) টিকাদান ক্যাম্পেইন।</p>
+              <a href="#volunteer" class="btn btn-outline">ক্যাম্পে যুক্ত হন</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. TEAM -->
+    <section class="section section-light" id="committee">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">তারুণ্যের নেতৃত্ব</span>
+          <h2 class="section-title">ফাউন্ডার টিম ও পরিচালকমণ্ডলী</h2>
+          <p class="section-subtitle">আমাদের এই সামাজিক স্টার্টআপকে এগিয়ে নিয়ে যাওয়ার নিবেদিতপ্রাণ স্বপ্নদ্রষ্টা তরুণরা।</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80" alt="সভাপতি" referrerpolicy="no-referrer"></div>
+            <div class="member-info">
+              <h3 class="member-name">তানজিলা শারমিন</h3>
+              <span class="member-role">প্রতিষ্ঠাতা ও সভাপতি</span>
+              <p class="member-desc">মানসিক স্বাস্থ্য ও শিক্ষা বিস্তার নিয়ে দীর্ঘদিন ধরে কাজ করছেন।</p>
+              <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80" alt="সাধারণ সম্পাদক" referrerpolicy="no-referrer"></div>
+            <div class="member-info">
+              <h3 class="member-name">আরিফুল ইসলাম</h3>
+              <span class="member-role">সহ-প্রতিষ্ঠাতা ও সেক্রেটারি</span>
+              <p class="member-desc">মাঠপর্যায়ের অপারেশন ও ভলান্টিয়ার নেটওয়ার্ক লিড করছেন।</p>
+              <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=500&auto=format&fit=crop&q=80" alt="স্বাস্থ্য সমন্বয়ক" referrerpolicy="no-referrer"></div>
+            <div class="member-info">
+              <h3 class="member-name">ডাঃ ফারজানা মেহনাজ</h3>
+              <span class="member-role">স্বাস্থ্য ও রক্তদান প্রধান</span>
+              <p class="member-desc">ফ্রি ব্লাড ডোনার ডেটাবেস ও জরুরি মেডিকেল রেসপন্স তত্ত্বাবধায়ক।</p>
+              <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=80" alt="প্রাণী কল্যাণ সমন্বয়ক" referrerpolicy="no-referrer"></div>
+            <div class="member-info">
+              <h3 class="member-name">মাহমুদুর রহমান</h3>
+              <span class="member-role">প্রাণী কল্যাণ সমন্বয়ক</span>
+              <p class="member-desc">আহত পশু রেসকিউ ও ফিডিং টিমের প্রধান সমন্বয়ক।</p>
+              <div class="member-contact"><a href="https://wa.me/8801405319335" target="_blank" class="member-btn">হোয়াটসঅ্যাপ</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. BLOG PREVIEW -->
+    <section class="section section-white" id="blog-preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">মাঠপর্যায়ের গল্প</span>
+          <h2 class="section-title">আমাদের কার্যক্রম ও ফিল্ড স্টোরি</h2>
+          <p class="section-subtitle">আমাদের স্বেচ্ছাসেবী টিমের নিয়মিত কাজের অগ্রগতি ও মানবিক অভিজ্ঞতার ইতিবৃত্ত পড়ুন।</p>
+        </div>
+
+        <div class="grid-3" id="homeBlogPreview"></div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <button type="button" class="btn btn-primary" onclick="switchPage('blog')" style="font-size: 1.05rem; padding: 1rem 2.5rem;">
+            📚 আমাদের সবগুলো ব্লগ ও ফিল্ড স্টোরি পড়ুন ➜
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-light" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">সাধারণ জিজ্ঞাসা</span>
+          <h2 class="section-title">সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)</h2>
+          <p class="section-subtitle">আমাদের সংগঠন সম্পর্কে কিছু স্পষ্ট উত্তর।</p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item open">
+            <div class="faq-question">
+              <span>মুক্ত স্বাধীন সোসাইটি কীভাবে কাজ করে?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              আমরা একটি অরাজনৈতিক সামাজিক প্ল্যাটফর্ম। রক্তদান, শিশুদের শিক্ষা, মানসিক স্বাস্থ্য লিসেনিং ও পথপ্রাণী সেবায় আমরা তরুণদের স্বেচ্ছাসেবী টিম নিয়ে সরাসরি মাঠপর্যায়ে কাজ করি।
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>আমি কীভাবে ভলান্টিয়ার হতে পারি?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              আমাদের ওয়েবসাইটের "স্বেচ্ছাসেবী" ফর্মটি পূরণ করুন অথবা সরাসরি হোয়াটসঅ্যাপে মেসেজ দিয়ে জানান। আমাদের টিম যোগাযোগ করবে।
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>রক্তদান বা সেবার জন্য কি কোনো ফি দিতে হয়?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              না, আমাদের সব সেবা সম্পূর্ণ বিনামূল্যে প্রদান করা হয়। কোনো প্রকার আর্থিক লেনদেন ছাড়া নিঃস্বার্থ সেবাই আমাদের ব্রত।
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="social-section">
+      <div class="container">
+        <span class="badge" style="background: rgba(255,255,255,0.15); color: #fff;">কানেক্টেড থাকুন</span>
+        <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem;">আমাদের সোশ্যাল মিডিয়ায় যুক্ত হোন</h2>
+        <div class="social-grid">
+          <a href="https://facebook.com" target="_blank" class="social-btn btn-fb">Facebook</a>
+          <a href="https://wa.me/8801405319335" target="_blank" class="social-btn btn-wa-channel">WhatsApp (০১৪০৫৩১৯৩৩৫)</a>
+          <a href="https://youtube.com" target="_blank" class="social-btn btn-yt">YouTube</a>
+          <a href="https://instagram.com" target="_blank" class="social-btn btn-insta">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER REGISTRATION -->
+    <section class="section section-white" id="volunteer">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">তারুণ্যের শক্তি</span>
+          <h2 class="section-title">স্বেচ্ছাসেবী হিসেবে যোগ দিন</h2>
+          <p class="section-subtitle">আমাদের নতুন এই সামাজিক প্ল্যাটফর্মের পরিবর্তনের অংশীদার হোন।</p>
+        </div>
+
+        <div class="form-card">
+          <form id="volunteerForm">
+            <!-- Web3Forms Key -->
+            <input type="hidden" name="access_key" value="99c119c4-1392-48c3-a6d8-196289dabb17">
+            <input type="hidden" name="subject" value="নতুন স্বেচ্ছাসেবী আবেদন - মুক্ত স্বাধীন সোসাইটি">
+
+            <div class="input-row-2">
+              <div class="form-field">
+                <label for="vol-name">আপনার পূর্ণ নাম *</label>
+                <input type="text" id="vol-name" name="vol_name" class="form-ctrl" placeholder="যেমন: তানভীর হাসান" required>
+              </div>
+              <div class="form-field">
+                <label for="vol-phone">মোবাইল বা হোয়াটসঅ্যাপ নম্বর *</label>
+                <input type="tel" id="vol-phone" name="vol_phone" class="form-ctrl" placeholder="০১XXXXXXXXX" required>
+              </div>
+            </div>
+
+            <div class="input-row-2">
+              <div class="form-field">
+                <label for="vol-email">ইমেইল অ্যাড্রেস *</label>
+                <input type="email" id="vol-email" name="vol_email" class="form-ctrl" placeholder="name@domain.com" required>
+              </div>
+              <div class="form-field">
+                <label for="vol-blood">রক্তের গ্রুপ</label>
+                <select id="vol-blood" name="vol_blood" class="form-ctrl">
+                  <option value="উল্লেখ করা হয়নি">নির্বাচন করুন</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" id="vol-submit-btn" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+              নিবন্ধন সম্পন্ন করুন (ইমেইলে পাঠান)
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="section section-light" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">বার্তা পাঠান</span>
+          <h2 class="section-title">আমাদের সাথে সরাসরি যোগাযোগ</h2>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info-card">
+            <h3 style="font-size: 1.65rem; margin-bottom: 0.5rem;">মুক্ত স্বাধীন সোসাইটি</h3>
+            <p style="color: #cbd5e1; font-size: 0.95rem;">আমরা সবসময় মানুষের পাশে থাকার প্রতিশ্রুতিতে বিশ্বাসী।</p>
+            <div class="contact-list">
+              <div class="contact-list-item">
+                <span>📍</span>
+                <p>হাউজ নং ১২, রোড ৩, যুব সরণি, ধানমন্ডি, ঢাকা</p>
+              </div>
+              <div class="contact-list-item">
+                <span>📞</span>
+                <p><a href="tel:01405319335" style="color:#fff; font-weight:700;">০১৪০৫৩১৯৩৩৫</a></p>
+              </div>
+            </div>
+            <a href="https://wa.me/8801405319335" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              💬 হোয়াটসঅ্যাপে সরাসরি মেসেজ দিন
+            </a>
+          </div>
+
+          <div style="background: #fff; padding: 2.8rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+            <form id="contactForm">
+              <input type="hidden" name="access_key" value="99c119c4-1392-48c3-a6d8-196289dabb17">
+              <input type="hidden" name="subject" value="মুক্ত স্বাধীন সোসাইটি - নতুন বার্তা এসেছে!">
+
+              <div class="form-field">
+                <label for="contact-name">আপনার নাম *</label>
+                <input type="text" id="contact-name" name="name" class="form-ctrl" required placeholder="পূর্ণ নাম">
+              </div>
+
+              <div class="form-field">
+                <label for="contact-email">ইমেইল অথবা মোবাইল নম্বর *</label>
+                <input type="text" id="contact-email" name="contact_info" class="form-ctrl" required placeholder="যোগাযোগের নম্বর">
+              </div>
+
+              <div class="form-field">
+                <label for="contact-msg">আপনার বার্তা লিখুন *</label>
+                <textarea id="contact-msg" name="message" rows="4" class="form-ctrl" required placeholder="কীভাবে সাহায্য করতে পারি?"></textarea>
+              </div>
+
+              <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width: 100%;">
+                ✉️ ইমেইলে মেসেজ পাঠান
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==========================================================
+       VIEW B: DEDICATED FULL BLOG PAGE
+  ========================================================== -->
+  <div id="blog-full-view">
+    <div class="container">
+      <div style="margin-bottom: 2rem;">
+        <button type="button" class="btn btn-outline" onclick="switchPage('home')">
+          ← মূল হোমপেজে ফিরে যান
+        </button>
+      </div>
+
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <span class="badge">📖 সকল গল্প ও রিপোর্ট</span>
+        <h1 class="section-title">মুক্ত স্বাধীন ব্লগ পোর্টাল</h1>
+        <p class="section-subtitle">শিক্ষা সহায়তা, জরুরি রক্তদান, মানসিক স্বাস্থ্য ও প্রাণী কল্যাণের গল্পসমূহ পড়ুন।</p>
+      </div>
+
+      <div class="blog-controls-box">
+        <input type="text" id="blogSearchInput" class="search-input-field" placeholder="🔍 যেকোনো বিষয় লিখে সার্চ করুন (যেমন: রক্তদান, শিক্ষা...)" />
+        <div class="category-pills-row">
+          <button class="cat-pill-btn active" onclick="filterBlogCategory('ALL', this)">সবগুলো</button>
+          <button class="cat-pill-btn" onclick="filterBlogCategory('শিক্ষা', this)">শিক্ষা সহায়তা</button>
+          <button class="cat-pill-btn" onclick="filterBlogCategory('রক্তদান', this)">রক্তদান</button>
+          <button class="cat-pill-btn" onclick="filterBlogCategory('মানসিক স্বাস্থ্য', this)">মানসিক স্বাস্থ্য</button>
+          <button class="cat-pill-btn" onclick="filterBlogCategory('প্রাণী কল্যাণ', this)">প্রাণী কল্যাণ</button>
+          <button class="cat-pill-btn" onclick="filterBlogCategory('বুক আড্ডা', this)">বুক আড্ডা</button>
+        </div>
+      </div>
+
+      <div class="grid-3" id="allBlogGrid"></div>
+    </div>
+  </div>
+
+  <!-- SDG বিস্তারিত রোডম্যাপ মোডাল -->
+  <div class="custom-modal-overlay" id="sdgModal">
+    <div class="custom-modal-box">
+      <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeSdgModal()">&times;</button>
+      <div id="sdgModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ব্লগ রিডিং মোডাল -->
+  <div class="custom-modal-overlay" id="articleModal">
+    <div class="custom-modal-box">
+      <button style="position: absolute; top: 1.2rem; right: 1.2rem; border: none; background: #e2e8f0; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;" onclick="closeModal()">&times;</button>
+      <img src="" id="modalImg" style="width: 100%; height: 280px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" alt="ফটো">
+      <span id="modalCat" style="background: rgba(21,128,61,0.1); color: var(--primary-accent); padding: 0.2rem 0.8rem; border-radius: 20px; font-weight: 700; font-size: 0.8rem;"></span>
+      <h2 id="modalTitle" style="color: var(--primary); font-size: 1.6rem; margin: 0.8rem 0;"></h2>
+      <div id="modalMeta" style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;"></div>
+      <div id="modalText" style="line-height: 1.8; color: var(--text-main); font-size: 1rem; margin-bottom: 2rem;"></div>
+      <a id="modalWaShare" target="_blank" class="btn btn-whatsapp">💬 হোয়াটসঅ্যাপে শেয়ার করুন</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="color: #fff;">মুক্ত স্বাধীন সোসাইটি</h4>
+          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+            মানসিক স্বাস্থ্য, শিক্ষা, প্রাণী কল্যাণ ও তারুণ্যের শক্তিতে জাতিসংঘের টেকসই উন্নয়ন অভীষ্ট বাস্তবায়নে নিবেদিত প্ল্যাটফর্ম।
+          </p>
+          <span style="font-size: 0.8rem; color: #a5d6b7;">হটলাইন / হোয়াটসঅ্যাপ: ০১৪০৫৩১৯৩৩৫</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>প্রধান কাজসমূহ</h4>
+          <ul>
+            <li><a href="#mental-health" onclick="switchPage('home')">মানসিক স্বাস্থ্য (SDG 3)</a></li>
+            <li><a href="#education" onclick="switchPage('home')">শিক্ষা সহায়তা (SDG 4)</a></li>
+            <li><a href="#blood-network" onclick="switchPage('home')">ব্লাড ডোনেশন নেটওয়ার্ক</a></li>
+            <li><a href="#animal-welfare" onclick="switchPage('home')">প্রাণী কল্যাণ (SDG 15)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>গুরুত্বপূর্ণ লিংক</h4>
+          <ul>
+            <li><a href="#sdg-goals" onclick="switchPage('home')">UN SDGs লক্ষ্যমাত্রা</a></li>
+            <li><a href="#about" onclick="switchPage('home')">আমাদের কথা</a></li>
+            <li><a onclick="switchPage('blog')">ব্লগ ও ফিল্ড স্টোরি</a></li>
+            <li><a href="#volunteer" onclick="switchPage('home')">স্বেচ্ছাসেবী ফর্ম</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>সরাসরি যোগাযোগ</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 0.8rem;">হোয়াটসঅ্যাপে যেকোনো সময় যুক্ত হতে ক্লিক করুন।</p>
+          <a href="https://wa.me/8801405319335" target="_blank" class="btn btn-whatsapp" style="width: 100%;">হোয়াটসঅ্যাপ চ্যাট</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> <strong>Mukto Swadhin Society (Independent Youth Platform)</strong>. সর্বস্বত্ব সংরক্ষিত।</div>
+        <div>UN SDG Aligned ও ১০০% রেসপনসিভ সিঙ্গেল ফাইল প্ল্যাটফর্ম।</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP POPUP -->
+  <button class="wa-floating-btn" id="wa-toggle-btn" aria-label="Open WhatsApp">💬</button>
+
+  <div class="wa-direct-box" id="wa-direct-box">
+    <div class="wa-box-header">
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <span style="font-size: 1.4rem;">🟢</span>
+        <div>
+          <h4 style="font-size: 0.95rem;">মুক্ত স্বাধীন সোসাইটি</h4>
+          <span style="font-size: 0.72rem; color: #bbf7d0;">অনলাইন · ০১৪০৫৩১৯৩৩৫</span>
+        </div>
+      </div>
+      <button style="background:none; border:none; color:#fff; font-size:1.4rem; cursor:pointer;" id="wa-close-btn">&times;</button>
+    </div>
+    <div class="wa-box-body">
+      <div class="wa-quick-btns">
+        <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20সন্ধান" target="_blank" class="wa-quick-btn">🩸 জরুরি রক্তের সন্ধান ➜</a>
+        <a href="https://wa.me/8801405319335?text=মানসিক%20স্বাস্থ্য%20কাউন্সেলিং" target="_blank" class="wa-quick-btn">🧠 মানসিক স্বাস্থ্য সহায়তা ➜</a>
+        <a href="https://wa.me/8801405319335?text=ভলান্টিয়ার%20হতে%20চাই" target="_blank" class="wa-quick-btn">🤝 ভলান্টিয়ার হতে চাই ➜</a>
+      </div>
+      <div class="wa-direct-form">
+        <textarea id="wa-custom-msg" rows="3" placeholder="এখানে মেসেজ লিখুন..."></textarea>
+        <button type="button" id="wa-send-direct-btn" class="btn btn-whatsapp" style="width:100%; border-radius:6px; font-size:0.9rem;">হোয়াটসঅ্যাপে পাঠান 💬</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // প্রগ্রেস বার
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if(height > 0) {
+        document.getElementById('scrollBar').style.width = ((winScroll / height) * 100) + '%';
+      }
+    });
+
+    // জাতিসংঘ এসডিজি বিস্তারিত ডেটা
+    const sdgDetails = {
+      sdg3: {
+        number: "SDG 03",
+        title: "সুস্বাস্থ্য ও মানসিক কল্যাণ (Good Health & Well-being)",
+        color: "#4c9f38",
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> সকলের জন্য সুস্থ জীবন নিশ্চিত করা ও সব বয়সের মানুষের সার্বিক কল্যাণ বাড়ানো।<br><br>
+        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
+        • <strong>২৪/৭ ফ্রি ব্লাড ডোনার ডেটাবেস:</strong> রক্তের অভাবে যেন কোনো রোগীর জীবন বিপন্ন না হয়, সেজন্য স্বেচ্ছাসেবী রক্তদাতাদের নেটওয়ার্ক পরিচালনা।<br>
+        • <strong>মানসিক স্বাস্থ্য ও লিসেনিং ডেস্ক:</strong> তরুণ ও শিক্ষার্থীদের হতাশা, ক্যারিয়ার চাপ ও বিষণ্নতা দূর করতে অভিজ্ঞ মনোবিজ্ঞানীদের তত্ত্বাবধানে বিনামূল্যে কাউন্সেলিং।<br>
+        • <strong>২০৩০ লক্ষ্যমাত্রা:</strong> প্রতি বছর ন্যূনতম ২,৫০০ ইউনিট জরুরি রক্তের ব্যবস্থা এবং ৫,০০০ তরুণকে মানসিক প্রশান্তির সহায়তা দেওয়া।`
+      },
+      sdg4: {
+        number: "SDG 04",
+        title: "অন্তর্ভুক্তিমূলক ও মানসম্মত শিক্ষা (Quality Education)",
+        color: "#c5192d",
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> অন্তর্ভুক্তিমূলক ও সমতাভিত্তিক মানসম্মত শিক্ষা নিশ্চিত করা এবং জীবনব্যাপী শিক্ষার সুযোগ সৃষ্টি।<br><br>
+        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
+        • <strong>মুক্ত সন্ধ্যা পাঠশালা:</strong> বস্তি ও পথশিশুদের জন্য বিনামূল্যে বর্ণমালা, গণিত ও নীতিশিক্ষা পরিচালনা।<br>
+        • <strong>শিক্ষা উপকরণ ড্রাইভ:</strong> খাতা, কলম, জ্যামিতি বক্স ও স্কুলব্যাগ সরবরাহ করে ঝরে পড়া শিশুদের ক্লাসরুমে ফিরিয়ে আনা।<br>
+        • <strong>ডিজিটাল সাক্ষরতা:</strong> ল্যাপটপ ও কম্পিউটারের মাধ্যমে প্রাথমিক প্রযুক্তিগত প্রশিক্ষণ প্রদান।`
+      },
+      sdg10: {
+        number: "SDG 10",
+        title: "সামাজিক অসমতা ও বৈষম্য হ্রাস (Reduced Inequalities)",
+        color: "#dd1367",
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> দেশের অভ্যন্তরীণ সামাজিক, অর্থনৈতিক ও সাংস্কৃতিক বৈষম্য কমিয়ে আনা।<br><br>
+        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
+        • <strong>বুক আড্ডা ও মুক্ত বই বিনিময়:</strong> ধনী-দরিদ্র নির্বিশেষে সবার জন্য মুক্ত জ্ঞানচর্চার সমতাভিত্তিক সুযোগ সৃষ্টি।<br>
+        • <strong>পিছিয়ে পড়া জনগোষ্ঠীর পাশে দাঁড়ানো:</strong> প্রান্তিক এলাকার শিশুদের শিক্ষা ও মেধা বিকাশের পথ সুগম করা।`
+      },
+      sdg11: {
+        number: "SDG 11",
+        title: "টেকসই ও মানবিক নগর সম্প্রদায় (Sustainable Communities)",
+        color: "#fd9d24",
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> মানববসতি ও শহরগুলোকে অন্তর্ভুক্তিমূলক, নিরাপদ, সহনশীল ও টেকসই করে গড়ে তোলা।<br><br>
+        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
+        • <strong>অ্যান্টি-রেবিজ (জলাতঙ্ক) টিকাদান:</strong> শহরের পথকুকুরদের ভ্যাকসিন প্রদান করে জননিরাপত্তা জোরদার করা।<br>
+        • <strong>প্রাণী-মানুষের নিরাপদ সহাবস্থান:</strong> শহরের জীববৈচিত্র্য ও পরিবেশের ভারসাম্য রক্ষায় জনসচেতনতা তৈরি।`
+      },
+      sdg15: {
+        number: "SDG 15",
+        title: "ডাঙার বাস্তুতন্ত্র ও প্রাণী অধিকার (Life on Land)",
+        color: "#56c02b",
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> স্থলজ বাস্তুতন্ত্রের সুরক্ষা, পুনর্বাসন ও টেকসই ব্যবহার নিশ্চিত করা।<br><br>
+        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
+        • <strong>আহত প্রাণী উদ্ধার ও চিকিৎসা:</strong> সড়ক দুর্ঘটনায় আহত পথকুকুর-বিড়ালকে দ্রুত ফার্স্ট এইড ও সার্জারি প্রদান।<br>
+        • <strong>দৈনিক স্ট্রিট ফিডিং ক্যাম্প:</strong> শহরের রাস্তায় অভুক্ত প্রাণীদের স্বাস্থ্যসম্মত খাবার সরবরাহ।`
+      },
+      sdg17: {
+        number: "SDG 17",
+        title: "লক্ষ্য অর্জনে অংশীদারিত্ব (Partnerships for the Goals)",
+        color: "#19486a",
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> টেকসই উন্নয়নের জন্য বৈশ্বিক ও জাতীয় অংশীদারিত্ব পুনরুজ্জীবিত করা।<br><br>
+        <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
+        • <strong>তারুণ্যের নেটওয়ার্কিং:</strong> দেশের বিভিন্ন কলেজ ও বিশ্ববিদ্যালয়ের তরুণ শিক্ষার্থীদের সমাজসেবায় ঐক্যবদ্ধ করা।<br>
+        • <strong>ডিজিটাল যুব প্ল্যাটফর্ম:</strong> প্রযুক্তির মাধ্যমে স্বেচ্ছাসেবা ও নাগরিক সহায়তার কার্যকর মেলবন্ধন তৈরি।`
+      }
+    };
+
+    function openSdgModal(key) {
+      const data = sdgDetails[key];
+      if(!data) return;
+      document.getElementById('sdgModalContent').innerHTML = `
+        <span style="background: ${data.color}; color: #fff; padding: 0.3rem 0.9rem; border-radius: 6px; font-weight: 800; font-size: 0.85rem;">${data.number}</span>
+        <h3 style="color: var(--primary); font-size: 1.6rem; margin: 0.8rem 0 1.2rem;">${data.title}</h3>
+        <div style="line-height: 1.8; color: var(--text-main); font-size: 1rem;">${data.content}</div>
+        <div style="margin-top: 2rem;">
+          <a href="https://wa.me/8801405319335?text=আমি%20SDG%20প্রজেক্টে%20সহায়তা%20করতে%20চাই" target="_blank" class="btn btn-primary">এই লক্ষ্যে আমাদের সাথে কাজ করুন ➜</a>
+        </div>
+      `;
+      document.getElementById('sdgModal').style.display = 'flex';
+    }
+
+    function closeSdgModal() {
+      document.getElementById('sdgModal').style.display = 'none';
+    }
+
+    // ব্লগ ডেটা
+    const blogData = [
+      {
+        id: 0,
+        title: "মিরপুরের বস্তির শিশুদের মাঝে শিক্ষা ও শীতবস্ত্র বিতরণ",
+        category: "শিক্ষা (SDG 4)",
+        date: "১৫ নভেম্বর, ২০২৬",
+        author: "আরিফুল ইসলাম",
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80",
+        excerpt: "দেড় শতাধিক পথশিশুর হাতে তুলে দেওয়া হলো নতুন শিক্ষাবর্ষের উপহার এবং শুরু হলো আনন্দ পাঠশালা...",
+        content: "শীতের এক বিকেলে মিরপুরের বস্তি এলাকায় দেড় শতাধিক শিশুর হাতে স্কুলব্যাগ, খাতা-কলম ও শীতের পোশাক তুলে দেওয়া হয়।"
+      },
+      {
+        id: 1,
+        title: "জরুরি রক্তের সন্ধানে রাত ২টায় দৌড়: বেঁচে গেল এক প্রসূতি মায়ের প্রাণ",
+        category: "রক্তদান (SDG 3)",
+        date: "১২ নভেম্বর, ২০২৬",
+        author: "ডাঃ ফারজানা মেহনাজ",
+        img: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&auto=format&fit=crop&q=80",
+        excerpt: "ঢাকা মেডিকেলে জরুরি বিরল ‘O নেগেটিভ’ রক্তের জন্য আমাদের টিম কীভাবে মাঝরাতে জীবন বাঁচাল...",
+        content: "রাত ২টায় ফোন পেয়ে আমাদের ভলান্টিয়ার তানভীর ভাই ধানমন্ডি থেকে ঢাকা মেডিকেলে গিয়ে রক্ত দেন।"
+      },
+      {
+        id: 2,
+        title: "তরুণদের মানসিক চাপ ও ডিপ্রেশন: না-বলা কথা শোনার লিসেনিং ডেস্ক",
+        category: "মানসিক স্বাস্থ্য",
+        date: "০৮ নভেম্বর, ২০২৬",
+        author: "তানজিলা শারমিন",
+        img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=80",
+        excerpt: "পড়াশোনা ও ক্যারিয়ারের চাপে তরুণদের মানসিক স্বস্তি ফিরিয়ে দিতে কাজ করছে আমাদের লিসেনিং ডেস্ক...",
+        content: "গত এক মাসে ৬০ জনেরও বেশি শিক্ষার্থী আমাদের লিসেনিং ডেস্কে কথা বলে মানসিক স্বস্তি পেয়েছেন।"
+      }
+    ];
+
+    function renderHomeBlogPreview() {
+      const container = document.getElementById('homeBlogPreview');
+      if(!container) return;
+      container.innerHTML = '';
+      blogData.forEach(post => {
+        container.innerHTML += `
+          <div class="card">
+            <div class="card-img-wrap"><img src="${post.img}" alt="${post.title}" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <span style="color:var(--primary-accent); font-weight:700; font-size:0.8rem; margin-bottom:0.4rem;">${post.category}</span>
+              <h3>${post.title}</h3>
+              <p>${post.excerpt}</p>
+              <button type="button" class="btn btn-outline" style="padding:0.4rem 1rem; align-self:flex-start;" onclick="openModal(${post.id})">সম্পূর্ণ পড়ুন ➜</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function renderAllBlogs(data) {
+      const container = document.getElementById('allBlogGrid');
+      if(!container) return;
+      container.innerHTML = '';
+      data.forEach(post => {
+        container.innerHTML += `
+          <div class="card">
+            <div class="card-img-wrap"><img src="${post.img}" alt="${post.title}" referrerpolicy="no-referrer"></div>
+            <div class="card-content">
+              <span style="color:var(--primary-accent); font-weight:700; font-size:0.8rem; margin-bottom:0.4rem;">${post.category} • ${post.date}</span>
+              <h3>${post.title}</h3>
+              <p>${post.excerpt}</p>
+              <button type="button" class="btn btn-outline" style="padding:0.4rem 1rem; align-self:flex-start;" onclick="openModal(${post.id})">সম্পূর্ণ পড়ুন ➜</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function filterBlogCategory(cat, btn) {
+      document.querySelectorAll('.cat-pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if(cat === 'ALL') {
+        renderAllBlogs(blogData);
+      } else {
+        renderAllBlogs(blogData.filter(p => p.category.includes(cat)));
+      }
+    }
+
+    const searchInp = document.getElementById('blogSearchInput');
+    if(searchInp) {
+      searchInp.addEventListener('input', (e) => {
+        const val = e.target.value.toLowerCase().trim();
+        renderAllBlogs(blogData.filter(p => p.title.toLowerCase().includes(val)));
+      });
+    }
+
+    function switchPage(page) {
+      const homeView = document.getElementById('home-view');
+      const blogView = document.getElementById('blog-full-view');
+      if(page === 'blog') {
+        homeView.style.display = 'none';
+        blogView.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        renderAllBlogs(blogData);
+      } else {
+        homeView.style.display = 'block';
+        blogView.style.display = 'none';
+      }
+      document.getElementById('nav-menu').classList.remove('active');
+    }
+
+    function openModal(id) {
+      const post = blogData.find(p => p.id === id);
+      if(!post) return;
+      document.getElementById('modalImg').src = post.img;
+      document.getElementById('modalCat').innerText = post.category;
+      document.getElementById('modalTitle').innerText = post.title;
+      document.getElementById('modalMeta').innerText = `${post.date} • লেখক: ${post.author}`;
+      document.getElementById('modalText').innerText = post.content;
+      document.getElementById('modalWaShare').href = `https://wa.me/?text=${encodeURIComponent(post.title + ' - মুক্ত স্বাধীন সোসাইটি')}`;
+      document.getElementById('articleModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('articleModal').style.display = 'none';
+    }
+
+    // ডোনার তালিকা
+    const donors = [
+      { name: "শাকিল আহমেদ", blood: "A+", area: "ঢাকা", phone: "০১৪০৫৩১৯৩৩৫" },
+      { name: "নুসরাত জাহান", blood: "O+", area: "চট্টগ্রাম", phone: "০১৪০৫৩১৯৩৩৫" },
+      { name: "মাহমুদুল হাসান", blood: "B+", area: "রাজশাহী", phone: "০১৪০৫৩১৯৩৩৫" },
+      { name: "রাকিব চৌধুরী", blood: "AB+", area: "ঢাকা", phone: "০১৪০৫৩১৯৩৩৫" }
+    ];
+
+    function renderDonors() {
+      const bVal = document.getElementById('blood-filter').value;
+      const aVal = document.getElementById('area-filter').value;
+      const list = document.getElementById('donors-list');
+      const filtered = donors.filter(d => (bVal === "ALL" || d.blood === bVal) && (aVal === "ALL" || d.area === aVal));
+      list.innerHTML = "";
+      if(filtered.length === 0) {
+        list.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 1.5rem;">কোনো দাতা পাওয়া যায়নি। সরাসরি হোয়াটসঅ্যাপে জানান।</div>`;
+        return;
+      }
+      filtered.forEach(d => {
+        list.innerHTML += `
+          <div class="donor-badge-card">
+            <div class="donor-blood-type">${d.blood}</div>
+            <div>
+              <h4 style="font-size: 0.95rem;">${d.name}</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">📍 ${d.area} · রক্তদাতা</p>
+              <a href="https://wa.me/8801405319335?text=রক্তের%20প্রয়োজনে%20যোগাযোগ" target="_blank" style="color: var(--primary-accent); font-weight: 600; font-size: 0.85rem;">💬 হোয়াটসঅ্যাপ</a>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    document.getElementById('blood-filter').addEventListener('change', renderDonors);
+    document.getElementById('area-filter').addEventListener('change', renderDonors);
+
+    // FAQ
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+
+    // ফর্ম হ্যান্ডলার
+    function setupForm(formId, btnId, msg) {
+      const form = document.getElementById(formId);
+      const btn = document.getElementById(btnId);
+      if(!form || !btn) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        btn.innerText = "পাঠানো হচ্ছে...";
+        btn.disabled = true;
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+          const data = await res.json();
+          if(data.success) {
+            alert(msg);
+            form.reset();
+          } else {
+            alert("ত্রুটি হয়েছে। হোয়াটসঅ্যাপে মেসেজ দিন।");
+          }
+        } catch(err) {
+          alert("ইন্টারনেট চেক করে আবার চেষ্টা করুন।");
+        } finally {
+          btn.innerText = "সাবমিট সম্পন্ন করুন";
+          btn.disabled = false;
+        }
+      });
+    }
+
+    setupForm('volunteerForm', 'vol-submit-btn', 'ধন্যবাদ! আপনার স্বেচ্ছাসেবী নিবন্ধন সরাসরি আমাদের ইমেইলে পৌঁছে গেছে।');
+    setupForm('contactForm', 'contact-submit-btn', 'ধন্যবাদ! আপনার বার্তা সরাসরি আমাদের ইমেইলে পৌঁছে গেছে।');
+
+    // হোয়াটসঅ্যাপ পপআপ
+    const waToggle = document.getElementById('wa-toggle-btn');
+    const waBox = document.getElementById('wa-direct-box');
+    const waClose = document.getElementById('wa-close-btn');
+
+    waToggle.addEventListener('click', () => waBox.style.display = (waBox.style.display === 'flex' ? 'none' : 'flex'));
+    waClose.addEventListener('click', () => waBox.style.display = 'none');
+
+    document.getElementById('wa-send-direct-btn').addEventListener('click', () => {
+      const txt = document.getElementById('wa-custom-msg').value.trim();
+      if(!txt) return alert("মেসেজ লিখুন।");
+      window.open(`https://wa.me/8801405319335?text=${encodeURIComponent(txt)}`, '_blank');
+      document.getElementById('wa-custom-msg').value = '';
+      waBox.style.display = 'none';
+    });
+
+    document.getElementById('mobile-toggle').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('active');
+    });
+
+    // ইনিশিয়াল লোড
+    renderHomeBlogPreview();
+    renderDonors();
+  </script>
 </body>
 </html>
