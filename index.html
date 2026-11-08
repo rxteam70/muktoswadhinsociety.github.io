@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mukto Swadhin Society - Independent Youth Platform. UN SDG Aligned Youth Startup." />
-  <title>Mukto Swadhin Society | UN SDG Aligned Youth Platform</title>
+  <meta name="description" content="Mukto Swadhin Society - Independent Youth Platform. On-Page Interactive Donation & UN SDG Aligned Platform." />
+  <title>Mukto Swadhin Society | Independent Youth Platform</title>
 
   <!-- গুগল ফন্ট: Hind Siliguri -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,13 @@
       --radius-full: 9999px;
       --transition: all 0.35s ease;
 
-      /* জাতিসংঘ এসডিজি অফিসিয়াল কালারস */
+      /* পেমেন্ট ব্র্যান্ড কালারস */
+      --bkash: #d12053;
+      --nagad: #f7941d;
+      --rocket: #8c3494;
+      --bank: #0f4c81;
+
+      /* জাতিসংঘ এসডিজি কালারস */
       --sdg-3: #4c9f38;
       --sdg-4: #c5192d;
       --sdg-10: #dd1367;
@@ -127,8 +133,8 @@
     .brand-title { font-size: 1.16rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
     .brand-subtitle { font-size: 0.73rem; font-weight: 400; color: rgba(255, 255, 255, 0.94); }
 
-    .nav-menu { display: flex; align-items: center; gap: 1.1rem; }
-    .nav-link { font-size: 0.94rem; font-weight: 500; color: var(--text-main); padding: 0.5rem 0.15rem; cursor: pointer; }
+    .nav-menu { display: flex; align-items: center; gap: 1rem; }
+    .nav-link { font-size: 0.93rem; font-weight: 500; color: var(--text-main); padding: 0.5rem 0.15rem; cursor: pointer; }
     .nav-link:hover, .nav-link.active { color: var(--primary-accent); }
     .mobile-btn { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); }
 
@@ -165,6 +171,168 @@
     .marquee-item { display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; font-weight: 600; }
     @keyframes marqueeRun { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
+    /* ==========================================================
+       ON-PAGE ALL-IN-ONE DONATION HUB (ইন্টারেক্টিভ অন-পেজ ডোনেশন)
+    ========================================================== */
+    .onpage-donate-section {
+      background: linear-gradient(180deg, #f0f7f3 0%, #ffffff 100%);
+      padding: 6rem 0;
+    }
+
+    .donate-hub-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--hover-shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .donate-hub-left {
+      padding: 3.5rem 3rem;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .donate-hub-right {
+      padding: 3.5rem 2.8rem;
+      background: #fbfdfc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .step-title {
+      font-size: 1.15rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .step-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-accent);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    /* অন-পেজ টাকার অ্যামাউন্ট পিলস */
+    .amount-pills-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .amount-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 0.65rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .amount-btn:hover, .amount-btn.active {
+      border-color: var(--primary-accent);
+      background: rgba(21, 128, 61, 0.08);
+      color: var(--primary-accent);
+    }
+
+    /* অন-পেজ পেমেন্ট মেথড সুইচার */
+    .payment-tab-selector {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pay-tab-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 0.4rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+
+    .pay-tab-btn:hover {
+      border-color: #94a3b8;
+    }
+
+    .pay-tab-btn.active {
+      border-color: var(--primary-accent);
+      background: #f0fdf4;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
+    }
+
+    /* অ্যাক্টিভ নম্বর ডিসপ্লে কার্ড */
+    .active-account-box {
+      background: #ffffff;
+      border: 1.5px dashed var(--primary-accent);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .account-text-info span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: block;
+    }
+
+    .account-text-info strong {
+      font-size: 1.35rem;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+    }
+
+    .copy-action-btn {
+      background: var(--primary-accent);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .copy-action-btn:hover {
+      background: var(--primary-hover);
+    }
+
     /* এসডিজি সেকশন */
     .sdg-section { background: linear-gradient(180deg, #ffffff 0%, #f4fbf6 100%); padding: 6rem 0; }
     .sdg-hero-banner {
@@ -174,7 +342,6 @@
     }
     .sdg-hero-banner h3 { font-size: 1.85rem; margin-bottom: 0.8rem; line-height: 1.3; }
     .sdg-hero-banner p { font-size: 1rem; color: #cbd5e1; }
-
     .sdg-grid-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .sdg-card {
       background: #fff; border-radius: var(--radius-md); border: 1px solid var(--border-color);
@@ -195,7 +362,6 @@
       align-self: flex-start; background: none; border: none; color: var(--primary-accent);
       font-weight: 700; font-size: 0.92rem; cursor: pointer; padding: 0;
     }
-    .sdg-detail-btn:hover { text-decoration: underline; }
 
     /* সাধারণ কার্ডস */
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem; }
@@ -322,7 +488,9 @@
     .cat-pill-btn.active { background: var(--primary-accent); color: #fff; }
 
     @media (max-width: 992px) {
-      .hero-grid, .about-layout, .sdg-hero-banner, .sdg-grid-container, .grid-3, .grid-4, .donors-grid, .contact-wrapper, .footer-grid { grid-template-columns: 1fr; }
+      .hero-grid, .about-layout, .sdg-hero-banner, .sdg-grid-container, .donate-hub-card, .grid-3, .grid-4, .donors-grid, .contact-wrapper, .footer-grid { grid-template-columns: 1fr; }
+      .donate-hub-left { border-right: none; border-bottom: 1px solid var(--border-color); padding: 2.5rem 1.5rem; }
+      .donate-hub-right { padding: 2.5rem 1.5rem; }
       .mobile-btn { display: block; }
       .nav-menu {
         position: fixed; top: 86px; left: -100%; width: 100%; height: calc(100vh - 86px);
@@ -383,16 +551,15 @@
 
       <nav class="nav-menu" id="nav-menu">
         <a class="nav-link active" onclick="switchPage('home')">হোম</a>
-        <a href="#sdg-goals" class="nav-link" onclick="switchPage('home')" style="color: #0284c7; font-weight:700;">🌐 UN SDGs</a>
+        <a href="#sdg-goals" class="nav-link" onclick="switchPage('home')">UN SDGs</a>
+        <a href="#onpage-donate" class="nav-link" onclick="switchPage('home')" style="color: var(--accent-blood); font-weight:700;">❤️ অনুদান</a>
         <a href="#about" class="nav-link" onclick="switchPage('home')">আমাদের কথা</a>
-        <a href="#mental-health" class="nav-link" onclick="switchPage('home')">মানসিক স্বাস্থ্য</a>
-        <a href="#education" class="nav-link" onclick="switchPage('home')">শিক্ষা সহায়তা</a>
         <a href="#blood-network" class="nav-link" onclick="switchPage('home')">রক্তদান</a>
         <a href="#animal-welfare" class="nav-link" onclick="switchPage('home')">প্রাণী কল্যাণ</a>
         <a href="#committee" class="nav-link" onclick="switchPage('home')">টিম</a>
-        <a class="nav-link" onclick="switchPage('blog')" style="color: var(--primary-accent); font-weight:700;">ব্লগ পেজ ➜</a>
-        <a href="#volunteer" class="btn btn-outline" style="padding: 0.45rem 1.1rem;" onclick="switchPage('home')">স্বেচ্ছাসেবী</a>
-        <a href="#contact" class="btn btn-primary" style="padding: 0.45rem 1.2rem;" onclick="switchPage('home')">যোগাযোগ</a>
+        <a class="nav-link" onclick="switchPage('blog')" style="color: var(--primary-accent); font-weight:700;">ব্লগ ➜</a>
+        <!-- অন-পেজ ডোনেশন বাটনে ক্লিক করলে স্ক্রোল হয়ে ডোনেশন হাবে যাবে -->
+        <a href="#onpage-donate" class="btn btn-blood" style="padding: 0.45rem 1.1rem;" onclick="switchPage('home')">ডোনেট করুন ❤️</a>
       </nav>
     </div>
   </header>
@@ -412,9 +579,10 @@
             জাতিসংঘের টেকসই উন্নয়ন অভীষ্ট (UN SDGs) অর্জনে আমরা তৃণমূল পর্যায়ে রক্তদান, মানসিক স্বস্তি, সুবিধাবঞ্চিতদের শিক্ষা ও অবলা জীবের অধিকার প্রতিষ্ঠায় কাজ করছি।
           </p>
           <div class="hero-btns">
-            <a href="#sdg-goals" class="btn btn-primary">আমাদের SDG প্রজেক্ট দেখুন ➜</a>
-            <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20প্রয়োজন" target="_blank" class="btn btn-blood">
-              🩸 জরুরি রক্তের সন্ধান
+            <a href="#onpage-donate" class="btn btn-blood">ডোনেট করে পাশে দাঁড়ান ❤️</a>
+            <a href="#sdg-goals" class="btn btn-primary">আমাদের SDG প্রজেক্ট ➜</a>
+            <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20প্রয়োজন" target="_blank" class="btn btn-outline">
+              🩸 রক্তের সন্ধান
             </a>
           </div>
         </div>
@@ -464,7 +632,140 @@
       </div>
     </div>
 
-    <!-- ৩. DETAILED UN SDG GOALS SECTION -->
+    <!-- ==========================================================
+         ৩. ON-PAGE ALL-IN-ONE DONATION HUB (এক পেজে সম্পূর্ণ ডোনেশন)
+    ========================================================== -->
+    <section class="onpage-donate-section" id="onpage-donate">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-blood">❤️ আপনার দান, একটি শিশুর মুখে হাসি</span>
+          <h2 class="section-title">অন-পেজ ডোনেশন ও সহায়তা কেন্দ্র</h2>
+          <p class="section-subtitle">
+            টাকা নির্বাচন, পেমেন্ট মেথড বাছাই এবং ট্রানজেকশন কনফার্মেশন—সবকিছু এক ফ্রেমেই সম্পন্ন করুন।
+          </p>
+        </div>
+
+        <!-- অল-ইন-ওয়ান ডোনেশন কার্ড -->
+        <div class="donate-hub-card">
+          
+          <!-- বাম পাশ: পরিমাণ ও পেমেন্ট মেথড সিলেক্টর -->
+          <div class="donate-hub-left">
+            <div class="step-title">
+              <span class="step-circle">১</span>
+              <span>টাকার পরিমাণ সিলেক্ট করুন (বা লিখুন)</span>
+            </div>
+
+            <div class="amount-pills-row">
+              <button type="button" class="amount-btn active" onclick="selectAmount(100, this)">৳ ১০০</button>
+              <button type="button" class="amount-btn" onclick="selectAmount(500, this)">৳ ৫০০</button>
+              <button type="button" class="amount-btn" onclick="selectAmount(1000, this)">৳ ১,০০০</button>
+              <button type="button" class="amount-btn" onclick="selectAmount(2500, this)">৳ ২,৫০০</button>
+            </div>
+
+            <div class="step-title">
+              <span class="step-circle">২</span>
+              <span>পেমেন্ট মাধ্যম বেছে নিন</span>
+            </div>
+
+            <div class="payment-tab-selector">
+              <div class="pay-tab-btn active" onclick="switchPaymentMethod('bkash', this)">
+                <span style="color: var(--bkash); font-size:1.1rem;">bK</span>
+                <span>বিকাশ</span>
+              </div>
+              <div class="pay-tab-btn" onclick="switchPaymentMethod('nagad', this)">
+                <span style="color: var(--nagad); font-size:1.1rem;">নগদ</span>
+                <span>নগদ</span>
+              </div>
+              <div class="pay-tab-btn" onclick="switchPaymentMethod('rocket', this)">
+                <span style="color: var(--rocket); font-size:1.1rem;">🚀</span>
+                <span>রকেট</span>
+              </div>
+              <div class="pay-tab-btn" onclick="switchPaymentMethod('bank', this)">
+                <span style="color: var(--bank); font-size:1.1rem;">🏦</span>
+                <span>ব্যাংক</span>
+              </div>
+            </div>
+
+            <!-- লাইভ অ্যাকাউন্ট ডিসপ্লে ও কপি বাটন -->
+            <div class="active-account-box" id="accountDisplayBox">
+              <div class="account-text-info">
+                <span id="accountTypeDesc">বিকাশ পার্সোনাল নম্বর (Send Money)</span>
+                <strong id="accountNumberVal">01405319335</strong>
+              </div>
+              <button type="button" class="copy-action-btn" onclick="copyCurrentNumber()">
+                📋 কপি করুন
+              </button>
+            </div>
+
+            <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; background: #fff; padding: 0.9rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              💡 <strong>সহজ নিয়ম:</strong> আপনার বিকাশ, নগদ বা রকেট অ্যাপে গিয়ে উপরে প্রদর্শিত নম্বরে <strong>Send Money</strong> করুন। সফল হলে প্রাপ্ত <strong>TrxID</strong> পাশের ফর্মে জমা দিন।
+            </div>
+          </div>
+
+          <!-- ডান পাশ: ট্রানজেকশন ভেরিফিকেশন ফর্ম -->
+          <div class="donate-hub-right">
+            <div class="step-title" style="margin-bottom: 1.2rem;">
+              <span class="step-circle">৩</span>
+              <span>টাকা পাঠানোর পর তথ্য জমা দিন</span>
+            </div>
+
+            <form id="donationForm">
+              <input type="hidden" name="access_key" value="99c119c4-1392-48c3-a6d8-196289dabb17">
+              <input type="hidden" name="subject" value="অন-পেজ নতুন ডোনেশন নিশ্চিতকরণ">
+
+              <div class="form-field">
+                <label>আপনার নাম *</label>
+                <input type="text" name="donor_name" class="form-ctrl" required placeholder="পূর্ণ নাম লিখুন">
+              </div>
+
+              <div class="form-field">
+                <label>মোবাইল নম্বর (যে নম্বর থেকে পাঠিয়েছেন) *</label>
+                <input type="tel" name="donor_phone" class="form-ctrl" required placeholder="০১XXXXXXXXX">
+              </div>
+
+              <div class="input-row-2">
+                <div class="form-field">
+                  <label>অনুদানের পরিমাণ (টাকা) *</label>
+                  <input type="number" id="formDonationAmount" name="amount" value="100" class="form-ctrl" required>
+                </div>
+                <div class="form-field">
+                  <label>পেমেন্ট মেথড</label>
+                  <input type="text" id="formDonationMethod" name="payment_method" value="বিকাশ (bKash)" class="form-ctrl" readonly style="background:#f1f5f9;">
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label>ট্রানজেকশন আইডি (TrxID) *</label>
+                <input type="text" name="trx_id" class="form-ctrl" required placeholder="যেমন: 9J4K2L1M">
+              </div>
+
+              <div class="form-field">
+                <label>যে খাতে ব্যয় করতে চান</label>
+                <select name="donation_cause" class="form-ctrl">
+                  <option value="সাধারণ তহবিল">সাধারণ তহবিল (যেখানে প্রয়োজন)</option>
+                  <option value="শিশুদের শিক্ষা">সুবিধাবঞ্চিত শিশুদের শিক্ষা</option>
+                  <option value="পথপ্রাণী সেবা">পথপ্রাণীদের খাদ্য ও চিকিৎসা</option>
+                  <option value="জরুরি রক্তদান">জরুরি রক্তদান সহায়তা</option>
+                </select>
+              </div>
+
+              <button type="submit" id="donationSubmitBtn" class="btn btn-blood" style="width: 100%; margin-top: 0.5rem; padding: 0.85rem;">
+                ডোনেশন কনফার্ম করুন ➜
+              </button>
+            </form>
+
+            <div style="text-align: center; margin-top: 1.2rem;">
+              <a href="https://wa.me/8801405319335?text=আসসালামু%20আলাইকুম,%20আমি%20অন-পেজে%20ডোনেশন%20করেছি।%20মানি%20রিসিপ্ট%20পাঠাচ্ছি।" target="_blank" style="color: var(--accent-wa); font-weight: 700; font-size: 0.92rem;">
+                💬 হোয়াটসঅ্যাপে মানি রিসিপ্ট পাঠান
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ৪. DETAILED UN SDG GOALS SECTION -->
     <section class="sdg-section" id="sdg-goals">
       <div class="container">
         <div class="section-header">
@@ -562,7 +863,7 @@
                 <span style="font-size: 1.5rem;">🏙️</span>
               </div>
               <h4 class="sdg-card-title">টেকসই ও মানবিক নগর সম্প্রদায়</h4>
-              <span class="sdg-official-tag">UN Target: Sustainable Cities & Communities</span>
+              <span class="sdg-official-tag">UN Target: Sustainable Communities</span>
               <p class="sdg-desc">
                 একটি সুস্থ, পরিচ্ছন্ন ও নিরাপদ শহর গঠনে মানুষ ও রাস্তার অবলা প্রাণীর মধ্যে পারস্পরিক সহাবস্থান এবং জননিরাপত্তা তৈরি।
               </p>
@@ -619,7 +920,7 @@
       </div>
     </section>
 
-    <!-- 4. ABOUT US -->
+    <!-- 5. ABOUT US -->
     <section class="section section-white" id="about">
       <div class="container">
         <div class="section-header">
@@ -656,7 +957,7 @@
       </div>
     </section>
 
-    <!-- 5. MENTAL HEALTH -->
+    <!-- 6. MENTAL HEALTH -->
     <section class="section section-light" id="mental-health">
       <div class="container">
         <div class="section-header">
@@ -706,7 +1007,7 @@
       </div>
     </section>
 
-    <!-- 6. EDUCATION SUPPORT -->
+    <!-- 7. EDUCATION SUPPORT -->
     <section class="section section-white" id="education">
       <div class="container">
         <div class="section-header">
@@ -746,7 +1047,7 @@
       </div>
     </section>
 
-    <!-- 7. BLOOD DONOR NETWORK -->
+    <!-- 8. BLOOD DONOR NETWORK -->
     <section class="section section-light" id="blood-network">
       <div class="container">
         <div class="section-header">
@@ -799,7 +1100,7 @@
       </div>
     </section>
 
-    <!-- 8. ANIMAL WELFARE -->
+    <!-- 9. ANIMAL WELFARE -->
     <section class="section section-white" id="animal-welfare">
       <div class="container">
         <div class="section-header">
@@ -839,7 +1140,7 @@
       </div>
     </section>
 
-    <!-- 9. TEAM -->
+    <!-- 10. TEAM -->
     <section class="section section-light" id="committee">
       <div class="container">
         <div class="section-header">
@@ -892,7 +1193,7 @@
       </div>
     </section>
 
-    <!-- 10. BLOG PREVIEW -->
+    <!-- 11. BLOG PREVIEW -->
     <section class="section section-white" id="blog-preview">
       <div class="container">
         <div class="section-header">
@@ -985,23 +1286,23 @@
 
             <div class="input-row-2">
               <div class="form-field">
-                <label for="vol-name">আপনার পূর্ণ নাম *</label>
-                <input type="text" id="vol-name" name="vol_name" class="form-ctrl" placeholder="যেমন: তানভীর হাসান" required>
+                <label>আপনার পূর্ণ নাম *</label>
+                <input type="text" name="vol_name" class="form-ctrl" placeholder="যেমন: তানভীর হাসান" required>
               </div>
               <div class="form-field">
-                <label for="vol-phone">মোবাইল বা হোয়াটসঅ্যাপ নম্বর *</label>
-                <input type="tel" id="vol-phone" name="vol_phone" class="form-ctrl" placeholder="০১XXXXXXXXX" required>
+                <label>মোবাইল বা হোয়াটসঅ্যাপ নম্বর *</label>
+                <input type="tel" name="vol_phone" class="form-ctrl" placeholder="০১XXXXXXXXX" required>
               </div>
             </div>
 
             <div class="input-row-2">
               <div class="form-field">
-                <label for="vol-email">ইমেইল অ্যাড্রেস *</label>
-                <input type="email" id="vol-email" name="vol_email" class="form-ctrl" placeholder="name@domain.com" required>
+                <label>ইমেইল অ্যাড্রেস *</label>
+                <input type="email" name="vol_email" class="form-ctrl" placeholder="name@domain.com" required>
               </div>
               <div class="form-field">
-                <label for="vol-blood">রক্তের গ্রুপ</label>
-                <select id="vol-blood" name="vol_blood" class="form-ctrl">
+                <label>রক্তের গ্রুপ</label>
+                <select name="vol_blood" class="form-ctrl">
                   <option value="উল্লেখ করা হয়নি">নির্বাচন করুন</option>
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
@@ -1056,17 +1357,17 @@
               <input type="hidden" name="subject" value="মুক্ত স্বাধীন সোসাইটি - নতুন বার্তা এসেছে!">
 
               <div class="form-field">
-                <label for="contact-name">আপনার নাম *</label>
-                <input type="text" id="contact-name" name="name" class="form-ctrl" required placeholder="পূর্ণ নাম">
+                <label>আপনার নাম *</label>
+                <input type="text" name="name" class="form-ctrl" required placeholder="পূর্ণ নাম">
               </div>
 
               <div class="form-field">
-                <label for="contact-email">ইমেইল অথবা মোবাইল নম্বর *</label>
+                <label>ইমেইল অথবা মোবাইল নম্বর *</label>
                 <input type="text" id="contact-email" name="contact_info" class="form-ctrl" required placeholder="যোগাযোগের নম্বর">
               </div>
 
               <div class="form-field">
-                <label for="contact-msg">আপনার বার্তা লিখুন *</label>
+                <label>আপনার বার্তা লিখুন *</label>
                 <textarea id="contact-msg" name="message" rows="4" class="form-ctrl" required placeholder="কীভাবে সাহায্য করতে পারি?"></textarea>
               </div>
 
@@ -1105,7 +1406,6 @@
           <button class="cat-pill-btn" onclick="filterBlogCategory('রক্তদান', this)">রক্তদান</button>
           <button class="cat-pill-btn" onclick="filterBlogCategory('মানসিক স্বাস্থ্য', this)">মানসিক স্বাস্থ্য</button>
           <button class="cat-pill-btn" onclick="filterBlogCategory('প্রাণী কল্যাণ', this)">প্রাণী কল্যাণ</button>
-          <button class="cat-pill-btn" onclick="filterBlogCategory('বুক আড্ডা', this)">বুক আড্ডা</button>
         </div>
       </div>
 
@@ -1159,8 +1459,8 @@
         <div class="footer-col">
           <h4>গুরুত্বপূর্ণ লিংক</h4>
           <ul>
+            <li><a href="#onpage-donate" onclick="switchPage('home')">অন-পেজ ডোনেশন</a></li>
             <li><a href="#sdg-goals" onclick="switchPage('home')">UN SDGs লক্ষ্যমাত্রা</a></li>
-            <li><a href="#about" onclick="switchPage('home')">আমাদের কথা</a></li>
             <li><a onclick="switchPage('blog')">ব্লগ ও ফিল্ড স্টোরি</a></li>
             <li><a href="#volunteer" onclick="switchPage('home')">স্বেচ্ছাসেবী ফর্ম</a></li>
           </ul>
@@ -1175,7 +1475,7 @@
 
       <div class="footer-bottom">
         <div>© <span id="year"></span> <strong>Mukto Swadhin Society (Independent Youth Platform)</strong>. সর্বস্বত্ব সংরক্ষিত।</div>
-        <div>UN SDG Aligned ও ১০০% রেসপনসিভ সিঙ্গেল ফাইল প্ল্যাটফর্ম।</div>
+        <div>অন-পেজ ডোনেশন ও UN SDG Aligned পূর্ণাঙ্গ প্ল্যাটফর্ম।</div>
       </div>
     </div>
   </footer>
@@ -1198,7 +1498,7 @@
       <div class="wa-quick-btns">
         <a href="https://wa.me/8801405319335?text=জরুরি%20রক্তের%20সন্ধান" target="_blank" class="wa-quick-btn">🩸 জরুরি রক্তের সন্ধান ➜</a>
         <a href="https://wa.me/8801405319335?text=মানসিক%20স্বাস্থ্য%20কাউন্সেলিং" target="_blank" class="wa-quick-btn">🧠 মানসিক স্বাস্থ্য সহায়তা ➜</a>
-        <a href="https://wa.me/8801405319335?text=ভলান্টিয়ার%20হতে%20চাই" target="_blank" class="wa-quick-btn">🤝 ভলান্টিয়ার হতে চাই ➜</a>
+        <a href="https://wa.me/8801405319335?text=ডোনেশন%20করতে%20চাই" target="_blank" class="wa-quick-btn">❤️ অনুদান সংক্রান্ত তথ্য ➜</a>
       </div>
       <div class="wa-direct-form">
         <textarea id="wa-custom-msg" rows="3" placeholder="এখানে মেসেজ লিখুন..."></textarea>
@@ -1219,7 +1519,61 @@
       }
     });
 
-    // জাতিসংঘ এসডিজি বিস্তারিত ডেটা
+    // ১. অন-পেজ ডোনেশন অ্যামাউন্ট সিলেক্টর
+    function selectAmount(val, btn) {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('formDonationAmount').value = val;
+    }
+
+    // ২. অন-পেজ পেমেন্ট মেথড সুইচিং
+    const paymentAccounts = {
+      bkash: {
+        desc: "বিকাশ পার্সোনাল নম্বর (Send Money)",
+        num: "01405319335",
+        methodName: "বিকাশ (bKash)"
+      },
+      nagad: {
+        desc: "নগদ পার্সোনাল নম্বর (Send Money)",
+        num: "01405319335",
+        methodName: "নগদ (Nagad)"
+      },
+      rocket: {
+        desc: "রকেট পার্সোনাল নম্বর (Send Money)",
+        num: "01405319335",
+        methodName: "রকেট (Rocket)"
+      },
+      bank: {
+        desc: "ব্যাংক অ্যাকাউন্ট (A/C Name: Mukto Swadhin | Branch: Dhanmondi)",
+        num: "150220XXXXXXXX",
+        methodName: "ব্যাংক ট্রান্সফার"
+      }
+    };
+
+    let currentPaymentMethod = 'bkash';
+
+    function switchPaymentMethod(methodKey, btn) {
+      document.querySelectorAll('.pay-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      currentPaymentMethod = methodKey;
+      const data = paymentAccounts[methodKey];
+      
+      document.getElementById('accountTypeDesc').innerText = data.desc;
+      document.getElementById('accountNumberVal').innerText = data.num;
+      document.getElementById('formDonationMethod').value = data.methodName;
+    }
+
+    function copyCurrentNumber() {
+      const num = paymentAccounts[currentPaymentMethod].num;
+      navigator.clipboard.writeText(num).then(() => {
+        alert("কপি হয়েছে: " + num);
+      }).catch(() => {
+        prompt("কপি করে নিন:", num);
+      });
+    }
+
+    // ৩. এসডিজি ডেটা
     const sdgDetails = {
       sdg3: {
         number: "SDG 03",
@@ -1228,8 +1582,7 @@
         content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> সকলের জন্য সুস্থ জীবন নিশ্চিত করা ও সব বয়সের মানুষের সার্বিক কল্যাণ বাড়ানো।<br><br>
         <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
         • <strong>২৪/৭ ফ্রি ব্লাড ডোনার ডেটাবেস:</strong> রক্তের অভাবে যেন কোনো রোগীর জীবন বিপন্ন না হয়, সেজন্য স্বেচ্ছাসেবী রক্তদাতাদের নেটওয়ার্ক পরিচালনা।<br>
-        • <strong>মানসিক স্বাস্থ্য ও লিসেনিং ডেস্ক:</strong> তরুণ ও শিক্ষার্থীদের হতাশা, ক্যারিয়ার চাপ ও বিষণ্নতা দূর করতে অভিজ্ঞ মনোবিজ্ঞানীদের তত্ত্বাবধানে বিনামূল্যে কাউন্সেলিং।<br>
-        • <strong>২০৩০ লক্ষ্যমাত্রা:</strong> প্রতি বছর ন্যূনতম ২,৫০০ ইউনিট জরুরি রক্তের ব্যবস্থা এবং ৫,০০০ তরুণকে মানসিক প্রশান্তির সহায়তা দেওয়া।`
+        • <strong>মানসিক স্বাস্থ্য ও লিসেনিং ডেস্ক:</strong> তরুণ ও শিক্ষার্থীদের হতাশা, ক্যারিয়ার চাপ ও বিষণ্নতা দূর করতে অভিজ্ঞ মনোবিজ্ঞানীদের তত্ত্বাবধানে বিনামূল্যে কাউন্সেলিং।`
       },
       sdg4: {
         number: "SDG 04",
@@ -1238,8 +1591,7 @@
         content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> অন্তর্ভুক্তিমূলক ও সমতাভিত্তিক মানসম্মত শিক্ষা নিশ্চিত করা এবং জীবনব্যাপী শিক্ষার সুযোগ সৃষ্টি।<br><br>
         <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
         • <strong>মুক্ত সন্ধ্যা পাঠশালা:</strong> বস্তি ও পথশিশুদের জন্য বিনামূল্যে বর্ণমালা, গণিত ও নীতিশিক্ষা পরিচালনা।<br>
-        • <strong>শিক্ষা উপকরণ ড্রাইভ:</strong> খাতা, কলম, জ্যামিতি বক্স ও স্কুলব্যাগ সরবরাহ করে ঝরে পড়া শিশুদের ক্লাসরুমে ফিরিয়ে আনা।<br>
-        • <strong>ডিজিটাল সাক্ষরতা:</strong> ল্যাপটপ ও কম্পিউটারের মাধ্যমে প্রাথমিক প্রযুক্তিগত প্রশিক্ষণ প্রদান।`
+        • <strong>শিক্ষা উপকরণ ড্রাইভ:</strong> খাতা, কলম, জ্যামিতি বক্স ও স্কুলব্যাগ সরবরাহ করে ঝরে পড়া শিশুদের ক্লাসরুমে ফিরিয়ে আনা।`
       },
       sdg10: {
         number: "SDG 10",
@@ -1247,17 +1599,15 @@
         color: "#dd1367",
         content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> দেশের অভ্যন্তরীণ সামাজিক, অর্থনৈতিক ও সাংস্কৃতিক বৈষম্য কমিয়ে আনা।<br><br>
         <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>বুক আড্ডা ও মুক্ত বই বিনিময়:</strong> ধনী-দরিদ্র নির্বিশেষে সবার জন্য মুক্ত জ্ঞানচর্চার সমতাভিত্তিক সুযোগ সৃষ্টি।<br>
-        • <strong>পিছিয়ে পড়া জনগোষ্ঠীর পাশে দাঁড়ানো:</strong> প্রান্তিক এলাকার শিশুদের শিক্ষা ও মেধা বিকাশের পথ সুগম করা।`
+        • <strong>বুক আড্ডা ও মুক্ত বই বিনিময়:</strong> সবার জন্য বিনামূল্যে জ্ঞানচর্চার সমতাভিত্তিক সুযোগ সৃষ্টি।`
       },
       sdg11: {
         number: "SDG 11",
         title: "টেকসই ও মানবিক নগর সম্প্রদায় (Sustainable Communities)",
         color: "#fd9d24",
-        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> মানববসতি ও শহরগুলোকে অন্তর্ভুক্তিমূলক, নিরাপদ, সহনশীল ও টেকসই করে গড়ে তোলা।<br><br>
+        content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> মানববসতি ও শহরগুলোকে অন্তর্ভুক্তিমূলক, নিরাপদ ও টেকসই করে গড়ে তোলা।<br><br>
         <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>অ্যান্টি-রেবিজ (জলাতঙ্ক) টিকাদান:</strong> শহরের পথকুকুরদের ভ্যাকসিন প্রদান করে জননিরাপত্তা জোরদার করা।<br>
-        • <strong>প্রাণী-মানুষের নিরাপদ সহাবস্থান:</strong> শহরের জীববৈচিত্র্য ও পরিবেশের ভারসাম্য রক্ষায় জনসচেতনতা তৈরি।`
+        • <strong>অ্যান্টি-রেবিজ (জলাতঙ্ক) টিকাদান:</strong> শহরের পথকুকুরদের ভ্যাকসিন প্রদান করে জননিরাপত্তা জোরদার করা।`
       },
       sdg15: {
         number: "SDG 15",
@@ -1274,8 +1624,7 @@
         color: "#19486a",
         content: `<strong>জাতিসংঘের মূল লক্ষ্য:</strong> টেকসই উন্নয়নের জন্য বৈশ্বিক ও জাতীয় অংশীদারিত্ব পুনরুজ্জীবিত করা।<br><br>
         <strong>আমাদের মাঠপর্যায়ের কার্যক্রম:</strong><br>
-        • <strong>তারুণ্যের নেটওয়ার্কিং:</strong> দেশের বিভিন্ন কলেজ ও বিশ্ববিদ্যালয়ের তরুণ শিক্ষার্থীদের সমাজসেবায় ঐক্যবদ্ধ করা।<br>
-        • <strong>ডিজিটাল যুব প্ল্যাটফর্ম:</strong> প্রযুক্তির মাধ্যমে স্বেচ্ছাসেবা ও নাগরিক সহায়তার কার্যকর মেলবন্ধন তৈরি।`
+        • <strong>তারুণ্যের নেটওয়ার্কিং:</strong> দেশের বিভিন্ন কলেজ ও বিশ্ববিদ্যালয়ের তরুণ শিক্ষার্থীদের সমাজসেবায় ঐক্যবদ্ধ করা।`
       }
     };
 
@@ -1297,7 +1646,7 @@
       document.getElementById('sdgModal').style.display = 'none';
     }
 
-    // ব্লগ ডেটা
+    // ৪. ব্লগ ডেটা
     const blogData = [
       {
         id: 0,
@@ -1487,6 +1836,7 @@
       });
     }
 
+    setupForm('donationForm', 'donationSubmitBtn', 'ধন্যবাদ! আপনার অনুদানের তথ্য সফলভাবে গৃহীত হয়েছে। আমরা ভেরিফাই করে কনফার্ম করব।');
     setupForm('volunteerForm', 'vol-submit-btn', 'ধন্যবাদ! আপনার স্বেচ্ছাসেবী নিবন্ধন সরাসরি আমাদের ইমেইলে পৌঁছে গেছে।');
     setupForm('contactForm', 'contact-submit-btn', 'ধন্যবাদ! আপনার বার্তা সরাসরি আমাদের ইমেইলে পৌঁছে গেছে।');
 
@@ -1510,7 +1860,6 @@
       document.getElementById('nav-menu').classList.toggle('active');
     });
 
-    // ইনিশিয়াল লোড
     renderHomeBlogPreview();
     renderDonors();
   </script>
